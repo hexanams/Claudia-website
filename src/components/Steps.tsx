@@ -32,8 +32,10 @@ const Steps = () => {
 
     return (
         <>
-            <section className='p-5 lg:px-16 lg:py-20  bg-'>
-                <div className='flex flex-col gap-6 justify-center items-center '>
+            <section className="p-5 lg:px-16 lg:py-20 bg-[url('/first-steps.svg')] w-full bg-cover bg-center bg-no-repeat">
+                <div
+                    className="flex flex-col gap-6 justify-center items-center"
+                >
                     <h1 className='font-extrabold text-xl lg:text-5xl text-center'>Take the First Step Today</h1>
                     <p className='text-base lg:text-lg text-[#131313] font-light text-center'>Your journey to mental well-being starts here. Reach out now to schedule your appointment or learn more about our services.</p>
                     <button className="py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg">
