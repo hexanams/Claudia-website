@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <div className='relative flex-grow flex flex-col justify-center items-center h-full px-10 lg:px-[9.3rem]'>
+        <div className='relative flex-grow flex flex-col justify-center items-center py-5 lg:py-0 h-1/2 lg:h-full px-10 lg:px-[9.3rem]'>
             <video
                 autoPlay
                 loop

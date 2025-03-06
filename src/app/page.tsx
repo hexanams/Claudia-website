@@ -9,7 +9,7 @@ import Steps from '@/components/Steps'
 const Page = () => {
   return (
     <section>
-      <div className="min-h-screen flex flex-col">
+      <div className="lg:min-h-screen flex flex-col">
         <NavBar />
         <Hero />
       </div>

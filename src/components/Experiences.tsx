@@ -49,7 +49,7 @@ const Experiences = () => {
                 <div className='lg:p-10 flex flex-col lg:flex-row gap-[38px] justify-between items-center'>
                     <div className='flex flex-col items-center lg:items-start gap-8 lg:w-1/2'>
                         <div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit'>Empathy</div>
-                        <div className='flex flex-col gap-6'>
+                        <div className='flex flex-col gap-6 '>
                             <h1 className='text-[#131313] font-extrabold text-xl lg:text-[2.5rem] text-left'>
                                 Your Journey to Mental Well-Being Starts Here
                             </h1>
@@ -62,12 +62,15 @@ const Experiences = () => {
                         </button>
                     </div>
 
-                    <Image
-                        alt='mental-health'
-                        src='/mental-well-being.svg'
-                        width={616}
-                        height={640}
-                    />
+                    <div className="w-full lg:w-1/2 flex justify-center items-center">
+                        <Image
+                            alt='mental-health'
+                            src='/mental-well-being.svg'
+                            width={616}
+                            height={640}
+                        />
+                    </div>
+
                 </div>
             </section>
         </>

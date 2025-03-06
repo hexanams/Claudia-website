@@ -53,12 +53,12 @@ const Steps = () => {
                 <div className="grid grid-col-1 lg:grid-cols-3 gap-12 place-content-center">
                     {steps.map((step, i) => (
                         <div key={i}>
-                            <div className="relative w-full h-[250px] rounded-lg">
+                            <div className="w-full h-[250px] rounded-lg">
                                 <Image
                                     src={step.image}
                                     alt={step.title}
-                                    fill
-                                    objectFit="cover"
+                                    width={405}
+                                    height={248}
                                 />
                             </div>
 

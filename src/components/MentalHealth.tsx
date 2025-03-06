@@ -4,7 +4,7 @@ const MentalHealth = () => {
     return (
         <section className='lg:px-20 lg:py-[6.3rem]'>
             <div className='p-5 lg:p-10 flex flex-col lg:flex-row gap-[38px] justify-center'>
-                <div className='flex flex-col gap-8 '>
+                <div className='flex flex-col gap-8 w-full lg:w-1/2'>
                     <div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit'>Thrive</div>
                     <div className='flex flex-col gap-6'>
                         <h1 className='text-[#131313] font-extrabold text-xl lg:text-[2.5rem] text-left'>
@@ -29,13 +29,15 @@ const MentalHealth = () => {
                         </div>
                     </div>
                 </div>
+                <div className='w-full lg:w-1/2 flex items-center justify-center'>
+                    <Image
+                        alt='mental-health'
+                        src='/mental-health.svg'
+                        width={557}
+                        height={474}
+                    />
+                </div>
 
-                <Image
-                    alt='mental-health'
-                    src='/mental-health.svg'
-                    width={557}
-                    height={474}
-                />
             </div>
         </section>
     )
