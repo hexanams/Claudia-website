@@ -4,9 +4,9 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className='px-16 py-20'>
-            <div className='flex justify-between'>
-                <div className='flex flex-col gap-6 w-1/2'>
+        <footer className='p-5 lg:px-16 lg:py-20'>
+            <div className='block gap-5 lg:flex justify-between'>
+                <div className='flex flex-col gap-6 lg:w-1/2'>
                     <h1 className='text-3xl'>Logo</h1>
                     <p className='text-base text-light'>Subscribe to our newsletter for the latest updates on features and services.</p>
 
@@ -25,8 +25,8 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='flex flex-wrap gap-10 justify-around w-1/2'>
-                    <div className='flex flex-col gap-4'>
+                <div className='mt-5 lg:mt-0 flex gap-10 justify-around lg:w-1/2'>
+                    <div className='flex flex-col gap-4 w-1/2'>
                         <h2 className='font-medium text-base'>Quick Links</h2>
                         <div className='flex flex-col'>
                             <Link className='py-2 text-sm font-light' href='/'>About Us</Link>
@@ -37,20 +37,20 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className='flex flex-col gap-4'>
+                    <div className='flex flex-col gap-4 w-1/2'>
                         <h2 className='font-medium text-base'>Connect With Us</h2>
                         <div className='flex flex-col'>
                             <a className='py-2 text-sm font-light' href='' target='blank' >Facebook Page</a>
                             <a className='py-2 text-sm font-light' href='' target='blank' >Instagram Feed</a>
                             <a className='py-2 text-sm font-light' href='' target='blank' >Twitter Profile</a>
-                            <a className='py-2 text-sm font-light' href='' target='blank' >aedIn Page</a>
+                            <a className='py-2 text-sm font-light' href='' target='blank' >LinkedIn Page</a>
                             <a className='py-2 text-sm font-light' href='' target='blank' >YouTube Channel</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className='mt-20 border-t-2 flex justify-between items-end h-14'>
+            <div className='mt-20 border-t-2 flex flex-col py-2 lg:p-0 lg:flex-row justify-between items-center lg:items-end h-14'>
                 <div className='font-light text-sm'>© 2025 Claudia. All rights reserved.</div>
                 <div className='flex gap-6'>
                     <h1 className='underline cursor-pointer text-sm'>Privacy Policy</h1>

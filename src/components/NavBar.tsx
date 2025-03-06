@@ -4,7 +4,7 @@ import React from 'react'
 
 const NavBar = () => {
     return (
-        <header className='h-[4.5rem] flex justify-center items-center px-24 py-4'>
+        <header className='hidden h-[4.5rem] lg:flex justify-center items-center px-24 py-4'>
             <div className='flex justify-between text-sm lg:text-base'>
                 <div className='flex gap-8 items-center'>
                     <Link className='pointer-cursor hover:underline' href='/'>Home</Link>
