@@ -14,7 +14,7 @@ const NavBar = () => {
                 <div className='hidden lg:flex justify-between text-sm xl:text-base'>
                     <div className='flex gap-8 items-center'>
                         <Link className='pointer-cursor hover:underline' href='/'>Home</Link>
-                        <Link className='pointer-cursor hover:underline' href='/'>About Us</Link>
+                        <Link className='pointer-cursor hover:underline' href='/about'>About Us</Link>
                         <Link className='pointer-cursor hover:underline' href='/'>Issues we treat</Link>
                         <Link className='pointer-cursor hover:underline' href='/'>Threapeutic services</Link>
                     </div>
@@ -28,7 +28,7 @@ const NavBar = () => {
                     </div>
                 </div>
                 <div className='lg:hidden flex justify-between items-center w-full'>
-                    <div>Logo</div>
+                    <Link href={'/'} className='cursor-pointer'>Logo</Link>
                     <Button className="bg-gray-500" onClick={() => setOpen((prev) => !prev)}>
                         <Menu className='text-' />
                     </Button>
@@ -42,7 +42,7 @@ const NavBar = () => {
                             </SheetHeader>
                             <div className='flex flex-col gap-4 p-2 items-center'>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Home</Link>
-                                <Link className='pointer-cursor hover:underline text-xl' href='/'>About Us</Link>
+                                <Link className='pointer-cursor hover:underline text-xl' href='/about'>About Us</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Issues we treat</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Threapeutic services</Link>
 

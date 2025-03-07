@@ -50,7 +50,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className='mt-20 border-t-2 flex flex-col py-2 lg:p-0 lg:flex-row justify-between items-center gap-5 lg:items-end h-14'>
+            <div className='mt-20 border-t-2 flex flex-col py-2 lg:p-0 lg:flex-row justify-between items-center gap-5 lg:items-end h-20'>
                 <div className='font-light text-sm'>© 2025 Claudia. All rights reserved.</div>
                 <div className='flex gap-6'>
                     <h1 className='underline cursor-pointer text-sm'>Privacy Policy</h1>
