@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import React from 'react'
+import { BsInstagram } from 'react-icons/bs'
+import { RiFacebookCircleFill, RiLinkedinFill, RiTwitterXFill, RiYoutubeFill } from 'react-icons/ri'
 
 
 const Footer = () => {
@@ -28,7 +29,7 @@ const Footer = () => {
                 <div className='mt-5 lg:mt-0 flex gap-10 justify-around lg:w-1/2'>
                     <div className='flex flex-col gap-4 w-1/2'>
                         <h2 className='font-medium text-base'>Quick Links</h2>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col justify-center'>
                             <Link className='py-2 text-sm font-light' href='/'>About Us</Link>
                             <Link className='py-2 text-sm font-light' href='/'>Contact Us</Link>
                             <Link className='py-2 text-sm font-light' href='/'>Services</Link>
@@ -40,11 +41,31 @@ const Footer = () => {
                     <div className='flex flex-col gap-4 w-1/2'>
                         <h2 className='font-medium text-base'>Connect With Us</h2>
                         <div className='flex flex-col'>
-                            <a className='py-2 text-sm font-light' href='' target='blank' >Facebook Page</a>
-                            <a className='py-2 text-sm font-light' href='' target='blank' >Instagram Feed</a>
-                            <a className='py-2 text-sm font-light' href='' target='blank' >Twitter Profile</a>
-                            <a className='py-2 text-sm font-light' href='' target='blank' >LinkedIn Page</a>
-                            <a className='py-2 text-sm font-light' href='' target='blank' >YouTube Channel</a>
+                            <div className='flex gap-1 py-2 items-center'>
+                                <RiFacebookCircleFill />
+                                <a className='text-sm font-light' href='' target='blank' >Facebook Page</a>
+
+                            </div>
+                            <div className='flex gap-1 py-2 items-center'>
+                                <BsInstagram />
+                                <a className='text-sm font-light' href='' target='blank' >Instagram Feed</a>
+
+                            </div>
+                            <div className='flex gap-1 py-2 items-center'>
+                                <RiTwitterXFill />
+                                <a className='text-sm font-light' href='' target='blank' >Twitter Profile</a>
+                            </div>
+
+                            <div className='flex gap-1 py-2 items-center'>
+                                <RiLinkedinFill />
+                                <a className='text-sm font-light' href='' target='blank' >LinkedIn Page</a>
+
+                            </div>
+                            <div className='flex gap-1 py-2 items-center'>
+                                <RiYoutubeFill />
+                                <a className='text-sm font-light' href='' target='blank' >YouTube Channel</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>

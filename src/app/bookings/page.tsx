@@ -1,14 +1,16 @@
-import About from "@/components/About"
-import MidSection from "@/components/PageMidSection"
+import Booking from '@/components/Booking'
+import MidSection from '@/components/PageMidSection'
+import React from 'react'
+
+
 const Page = () => {
     return (
         <section>
             <div className="lg:min-h-screen flex flex-col">
-                <About />
+                <Booking />
             </div>
             <MidSection />
-        </section>
-    )
+        </section>)
 }
 
 export default Page

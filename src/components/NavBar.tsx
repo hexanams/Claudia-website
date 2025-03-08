@@ -23,14 +23,14 @@ const NavBar = () => {
                         <Link className='pointer-cursor hover:underline' href='/'>Price</Link>
                         <Link className='pointer-cursor hover:underline' href='/'>Book online</Link>
                         <Link className='pointer-cursor hover:underline' href='/'>Contact us</Link>
-                        <Link className='pointer-cursor hover:underline' href='/'>FAQ</Link>
+                        <Link className='pointer-cursor hover:underline' href='/faqs'>FAQ</Link>
                         <Link className='pointer-cursor hover:underline' href='/'>Blogs</Link>
                     </div>
                 </div>
                 <div className='lg:hidden flex justify-between items-center w-full'>
                     <Link href={'/'} className='cursor-pointer'>Logo</Link>
-                    <Button className="bg-gray-500" onClick={() => setOpen((prev) => !prev)}>
-                        <Menu className='text-' />
+                    <Button variant='ghost' className="bg-transparent" onClick={() => setOpen((prev) => !prev)}>
+                        <Menu className='text-black' />
                     </Button>
                 </div>
 
@@ -49,7 +49,7 @@ const NavBar = () => {
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Price</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Book online</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Contact us</Link>
-                                <Link className='pointer-cursor hover:underline text-xl' href='/'>FAQ</Link>
+                                <Link className='pointer-cursor hover:underline text-xl' href='/faqs'>FAQ</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Blogs</Link>
                             </div>
                         </SheetContent>

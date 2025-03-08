@@ -42,11 +42,11 @@ const FAQ = () => {
                     <h3 className="text-lg font-light text-center">Find answers to common questions about our services and how we can support you.</h3>
                 </div>
 
-                <div className="bg-[#EEECEB] pt-5 lg:px-20 w-full">
-                    <Accordion type="multiple">
+                <div className="bg-[#EEECEB] w-full">
+                    <Accordion type="multiple" className='px-5 lg:px-20 py-5'>
                         {questions.map((question, i) => (
                             <AccordionItem key={i} value={`item-${i}`}>
-                                <AccordionTrigger className='lg:py-5 p-2 text-lg font-extrabold'>{question.question}</AccordionTrigger>
+                                <AccordionTrigger className='py-2 lg:py-5 text-base lg:text-lg font-extrabold'>{question.question}</AccordionTrigger>
                                 <AccordionContent className='pb-6'>
                                     {question.answer}
                                 </AccordionContent>
