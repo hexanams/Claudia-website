@@ -29,10 +29,10 @@ const FAQSection = () => {
 
     return (
         <>
-            <section className='w-full h-[434px] px-5 pb-14 lg:px-[6.3rem] flex items-end'>
+            <section className="px-5 h-[434px] lg:px-[6.3rem] pb-14 bg-[url('/faq-hero.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end">
                 <div>
                     <h1 className='text-[#F2F2F2] text-xl lg:text-5xl font-extrabold'>FAQs</h1>
-                    <p className='text-xs lg:text-lg font-light'>Have questions about therapy? We&apos;re here to help. Below are answers to some of the most common questions about our services, what to expect, and how therapy can support you on your journey to healing and growth. If you don&apos;t see your question here, feel free to reach out—we&apos;re happy to assist.</p>
+                    <p className='text-xs text-white lg:text-lg font-light'>Have questions about therapy? We&apos;re here to help. Below are answers to some of the most common questions about our services, what to expect, and how therapy can support you on your journey to healing and growth. If you don&apos;t see your question here, feel free to reach out—we&apos;re happy to assist.</p>
                 </div>
             </section>
 
