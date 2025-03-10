@@ -76,7 +76,7 @@ const Booking = () => {
 
                         <Dialog>
                             <DialogTrigger asChild>
-                                <Button variant="outline" className='bg-[#C99D86] py-2 px-5 rounded-sm text-[#EFE9E3] text-base text-white'>
+                                <Button variant="outline" className='bg-[#C99D86] py-2 px-5 rounded-sm text-[#EFE9E3] text-base'>
                                     Book an appointment
                                 </Button>
                             </DialogTrigger>

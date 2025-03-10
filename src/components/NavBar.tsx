@@ -14,7 +14,7 @@ const NavBar = () => {
 
     return (
         <>
-            <header className='h-[4.5rem] flex justify-center items-center px-4 lg:px-24 py-4 bg-white'>
+            <header className='h-[4.5rem] flex justify-center items-center px-5 lg:px-24 py-4 bg-white'>
                 <div className='hidden lg:flex justify-between text-sm xl:text-base'>
                     <div className='flex gap-8 items-center'>
                         <Link className={linkStyle('/')} href='/'>Home</Link>
@@ -52,7 +52,7 @@ const NavBar = () => {
 
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Price</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/booking'>Book online</Link>
-                                <Link className='pointer-cursor hover:underline text-xl' href='/'>Contact us</Link>
+                                <Link className='pointer-cursor hover:underline text-xl' href='/contact'>Contact us</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/faqs'>FAQ</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Blogs</Link>
                             </div>
