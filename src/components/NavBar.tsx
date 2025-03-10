@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation'
 const NavBar = () => {
     const [open, setOpen] = useState(false)
     const pathname = usePathname()
-    const linkStyle = (path: any) => pathname === path ? 'text-[#C7C2BE] pointer-cursor hover:underline' : 'text-[#131313] pointer-cursor hover:underline'
+    const linkStyle = (path: string) => pathname === path ? 'text-[#C7C2BE] pointer-cursor hover:underline' : 'text-[#131313] pointer-cursor hover:underline'
 
     return (
         <>

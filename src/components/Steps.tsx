@@ -37,7 +37,7 @@ const Steps = () => {
                 >
                     <h1 className='font-extrabold text-xl lg:text-5xl text-center'>Take the First Step Today</h1>
                     <p className='text-base lg:text-lg text-[#131313] font-light text-center'>Your journey to mental well-being starts here. Reach out now to schedule your appointment or learn more about our services.</p>
-                    <button className="py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg">
+                    <button className="py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg text-white">
                         Book an appointment
                     </button>
                 </div>
