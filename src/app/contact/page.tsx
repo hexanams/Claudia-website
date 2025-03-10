@@ -16,7 +16,7 @@ const formSchema = z.object({
     last_name: z.string().min(2, { message: "Last name must be at least 2 characters.", }),
     description: z.string().optional(),
     email: z.string().email().min(2, { message: "Email must be at least 2 characters.", }),
-    number: z.number().min(2, { message: "Phone number must be at least 2 characters.", }),
+    number: z.coerce.number().min(2, { message: "Phone number must be at least 2 characters.", }),
 })
 
 const Page = () => {
@@ -29,7 +29,7 @@ const Page = () => {
                         <div className='flex flex-col gap-4'>
                             <div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit'>Contact Us</div>
                             <h1 className='font-extrabold text-4xl text-[#939393]'>Get in touch with Claudia</h1>
-                            <h2 className='font-light text-base text-[#939393]'>
+                            <h2 className='font-light text-base text-[#939393] line-clamp-3'>
                                 We are here to support you on your journey to emotional wellness. Whether you have questions, need more information or are ready  to book your first session, don&apos;t forget to reach out. We&apos;d love to hear from you.
                             </h2>
                         </div>
@@ -99,17 +99,21 @@ export const ContactForm = () => {
     })
 
     // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values)
+    function onSubmit(data: z.infer<typeof formSchema>) {
+        const subject = encodeURIComponent(`New Contact Form Submission from ${data.first_name} ${data.last_name}`);
+        const body = encodeURIComponent(
+            `Name: ${data.first_name} ${data.last_name}\nEmail: ${data.email}\nNumber: ${data.number}\nDescription: ${data.description}`
+        );
+
+        window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+        console.log(data)
     }
     return (
         <div className='mt-4 md:mt-11 flex justify-center items-start flex-col md:gap-6 w-full'>
             <div className="flex flex-col items-start justify-center lg:justify-between w-full md:flex-row gap-4">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} >
-                        <div className="h-fit grid grid-col-1 md:grid-cols-2 gap-6 mb-6">
+                        <div className="h-fit grid grid-col-1 2xl:grid-cols-2 gap-6 mb-6">
                             <FormField
                                 control={form.control}
                                 name="first_name"
@@ -118,7 +122,7 @@ export const ContactForm = () => {
                                         <FormLabel className="text-sm text-[#131313] md:text-base">First name</FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="w-full md:w-[291px] py-[10px] px-4 border text-sm md:text-base text-[#B6BB6B6]"
+                                                className="w-full 2xl:w-[291px] py-[10px] px-4 border text-sm md:text-base text-[#B6BB6B6]"
                                                 placeholder="First name"
                                                 {...field}
                                             />
@@ -135,7 +139,7 @@ export const ContactForm = () => {
                                         <FormLabel className="text-sm text-[#131313] md:text-base">Last name</FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="w-full md:w-[291px] py-[10px] px-4 border text-sm md:text-base text-[#B6BB6B6]"
+                                                className="w-full 2xl:w-[291px] py-[10px] px-4 border text-sm md:text-base text-[#B6BB6B6]"
                                                 placeholder="First name"
                                                 {...field}
                                             />
@@ -152,7 +156,7 @@ export const ContactForm = () => {
                                         <FormLabel className="text-sm text-[#131313] md:text-base">Email address</FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="w-full md:w-[291px] py-[10px] px-4 border text-sm md:text-base text-[#B6BB6B6]"
+                                                className="w-full 2xl:w-[291px] py-[10px] px-4 border text-sm md:text-base text-[#B6BB6B6]"
                                                 placeholder="Enter your email address"
                                                 {...field}
                                             />
@@ -169,7 +173,7 @@ export const ContactForm = () => {
                                         <FormLabel className="text-sm text-[#131313] md:text-base">Phone Number</FormLabel>
                                         <FormControl>
                                             <Input
-                                                className="w-full md:w-[291px] py-[10px] px-4 border text-sm md:text-base text-[#B6BB6B6]"
+                                                className="w-full 2xl:w-[291px] py-[10px] px-4 border text-sm md:text-base text-[#B6BB6B6]"
                                                 placeholder="Enter your phone number"
                                                 {...field}
                                             />
