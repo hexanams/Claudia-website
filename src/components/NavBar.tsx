@@ -47,10 +47,10 @@ const NavBar = () => {
                             <div className='flex flex-col gap-4 p-4 items-start text-[#131313]'>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Home</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/about'>About Us</Link>
-                                <Link className='pointer-cursor hover:underline text-xl' href='/'>Issues we treat</Link>
+                                <Link className='pointer-cursor hover:underline text-xl' href='/issues'>Issues we treat</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Threapeutic services</Link>
 
-                                <Link className='pointer-cursor hover:underline text-xl' href='/'>Price</Link>
+                                <Link className='pointer-cursor hover:underline text-xl' href='/price'>Price</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/booking'>Book online</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/contact'>Contact us</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/faqs'>FAQ</Link>

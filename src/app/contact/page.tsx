@@ -9,7 +9,8 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-
+import emailjs from '@emailjs/browser';
+import { toast } from "sonner"
 
 const formSchema = z.object({
     first_name: z.string().min(2, { message: "First name must be at least 2 characters.", }),
@@ -50,7 +51,7 @@ const Page = () => {
 
                     </div>
                     <div className='w-full lg:w-1/2 flex flex-col items-center md:items-start'>
-                        <h1 className='font-extrabold text-2xl text-[#131313] mb-2'>Ready for an expert consultation</h1>
+                        <h1 className='font-extrabold text-2xl text-[#131313] mb-2'>Ready for an expert consultation?</h1>
                         <h2 className='text-base text-[#131313]'>Let&apos;s begin 😊</h2>
 
                         <ContactForm />
@@ -85,7 +86,7 @@ const Page = () => {
 
 export default Page
 
-export const ContactForm = () => {
+const ContactForm = () => {
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -93,21 +94,33 @@ export const ContactForm = () => {
             first_name: "",
             last_name: "",
             email: "",
-            number: undefined,
+            number: 0,
             description: "",
         },
     })
 
-    // 2. Define a submit handler.
-    function onSubmit(data: z.infer<typeof formSchema>) {
-        const subject = encodeURIComponent(`New Contact Form Submission from ${data.first_name} ${data.last_name}`);
-        const body = encodeURIComponent(
-            `Name: ${data.first_name} ${data.last_name}\nEmail: ${data.email}\nNumber: ${data.number}\nDescription: ${data.description}`
-        );
+    const onSubmit = async (data: z.infer<typeof formSchema>) => {
+        const templateParams = {
+            from_name: `${data.first_name} ${data.last_name}`,
+            to_name: "Claudia",
+            message: data.description,
+            reply_to: data.email,
+        };
+        try {
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+                templateParams,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            );
+            toast("Email sent")
+            form.reset();
+        } catch (error) {
+            toast.error('Failed to send email. Please try again.');
+            console.error(error)
+        }
+    };
 
-        window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
-        console.log(data)
-    }
     return (
         <div className='mt-4 md:mt-11 flex justify-center items-start flex-col md:gap-6 w-full'>
             <div className="flex flex-col items-start justify-center lg:justify-between w-full md:flex-row gap-4">

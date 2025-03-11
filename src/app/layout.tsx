@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-
+import { Toaster } from "sonner"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-avenir">
+        <Toaster />
         <NavBar />
         {children}
         <Footer />

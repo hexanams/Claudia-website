@@ -3,21 +3,21 @@ import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
+    FormDescription,
     FormField,
     FormItem,
     FormLabel,
-    FormMessage,
-    FormDescription
+    FormMessage
 } from "@/components/ui/form"
-import { Input } from "./ui/input"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { ChevronLeft, Mail, Phone } from 'lucide-react'
 import Image from "next/image"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { InlineWidget } from 'react-calendly'
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Calendar } from './ui/calendar'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog'
+import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 
 const formSchema = z.object({
@@ -25,13 +25,62 @@ const formSchema = z.object({
     last_name: z.string().min(2, { message: "Last name must be at least 2 characters.", }),
     description: z.string().optional(),
     email: z.string().email().min(2, { message: "Email must be at least 2 characters.", }),
-    number: z.number().min(2, { message: "Phone number must be at least 2 characters.", }),
+    number: z.string().min(2, { message: "Phone number must be at least 2 characters.", }),
 })
 
-
 const Booking = () => {
-    const [tab, setTab] = useState(0)
-    const [date, setDate] = useState<Date | undefined>(new Date())
+    const [tab, setTab] = useState(0);
+    const [selectedDate, setSelectedDate] = useState('');
+    const [selectedTime, setSelectedTime] = useState('');
+
+    // Set up Calendly event listener
+    useEffect(() => {
+        // Function to handle Calendly events
+        interface CalendlyEventPayload {
+            event: {
+                start_time: string;
+            };
+        }
+
+        interface CalendlyEvent {
+            event: string;
+            payload: CalendlyEventPayload;
+        }
+
+        const handleCalendlyEvent = (e: MessageEvent<CalendlyEvent>) => {
+            if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+                const eventDetails = e.data;
+                if (eventDetails && eventDetails.payload) {
+                    const startTime = new Date(eventDetails.payload.event.start_time);
+
+                    const formattedDate = startTime.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    const formattedTime = startTime.toLocaleTimeString('en-US', {
+                        hour: 'numeric',
+                        minute: '2-digit',
+                        hour12: true
+                    });
+
+                    // Store full event data
+                    localStorage.setItem('calendlyEventData', JSON.stringify(eventDetails.payload));
+
+                    setSelectedDate(formattedDate);
+                    setSelectedTime(formattedTime);
+                    setTab(1);
+                }
+            }
+        };
+
+        window.addEventListener('message', handleCalendlyEvent);
+
+        return () => {
+            window.removeEventListener('message', handleCalendlyEvent);
+        };
+    }, []);
 
     return (
         <>
@@ -46,7 +95,6 @@ const Booking = () => {
                     <h1 className='font-extrabold text-xl md:text-3xl'>Free 15 minutes consultation call</h1>
                     <h2 className='text-base'>Conducted via Phone or Video Call with me</h2>
                 </div>
-
 
                 <div className='mt-10 md:mt-20 flex flex-col md:flex-row items-center gap-8 justify-between'>
                     <div className="relative md:w-fit h-fit">
@@ -89,100 +137,115 @@ const Booking = () => {
                                         Not sure if therapy is the right fit for you? We&apos;re here to help! Schedule a free 15-minute consultation call to discuss your needs, ask questions, and learn more about how we can support you. This no-obligation call is a great opportunity to get to know us and decide how we can best work together on your path to healing.
                                     </DialogDescription>
                                 </DialogHeader>
-                                {tab === 0 ? <TabOne
-                                    setTab={setTab}
-                                    tab={tab}
-                                    date={date!}
-                                    setDate={setDate}
-                                /> : <TabTwo
-                                    setTab={setTab}
-                                    tab={tab}
-                                    date={date!}
-                                />}
+                                {tab === 0 ?
+                                    <CalendlyTab /> :
+                                    <UserInfoTab
+                                        setTab={setTab}
+                                        tab={tab}
+                                        selectedDate={selectedDate}
+                                        selectedTime={selectedTime}
+                                    />
+                                }
                             </DialogContent>
                         </Dialog>
-
                     </div>
                 </div>
-            </section >
+            </section>
         </>
     )
 }
 
 export default Booking
 
-export const TabOne = ({ setTab, tab, date, setDate }: {
-    setTab: React.Dispatch<React.SetStateAction<number>>,
-    tab: number
-    date: Date | undefined
-    setDate: React.Dispatch<React.SetStateAction<Date | undefined>>
-}) => {
-    const formattedDate = (date: Date) => {
-        return new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long' }).format(date);
-    }
-
+const CalendlyTab = () => {
     return (
-        <div className='mt-11 flex justify-center items-center md:items-start flex-col gap-6 w-fit'>
-            <div className="flex flex-col items-center md:flex-row gap-4 md:gap-36">
-                <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={(day) => setDate(day as Date)}
-                    className="rounded-md md:border md:shadow flex justify-center p-0"
-                />
-
-                <div className='h-fit'>
-                    <h2 className='text-base text-[#1A1A1A] mb-4'>{formattedDate(date!)}</h2>
-                    <div className='grid grid-cols-2 gap-4 h-fit'>
-                        <div className='bg-[#EFE9E3] w-[115px] md:w-[150px] h-[40px] flex justify-center items-center text-[#C99D86]'>
-                            15:30
-                        </div>
-                        <div className='bg-[#EFE9E3] w-[115px] md:w-[150px] h-[40px] flex justify-center items-center text-[#C99D86]'>
-                            16:00
-                        </div>
-                        <div className='bg-[#EFE9E3] w-[115px] md:w-[150px] h-[40px] flex justify-center items-center text-[#C99D86]'>
-                            16:30
-                        </div>
-                        <div className='bg-[#EFE9E3] w-[115px] md:w-[150px] h-[40px] flex justify-center items-center text-[#C99D86]'>
-                            17:00
-                        </div>
-                    </div>
-
-                    <Button variant="ghost"
-                        onClick={() => setTab(tab + 1)}
-                        className='bg-[#C99D86] w-full mt-4 md:mt-16 rounded py-2 px-5 text-[#EFE9E3]'
-                    >
-                        Next
-                    </Button>
-                </div>
-            </div>
+        <div className='mt-8 w-full max-w-4xl'>
+            <InlineWidget
+                url="https://calendly.com/raymenah19/30min"
+                styles={{
+                    height: '650px',
+                    width: '100%',
+                }}
+                prefill={{
+                    email: "",
+                    firstName: "",
+                    lastName: "",
+                    name: ""
+                }}
+            />
         </div>
     )
 }
 
-
-export const TabTwo = ({ setTab, tab, date }: { setTab: React.Dispatch<React.SetStateAction<number>>, tab: number, date: Date }) => {
-    const formattedDate = (date: Date) => {
-        return new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long' }).format(date);
-    }
-
+const UserInfoTab = ({
+    setTab,
+    tab,
+    selectedDate,
+    selectedTime
+}: {
+    setTab: React.Dispatch<React.SetStateAction<number>>,
+    tab: number,
+    selectedDate: string,
+    selectedTime: string
+}) => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             first_name: "",
             last_name: "",
             email: "",
-            number: undefined,
+            number: "",
             description: "",
         },
     })
 
-    // 2. Define a submit handler.
     function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values)
+        // Get Calendly event data
+        const calendlyEventData = JSON.parse(localStorage.getItem('calendlyEventData') || '{}');
+
+        // Combine the data
+        const bookingData = {
+            ...values,
+            calendlyEvent: calendlyEventData,
+            appointmentDate: selectedDate,
+            appointmentTime: selectedTime
+        };
+        // Process the booking
+        processBooking(bookingData);
     }
+
+    interface BookingData {
+        first_name: string;
+        last_name: string;
+        email: string;
+        number: string;
+        description?: string;
+        calendlyEvent: unknown;
+        appointmentDate: string;
+        appointmentTime: string;
+    }
+
+    interface ExistingBooking extends BookingData {
+        bookingId: number;
+        bookingStatus: string;
+        createdAt: string;
+    }
+
+    function processBooking(bookingData: BookingData) {
+        // Store the booking in localStorage for your records
+        const existingBookings: ExistingBooking[] = JSON.parse(localStorage.getItem('bookings') || '[]');
+        existingBookings.push({
+            ...bookingData,
+            bookingId: Date.now(), // Simple unique ID
+            bookingStatus: 'confirmed',
+            createdAt: new Date().toISOString()
+        });
+        localStorage.setItem('bookings', JSON.stringify(existingBookings));
+
+        // Show confirmation to user
+        alert("Booking successful! We've recorded your appointment details.");
+    }
+
     return (
         <div className='mt-4 md:mt-11 flex justify-center items-start flex-col md:gap-6 w-full'>
             <div
@@ -193,15 +256,15 @@ export const TabTwo = ({ setTab, tab, date }: { setTab: React.Dispatch<React.Set
                 Back
             </div>
 
-            <div className="flex flex-col items-start justify-between w-full md:flex-row gap-4 ">
+            <div className="flex flex-col items-start justify-between w-full md:flex-row gap-4">
                 <div>
                     <h1 className='text-base lg:text-xl font-extrabold'>Booking Details</h1>
                     <h2 className='text-sm lg:text-base'>Free 15 minutes Consultation call</h2>
-                    <h2 className='text-sm lg:text-base'>{formattedDate(date!)} at { }</h2>
+                    <h2 className='text-sm lg:text-base'>{selectedDate} at {selectedTime}</h2>
                 </div>
 
                 <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} >
+                    <form onSubmit={form.handleSubmit(onSubmit)}>
                         <div className="h-fit grid grid-col-1 md:grid-cols-2 gap-6 mb-6">
                             <FormField
                                 control={form.control}
@@ -229,7 +292,7 @@ export const TabTwo = ({ setTab, tab, date }: { setTab: React.Dispatch<React.Set
                                         <FormControl>
                                             <Input
                                                 className="w-full md:w-[291px] py-[10px] px-4 border text-sm md:text-base text-[#B6BB6B6]"
-                                                placeholder="First name"
+                                                placeholder="Last name"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -271,7 +334,7 @@ export const TabTwo = ({ setTab, tab, date }: { setTab: React.Dispatch<React.Set
                                     </FormItem>
                                 )}
                             />
-                        </div >
+                        </div>
                         <FormField
                             control={form.control}
                             name="description"
@@ -287,7 +350,6 @@ export const TabTwo = ({ setTab, tab, date }: { setTab: React.Dispatch<React.Set
                                                 {...field}
                                             />
                                         </div>
-
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -302,11 +364,9 @@ export const TabTwo = ({ setTab, tab, date }: { setTab: React.Dispatch<React.Set
                                 Book now
                             </Button>
                         </div>
-
                     </form>
                 </Form>
             </div>
         </div>
     )
 }
-
