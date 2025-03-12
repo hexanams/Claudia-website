@@ -133,7 +133,7 @@ const TheraputicServices = () => {
                 <section className="mt-9 flex flex-col lg:flex-row gap-10 p-5 lg:px-20">
 
                     {/* Service List */}
-                    <div className="w-full lg:w-1/3 bg-[#EFE9E3] p-5 md:pl-[100px] md:pt-[68px] flex flex-col gap-5">
+                    <div className="w-full lg:w-1/3 bg-[#EFE9E3] p-5 md:pl-[100px] md:pt-[68px] flex flex-col gap-0 md:gap-5">
                         {services.map((service) => (
                             <div
                                 key={service.id}
