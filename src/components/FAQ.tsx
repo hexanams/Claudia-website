@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel'
+import Link from 'next/link'
 
 const FAQ = () => {
     const questions = [
@@ -59,9 +60,11 @@ const FAQ = () => {
                 <div className="w-full lg:w-[560px] flex flex-col justify-center items-center">
                     <h1 className="text-xl lg:text-3xl font-extrabold">Still have questions?</h1>
                     <h3 className="my-2 lg:mt-4 lg:mb-6 text-base lg:text-lg font-light">We&apos;re here to help you!</h3>
-                    <button className="py-2 px-5 bg-[#C99D86] text-white rounded-md">
+                    <Link
+                        href='/contact'
+                        className="py-2 px-5 bg-[#C99D86] text-white rounded-md">
                         Contact
-                    </button>
+                    </Link>
                 </div>
             </section>
 

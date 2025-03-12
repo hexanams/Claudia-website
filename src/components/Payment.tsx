@@ -3,6 +3,7 @@ import React from 'react'
 import { Button } from './ui/button'
 import { Card, CardContent } from './ui/card'
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel'
+import Link from 'next/link'
 
 const Payment = () => {
     // const plugin = React.useRef(
@@ -27,7 +28,7 @@ const Payment = () => {
     }, [api])
     return (
         <>
-            <section className="px-5 h-[434px] md:px-[6.3rem] pb-14 bg-[url('/booking-hero.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end">
+            <section className="px-5 h-[434px] md:px-[6.3rem] pb-14 bg-[url('/payment.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end">
                 <div>
                     <h1 className='text-[#F2F2F2] text-xl md:text-5xl font-extrabold'>Book a Payment and Fees</h1>
                     <p className='text-xs text-white lg:text-lg font-light'>We believe that quality mental health care should be accessible and transparent. Below, you&apos;ll find information about our session fees, payment options, and insurance coverage. If you have any questions, please don&apos;t hesitate to reach out—we&apos;re happy to help.</p>
@@ -35,8 +36,9 @@ const Payment = () => {
             </section>
 
             <section className='px-9 py-10 flex flex-col justify-center bg-[#EEECEB] items-center'>
-                <div className='w-fit flex flex-col lg:flex-row justify-center gap-8 items-center'>
-                    <div className='w-full md:w-[559px] px-36 py-8 flex flex-col justify-center items-center'>
+                <div className='w-full md:w-fit flex flex-col lg:flex-row justify-center gap-8 items-center'>
+                    <div className="w-full md:w-[559px] px-36 py-8 flex flex-col justify-center items-center bg-[url('/payment-1.svg')] bg-cover bg-center bg-no-repeat">
+
                         <h2 className='font-extrabold text-3xl text-[#EEEEEE]'>Individual therapy</h2>
                         <h1 className='mt-2 font-extrabold text-[56px] text-[#FFFFFF]'>$100</h1>
                         <Button
@@ -45,14 +47,14 @@ const Payment = () => {
                             Book as consultation
                         </Button>
                     </div>
-                    <div className='w-full md:w-[559px] px-36 py-8 flex flex-col justify-center items-center'>
+                    <div className="w-full md:w-[559px] px-36 py-8 flex flex-col justify-center items-center bg-[url('/payment-2.svg')] bg-cover bg-center bg-no-repeat">
                         <h2 className='font-extrabold text-3xl text-[#EEEEEE]'>Couples therapy</h2>
                         <h1 className='mt-2 font-extrabold text-[56px] text-[#FFFFFF]'>$120</h1>
-                        <Button
-                            variant="ghost"
+                        <Link
+                            href='/booking'
                             className="mt-6 py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg text-white">
                             Book a consultation
-                        </Button>
+                        </Link>
                     </div>
                 </div>
 

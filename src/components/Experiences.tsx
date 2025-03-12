@@ -1,5 +1,5 @@
 import Image from "next/image"
-
+import Link from "next/link"
 
 const Experiences = () => {
     return (
@@ -57,9 +57,11 @@ const Experiences = () => {
                                 Discover a holistic approach to mental health that prioritizes your unique needs. Our practice fosters a supportive environment where you can thrive, you can feel seen, heard and understood.
                             </h3>
                         </div>
-                        <button className="py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg text-white">
+                        <Link
+                            href='/booking'
+                            className="py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg text-white">
                             Book an appointment
-                        </button>
+                        </Link>
                     </div>
 
                     <div className="w-full lg:w-1/2 flex justify-center items-center">

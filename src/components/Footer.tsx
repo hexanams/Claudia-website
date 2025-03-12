@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { BsInstagram } from 'react-icons/bs'
 import { RiFacebookCircleFill, RiLinkedinFill, RiTwitterXFill, RiYoutubeFill } from 'react-icons/ri'
 
-
 const Footer = () => {
     return (
         <footer className='p-5 lg:px-16 lg:py-20'>
@@ -30,11 +29,11 @@ const Footer = () => {
                     <div className='flex flex-col gap-4 w-1/2'>
                         <h2 className='font-medium text-base'>Quick Links</h2>
                         <div className='flex flex-col justify-center'>
-                            <Link className='py-2 text-sm font-light' href='/'>About Us</Link>
-                            <Link className='py-2 text-sm font-light' href='/'>Contact Us</Link>
+                            <Link className='py-2 text-sm font-light' href='/about'>About Us</Link>
+                            <Link className='py-2 text-sm font-light' href='/contact'>Contact Us</Link>
                             <Link className='py-2 text-sm font-light' href='/'>Services</Link>
                             <Link className='py-2 text-sm font-light' href='/'>Blog Posts</Link>
-                            <Link className='py-2 text-sm font-light' href='/'>FAQs</Link>
+                            <Link className='py-2 text-sm font-light' href='/faqs'>FAQs</Link>
                         </div>
                     </div>
 

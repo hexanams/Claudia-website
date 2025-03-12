@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const Steps = () => {
     const steps = [
@@ -37,9 +38,11 @@ const Steps = () => {
                 >
                     <h1 className='font-extrabold text-xl lg:text-5xl text-center'>Take the First Step Today</h1>
                     <p className='text-base lg:text-lg text-[#131313] font-light text-center'>Your journey to mental well-being starts here. Reach out now to schedule your appointment or learn more about our services.</p>
-                    <button className="py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg text-white">
+                    <Link
+                        href='/booking'
+                        className="py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg text-white">
                         Book an appointment
-                    </button>
+                    </Link>
                 </div>
             </section>
 
@@ -66,7 +69,11 @@ const Steps = () => {
                             <div className="px-6 mt-6 mb-4">
                                 <h2 className="text-xl lg:text-3xl font-extrabold">{step.title}</h2>
                                 <p className="font-light text-base lg:text-xl">{step.description}</p>
-                                <h3 className="text-[#C7C2BE] hover:underline cursor-pointer text-base lg:text-xl font-light">Book a consultation</h3>
+                                <Link
+                                    href="/booking"
+                                    className="text-[#C7C2BE] hover:underline cursor-pointer text-base lg:text-xl font-light">
+                                    Book a consultation
+                                </Link>
                             </div>
 
                         </div>

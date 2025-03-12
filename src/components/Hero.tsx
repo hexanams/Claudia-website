@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 
@@ -26,9 +27,11 @@ const Hero = () => {
                 <button className='py-3 px-6 bg-[#C99D86] text-white text-base rounded'>
                     Learn More
                 </button>
-                <button className='py-3 px-6 text-[#C7C2BE] bg-[#F9F9F9] text-base rounded'>
+                <Link
+                    href='/contact'
+                    className='py-3 px-6 text-[#C7C2BE] bg-[#F9F9F9] text-base rounded'>
                     Contact
-                </button>
+                </Link>
             </div>
         </div>
     )

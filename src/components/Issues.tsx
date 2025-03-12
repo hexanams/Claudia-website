@@ -1,6 +1,3 @@
-import React from 'react'
-
-
 const Issues = () => {
     const issues = [
         "Abuse",
@@ -51,9 +48,8 @@ const Issues = () => {
         "Work-related stress"
     ];
 
-
     return (
-        <section className='p-5 lg:py-10 lg:px-[100px] '>
+        <section className="p-5 lg:py-10 lg:px-[100px] bg-[url('/issues.svg')] w-full bg-cover bg-center bg-no-repeat">
             <h1 className='text-3xl md:text-5xl font-extrabold text-center'>Issues that we treat</h1>
             <div className='mt-11 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                 {issues.map((issue, i) => (
