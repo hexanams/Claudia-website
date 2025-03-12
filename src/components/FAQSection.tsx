@@ -1,9 +1,14 @@
-import React from 'react'
-import MidSection from './PageMidSection'
+"use client"
+import { motion } from 'motion/react'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion'
 
 
 const FAQSection = () => {
+    const fadeIn = (direction = "up", delay = 0) => ({
+        hidden: { opacity: 0, y: direction === "up" ? 30 : -30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay } },
+    });
+
     const questions = [
         {
             question: 'What happens after your initial enquiry? ',
@@ -30,28 +35,54 @@ const FAQSection = () => {
     return (
         <>
             <section className="px-5 h-[434px] lg:px-[6.3rem] pb-14 bg-[url('/faq-hero.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end">
-                <div>
+                <motion.div
+                    variants={fadeIn("up", 0)}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                >
                     <h1 className='text-[#F2F2F2] text-xl lg:text-5xl font-extrabold'>FAQs</h1>
                     <p className='text-xs text-white lg:text-lg font-light'>Have questions about therapy? We&apos;re here to help. Below are answers to some of the most common questions about our services, what to expect, and how therapy can support you on your journey to healing and growth. If you don&apos;t see your question here, feel free to reach out—we&apos;re happy to assist.</p>
-                </div>
-            </section>
+                </motion.div>
+            </section >
 
-            <div className="bg-[#EEECEB] p-5 lg:py-28 lg:px-[12.5rem] w-full">
-                <h1 className='font-extrabold text-2xl lg:text-5xl text-center'>Frequently Asked Questions</h1>
-                <Accordion type="multiple" className='bg-white px-5 lg:px-20 py-5 mt-10'>
-                    {questions.map((question, i) => (
-                        <AccordionItem key={i} value={`item-${i}`}>
-                            <AccordionTrigger className='py-2 lg:py-5 text-base lg:text-lg font-extrabold'>{question.question}</AccordionTrigger>
-                            <AccordionContent className='pb-6'>
-                                {question.answer}
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
+            <motion.div
+                className="bg-[#EEECEB] p-5 lg:py-28 lg:px-[12.5rem] w-full"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeIn("up", 0)}
+            >
+                <motion.h1
+                    className='font-extrabold text-2xl lg:text-5xl text-center'
+                    variants={fadeIn("up", 0.1)}
+                >
+                    Frequently Asked Questions
+                </motion.h1>
 
-            </div>
-
-            <MidSection />
+                <motion.div
+                    className='bg-white px-5 lg:px-20 py-5 mt-10'
+                    variants={fadeIn("up", 0.2)}
+                >
+                    <Accordion type="multiple">
+                        {questions.map((question, i) => (
+                            <motion.div
+                                key={i}
+                                variants={fadeIn("up", 0.2 + i * 0.1)}
+                            >
+                                <AccordionItem value={`item-${i}`}>
+                                    <AccordionTrigger className='py-2 lg:py-5 text-base lg:text-lg font-extrabold'>
+                                        {question.question}
+                                    </AccordionTrigger>
+                                    <AccordionContent className='pb-6'>
+                                        {question.answer}
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </motion.div>
+                        ))}
+                    </Accordion>
+                </motion.div>
+            </motion.div>
         </>
     )
 }

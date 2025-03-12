@@ -1,5 +1,7 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
+import { motion } from "motion/react"
 
 const Steps = () => {
     const steps = [
@@ -30,33 +32,77 @@ const Steps = () => {
         }
     ]
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const textVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    };
+
+    const imageVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    };
     return (
         <>
             <section className="p-5 lg:px-16 lg:py-20 bg-[url('/first-steps.svg')] w-full bg-cover bg-center bg-no-repeat">
-                <div
+                <motion.div
                     className="flex flex-col gap-6 justify-center items-center"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
                 >
-                    <h1 className='font-extrabold text-xl lg:text-5xl text-center'>Take the First Step Today</h1>
-                    <p className='text-base lg:text-lg text-[#131313] font-light text-center'>Your journey to mental well-being starts here. Reach out now to schedule your appointment or learn more about our services.</p>
-                    <Link
-                        href='/booking'
-                        className="py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg text-white">
-                        Book an appointment
-                    </Link>
-                </div>
+                    <motion.h1 className='font-extrabold text-xl lg:text-5xl text-center' variants={textVariants}>
+                        Take the First Step Today
+                    </motion.h1>
+                    <motion.p className='text-base lg:text-lg text-[#131313] font-light text-center' variants={textVariants}>
+                        Your journey to mental well-being starts here. Reach out now to schedule your appointment or learn more about our services.
+                    </motion.p>
+                    <motion.div variants={textVariants}>
+                        <Link
+                            href='/booking'
+                            className="py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg text-white hover:bg-[#b48470] transition-colors"
+                        >
+                            Book an appointment
+                        </Link>
+                    </motion.div>
+                </motion.div>
             </section>
 
             <section className="p-5 lg:py-20 lg:px-16 flex flex-col gap-20">
-                <div className="flex flex-col justify-center items-center gap-4">
-                    <div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit'>Our Services</div>
-                    <div className="font-extrabold text-xl lg:text-5xl text-center">
+                <motion.div
+                    className="flex flex-col justify-center items-center gap-4"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    <motion.div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit' variants={textVariants}>
+                        Our Services
+                    </motion.div>
+                    <motion.div className="font-extrabold text-xl lg:text-5xl text-center" variants={textVariants}>
                         We provide a safe, non-judgmental space where you can express yourself
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-                <div className="grid grid-col-1 lg:grid-cols-3 gap-12 place-content-center">
+                <motion.div
+                    className="grid grid-cols-1 lg:grid-cols-3 gap-12 place-items-center"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
                     {steps.map((step, i) => (
-                        <div key={i}>
+                        <motion.div key={i} variants={imageVariants}>
                             <div className="w-full h-[250px] rounded-lg">
                                 <Image
                                     src={step.image}
@@ -65,20 +111,19 @@ const Steps = () => {
                                     height={248}
                                 />
                             </div>
-
                             <div className="px-6 mt-6 mb-4">
                                 <h2 className="text-xl lg:text-3xl font-extrabold">{step.title}</h2>
                                 <p className="font-light text-base lg:text-xl">{step.description}</p>
                                 <Link
                                     href="/booking"
-                                    className="text-[#C7C2BE] hover:underline cursor-pointer text-base lg:text-xl font-light">
+                                    className="text-[#C7C2BE] hover:underline cursor-pointer text-base lg:text-xl font-light"
+                                >
                                     Book a consultation
                                 </Link>
                             </div>
-
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </section>
         </>
     )

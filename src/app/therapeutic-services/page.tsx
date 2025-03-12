@@ -1,11 +1,11 @@
-import FAQSection from '@/components/FAQSection'
 import MidSection from '@/components/PageMidSection'
+import TheraputicServices from '@/components/TheraputicServices'
 
 const Page = () => {
     return (
         <section>
             <div className="lg:min-h-screen flex flex-col">
-                <FAQSection />
+                <TheraputicServices />
             </div>
             <MidSection />
         </section>

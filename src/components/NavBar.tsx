@@ -20,7 +20,7 @@ const NavBar = () => {
                         <Link className={linkStyle('/')} href='/'>Home</Link>
                         <Link className={linkStyle('/about')} href='/about'>About Us</Link>
                         <Link className={linkStyle('/issues')} href='/issues'>Issues we treat</Link>
-                        <Link className={linkStyle('/services')} href='/services'>Therapeutic services</Link>
+                        <Link className={linkStyle('/services')} href='/therapeutic-services'>Therapeutic services</Link>
                     </div>
                     <div className='mx-20'>Image</div>
                     <div className='flex gap-8 items-center'>
@@ -28,7 +28,7 @@ const NavBar = () => {
                         <Link className={linkStyle('/booking')} href='/booking'>Book online</Link>
                         <Link className={linkStyle('/contact')} href='/contact'>Contact us</Link>
                         <Link className={linkStyle('/faqs')} href='/faqs'>FAQ</Link>
-                        <Link className={linkStyle('/blogs')} href='/blogs'>Blogs</Link>
+                        {/* <Link className={linkStyle('/blogs')} href='/blogs'>Blogs</Link> */}
                     </div>
                 </div>
                 <div className='lg:hidden flex justify-between items-center w-full'>
@@ -48,13 +48,12 @@ const NavBar = () => {
                                 <Link className='pointer-cursor hover:underline text-xl' href='/'>Home</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/about'>About Us</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/issues'>Issues we treat</Link>
-                                <Link className='pointer-cursor hover:underline text-xl' href='/'>Threapeutic services</Link>
-
+                                <Link className='pointer-cursor hover:underline text-xl' href='/therapeutic-services'>Threapeutic services</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/price'>Price</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/booking'>Book online</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/contact'>Contact us</Link>
                                 <Link className='pointer-cursor hover:underline text-xl' href='/faqs'>FAQ</Link>
-                                <Link className='pointer-cursor hover:underline text-xl' href='/'>Blogs</Link>
+                                {/* <Link className='pointer-cursor hover:underline text-xl' href='/'>Blogs</Link> */}
                             </div>
                         </SheetContent>
                     </Sheet>

@@ -7,9 +7,21 @@ import { useEffect } from 'react'
 import { InlineWidget } from 'react-calendly'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog'
 import Link from "next/link"
+import { motion } from "motion/react"
 
 
 const Booking = () => {
+
+    const fadeIn = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    }
+
+    const staggerContainer = {
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.3 } }
+    }
+
     // Set up Calendly event listener
     useEffect(() => {
         // Function to handle Calendly events
@@ -43,21 +55,35 @@ const Booking = () => {
 
     return (
         <>
-            <section className="px-5 h-[434px] md:px-[6.3rem] pb-14 bg-[url('/booking-hero.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end">
-                <div>
+            <section
+                className="px-5 h-[434px] md:px-[6.3rem] pb-14 bg-[url('/booking-hero.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end"
+            >
+                <motion.div
+                    variants={fadeIn}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                >
                     <Link
                         href={'/booking'}
                         className='text-[#F2F2F2] text-xl md:text-5xl font-extrabold'>Book a Consultation Online</Link>
                     <p className='text-xs text-white lg:text-lg font-light'>Taking the first step toward therapy is a sign of strength, and we&apos;re here to make it as easy as possible. Schedule your consultation online at a time that works for you. Whether you have questions about our services or are ready to begin your journey, we&apos;re here to support you.</p>
-                </div>
+                </motion.div>
             </section>
-            <section className='bg-[#EEECEB] flex flex-col justify-center items-center py-10 md:py-40'>
-                <div className='text-center flex flex-col gap-2'>
+
+            <motion.section
+                className='bg-[#EEECEB] flex flex-col justify-center items-center py-10 md:py-40'
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+            >
+                <motion.div className='text-center flex flex-col gap-2' variants={fadeIn}>
                     <h1 className='font-extrabold text-xl md:text-3xl'>Free 15 minutes consultation call</h1>
                     <h2 className='text-base'>Conducted via Phone or Video Call with me</h2>
-                </div>
+                </motion.div>
 
-                <div className='mt-10 md:mt-20 flex flex-col md:flex-row items-center gap-8 justify-between'>
+                <motion.div className='mt-10 md:mt-20 flex flex-col md:flex-row items-center gap-8 justify-between' variants={fadeIn}>
                     <div className="relative md:w-fit h-fit">
                         <div className="hidden xl:inline w-[380px] h-[457px] absolute left-5 -top-5 bg-[#C7C2BE] z-0" />
                         <Image
@@ -100,14 +126,13 @@ const Booking = () => {
                                         Not sure if therapy is the right fit for you? We&apos;re here to help! Schedule a free 15-minute consultation call to discuss your needs, ask questions, and learn more about how we can support you. This no-obligation call is a great opportunity to get to know us and decide how we can best work together on your path to healing.
                                     </DialogDescription>
                                 </DialogHeader>
-                                {/* calendly for managing booking appointments */}
                                 <CalendlyTab />
 
                             </DialogContent>
                         </Dialog>
                     </div>
-                </div>
-            </section>
+                </motion.div>
+            </motion.section>
         </>
     )
 }
