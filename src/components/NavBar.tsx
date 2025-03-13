@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { Button } from './ui/button'
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from './ui/sheet'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 
 const NavBar = () => {
@@ -14,16 +15,24 @@ const NavBar = () => {
 
     return (
         <>
-            <header className='h-[4.5rem] flex justify-center items-center px-5 lg:px-24 py-4 bg-white'>
-                <div className='hidden lg:flex justify-between text-sm xl:text-base'>
-                    <div className='flex gap-8 items-center'>
+            <header className='h-[4.5rem] w-full flex justify-between items-center px-5 lg:px-[100px] py-4 bg-white'>
+                <div className='hidden lg:flex justify-between text-sm xl:text-base w-full'>
+                    <div className='flex gap-8 items-center justify-between w-full'>
                         <Link className={linkStyle('/')} href='/'>Home</Link>
                         <Link className={linkStyle('/about')} href='/about'>About Us</Link>
                         <Link className={linkStyle('/issues')} href='/issues'>Issues we treat</Link>
                         <Link className={linkStyle('/services')} href='/therapeutic-services'>Therapeutic services</Link>
                     </div>
-                    <div className='mx-20'>Image</div>
-                    <div className='flex gap-8 items-center'>
+                    <div className="w-full flex justify-center items-center">
+                        <Image
+                            src='/logo.svg'
+                            alt='logo'
+                            width={220}
+                            height={40}
+                            priority
+                        />
+                    </div>
+                    <div className='flex gap-8 items-center justify-between w-full'>
                         <Link className={linkStyle('/price')} href='/price'>Price</Link>
                         <Link className={linkStyle('/booking')} href='/booking'>Book online</Link>
                         <Link className={linkStyle('/contact')} href='/contact'>Contact us</Link>

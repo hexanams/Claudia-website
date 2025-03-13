@@ -10,7 +10,7 @@ const Hero = () => {
     }
 
     return (
-        <div className='relative flex-grow flex flex-col justify-center items-center py-5 lg:py-0 h-1/2 lg:h-full px-10 lg:px-[9.3rem]'>
+        <div className='relative flex-grow flex flex-col justify-center items-center py-5 lg:py-0 w-full h-screen px-10 lg:px-[9.3rem]'>
             <video
                 autoPlay
                 loop
@@ -18,7 +18,7 @@ const Hero = () => {
                 playsInline
                 className="absolute top-0 left-0 w-full h-full object-cover -z-10"
             >
-                <source src="/claudia-hero.mp4" type="video/mp4" />
+                <source src="/hero-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
             <motion.h1
@@ -26,13 +26,13 @@ const Hero = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className='text-3xl lg:text-[2.5rem] text-white font-extrabold text-center lg:mx-[11.3rem]'>You deserve a life of empowerment and fulfilment.</motion.h1>
+                className='text-3xl font-avenir lg:text-[2.5rem] text-white font-extrabold text-center lg:mx-[11.3rem]'>You deserve a life of empowerment and fulfilment.</motion.h1>
             <motion.h1
                 variants={fadeIn}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className='text-3xl lg:text-[2.5rem] text-white font-extrabold text-center lg:mx-[11.3rem]'>  I am committed to helping you find it.
+                className='text-3xl font-avenir lg:text-[2.5rem] text-white font-extrabold text-center lg:mx-[11.3rem]'>  I am committed to helping you find it.
             </motion.h1>
             <motion.p
                 variants={{
@@ -56,9 +56,11 @@ const Hero = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 className='mt-8 flex gap-4 '>
-                <button className='py-3 px-6 bg-[#C99D86] text-white text-base rounded'>
+                <Link
+                    href='/about'
+                    className='py-3 px-6 bg-[#C99D86] text-white text-base rounded'>
                     Learn More
-                </button>
+                </Link>
                 <Link
                     href='/contact'
                     className='py-3 px-6 text-[#C7C2BE] bg-[#F9F9F9] text-base rounded'>

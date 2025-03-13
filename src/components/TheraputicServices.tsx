@@ -59,7 +59,7 @@ export const services = [
                 </div>
             </div>
         ),
-        image: "/child-therapy.svg",
+        image: "/therapy-2.svg",
 
     },
     {
@@ -72,7 +72,6 @@ export const services = [
 
                 <p>
                     There are many reasons why couples choose to seek couples therapy, for example partners may notice unhelpful, repeating behaviour patterns which find them stuck in the same argument over and over again, some problems within relationships may arise due to lack of trust, intimacy or communication. There may also be external factors placing stress on the relationship such as financial problems or work stressors. When any of these problems arise within a relationship, couples therapy can help you to communicate more effectively and form a deeper understanding of one another.
-
                 </p>
 
                 <p>
@@ -84,7 +83,7 @@ export const services = [
                 </p>
             </div>
         ),
-        image: "/couples-therapy.svg",
+        image: "/therapy-3.svg",
     },
     {
         id: 5,
@@ -95,7 +94,7 @@ export const services = [
                 <p>We want to make accessing psychological support for staff within companies as easy as possible. Therefore, we provide a &apos;pay as you go&apos; approach for businesses so you only pay for the therapy your staff need. We are happy to tailor our approach as best as possible to ensure we meet your companies needs and your staff&apos;s needs.</p>
             </div>
         ),
-        image: "/image-gallery-3.svg",
+        image: "/therapy-4.svg",
     },
     {
         id: 6,
@@ -119,7 +118,7 @@ export const services = [
                 </p>
             </div>
         ),
-        image: "/psychology.svg",
+        image: "/therapy-5.svg",
     }
 ];
 const TheraputicServices = () => {
@@ -128,7 +127,7 @@ const TheraputicServices = () => {
 
     return (
         <section className='bg-[#EEECEB]'>
-            <h1 className='text-xl md:text-5xl font-extrabold mt-10 text-center'>Therapeutic services we offer</h1>
+            <h1 className='text-xl font-avenir md:text-5xl font-extrabold mt-10 text-center'>Therapeutic services we offer</h1>
             <div className='flex'>
                 <section className="mt-9 flex flex-col lg:flex-row gap-10 p-5 lg:px-20">
 
@@ -204,7 +203,7 @@ const TheraputicServices = () => {
                                     className="rounded-lg"
                                 />
 
-                                <h1 className="mt-10 text-2xl md:text-[40px] text-[#939393] font-extrabold">
+                                <h1 className="mt-10 font-avenir text-2xl md:text-[40px] text-[#939393] font-extrabold">
                                     {selectedService.title}
                                 </h1>
 
@@ -214,7 +213,7 @@ const TheraputicServices = () => {
 
                                 <Link
                                     href='/booking'
-                                    className="mt-8 py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg text-white"
+                                    className="mt-8 py-2 px-5 h-14 rounded-[8px] flex items-center bg-[#C99D85] text-base w-fit text-white"
                                 >
                                     Book a consultation
                                 </Link>

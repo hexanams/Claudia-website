@@ -1,9 +1,30 @@
 "use client"
+import { motion } from "motion/react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion } from "motion/react"
+import React from "react"
+import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
 
 const Experiences = () => {
+    const [api, setApi] = React.useState<CarouselApi>()
+    const [current, setCurrent] = React.useState(0)
+    const [count, setCount] = React.useState(0)
+
+
+    React.useEffect(() => {
+        if (!api) {
+            return
+        }
+
+        setCount(api.scrollSnapList().length)
+        setCurrent(api.selectedScrollSnap() + 1)
+
+        api.on("select", () => {
+            setCurrent(api.selectedScrollSnap() + 1)
+        })
+    }, [api])
+
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -26,9 +47,27 @@ const Experiences = () => {
 
     return (
         <>
-            <section className="p-5 lg:px-16 lg:py-20">
+            <section className="relative p-5 lg:px-16 lg:py-20">
+                <Image
+                    alt='quote'
+                    src='/top-quotes.svg'
+                    width={40}
+                    height={20}
+                    priority
+                    className="absolute md:w-[100px] md:h-[50px] lg:w-[177px] lg:h-[137px] top-[10px] left-[20px] lg:top-[65px] lg:left-[127px]"
+                // fill
+                />
+                <Image
+                    alt='quote'
+                    src='/bottom-quotes.svg'
+                    width={40}
+                    height={20}
+                    priority
+                    className="absolute md:w-[100px] md:h-[50px] lg:w-[177px] lg:h-[137px] bottom-[10px] right-[20px] lg:bottom-[31px] lg:right-[198px]"
+                // fill
+                />
                 <motion.div
-                    className="lg:py-12 lg:px-36 flex flex-col gap-4 lg:gap-8 justify-center items-center"
+                    className="p-5 lg:py-12 lg:px-36 flex flex-col gap-4 lg:gap-8 justify-center items-center"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -37,14 +76,29 @@ const Experiences = () => {
                     <motion.div className="bg-[#EEECEB] py-2 px-4 rounded-3xl text-[#C7C2BE] text-base font-extrabold" variants={textVariants}>
                         A Journey From Struggle to Strength
                     </motion.div>
-                    <motion.div className="text-[#131313] text-base lg:text-xl text-center" variants={textVariants}>
-                        “I was unsure about starting therapy, but Claudia was able to quickly put my mind at ease. She really helped me to explore and understand my problems in a kind and empathetic way. Claudia was caring and non-judgemental at a time when I really needed that in my life. I gained so much from her support and feel so much more able to handle life stress confidently and put myself first. Thank you, Claudia!”
-                    </motion.div>
-                    <motion.div className="text-sm lg:text-base font-medium" variants={textVariants}>
-                        Anonymous - Current client
-                    </motion.div>
+                    <div className="px-5 lg:px-10 w-full flex flex-col justify-center gap-4 mx-auto max-w-5xl">
+                        <Carousel setApi={setApi} className="w-full lg:max-w-5xl">
+                            <CarouselContent>
+                                {Array.from({ length: 2 }).map((_, index) => (
+                                    <CarouselItem key={index}>
+                                        <div className="flex flex-col items-start justify-center p-4">
+                                            <h3 className="text-[#939393] font-light text-base lg:text-lg text-left">
+                                                “I was unsure about starting therapy, but Claudia was able to quickly put my mind at ease. She really helped me to explore and understand my problems in a kind and empathetic way. Claudia was caring and non-judgemental at a time when I really needed that in my life. I gained so much from her support and feel so much more able to handle life stress confidently and put myself first. Thank you, Claudia!”
+                                            </h3>
+                                            <h3 className='mt-[14px] font-avenir text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious />
+                            <CarouselNext />
+                        </Carousel>
+                    </div>
+                    <div className="mt-4 text-center text-sm text-muted-foreground">
+                        Slide {current} of {count}
+                    </div>
                 </motion.div>
-            </section>
+            </section >
 
             <section className="flex flex-col justify-center items-center">
                 <motion.div
@@ -84,18 +138,17 @@ const Experiences = () => {
                             Empathy
                         </motion.div>
                         <motion.div className="flex flex-col gap-6" variants={textVariants}>
-                            <h1 className="text-[#131313] font-extrabold text-xl lg:text-[2.5rem] text-left">
+                            <h1 className="font-avenir text-[#939393] font-extrabold text-xl lg:text-[2.5rem] text-left">
                                 Your Journey to Mental Well-Being Starts Here
                             </h1>
-                            <h3 className="text-[#616161] font-light text-base lg:text-lg text-left">
+                            <h3 className="text-[#939393] font-light text-base font-avenir lg:text-lg text-left">
                                 Discover a holistic approach to mental health that prioritizes your unique needs. Our practice fosters a supportive environment where you can thrive, you can feel seen, heard and understood.
                             </h3>
                         </motion.div>
-                        <motion.div variants={textVariants}>
-                            <Link
-                                href='/booking'
-                                className="py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg text-white hover:bg-[#b48470] transition-colors"
-                            >
+                        <motion.div
+                            className="bg-[#C99D85] text-base w-fit rounded-lg text-white hover:bg-[#b48470] transition-colors"
+                            variants={textVariants}>
+                            <Link className="py-2 px-5 h-[56px] flex items-center" href='/booking'>
                                 Book an appointment
                             </Link>
                         </motion.div>

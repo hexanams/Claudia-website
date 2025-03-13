@@ -80,8 +80,8 @@ const FAQ = () => {
     return (
         <><section className="p-5 lg:py-20 lg:px-[12.5rem] flex flex-col items-center gap-10 lg:gap-20">
             <div className="w-fit flex flex-col justify-center items-center gap-6">
-                <h1 className="text-3xl font-extrabold">FAQs</h1>
-                <h3 className="text-lg font-light text-center">
+                <h1 className="text-5xl font-extrabold font-avenir">FAQs</h1>
+                <h3 className="text-lg font-light text-center font-avenir">
                     Find answers to common questions about our services and how we can support you.
                 </h3>
             </div>
@@ -91,9 +91,9 @@ const FAQ = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-[#EEECEB] w-full"
+                className="bg-[#EEECEB] w-full rounded-2xl"
             >
-                <Accordion type="multiple" className="px-5 lg:px-20 py-5">
+                <Accordion type="multiple" className="px-5 lg:px-20 py-5 nth-last-[border-none]:">
                     {questions.map((question, i) => (
                         <motion.div
                             key={i}
@@ -101,6 +101,7 @@ const FAQ = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
+                            className='border-b border-b-black last:border-none'
                         >
                             <AccordionItem value={`item-${i}`}>
                                 <AccordionTrigger className="py-2 lg:py-5 text-base lg:text-lg font-extrabold">
@@ -116,8 +117,8 @@ const FAQ = () => {
             </motion.div>
 
             <div className="w-full lg:w-[560px] flex flex-col justify-center items-center">
-                <h1 className="text-xl lg:text-3xl font-extrabold">Still have questions?</h1>
-                <h3 className="my-2 lg:mt-4 lg:mb-6 text-base lg:text-lg font-light">We&apos;re here to help you!</h3>
+                <h1 className="text-xl lg:text-3xl font-extrabold font-avenir">Still have questions?</h1>
+                <h3 className="my-2 lg:mt-4 lg:mb-6 text-base lg:text-lg font-light font-avenir">We&apos;re here to help you!</h3>
                 <Link href='/contact' className="py-2 px-5 bg-[#C99D86] text-white rounded-md">Contact</Link>
             </div>
         </section>
@@ -130,8 +131,8 @@ const FAQ = () => {
                     viewport={{ once: true }}
                     className="flex flex-col items-center gap-6"
                 >
-                    <h1 className="font-extrabold text-2xl lg:text-5xl">Image Gallery</h1>
-                    <h1 className="font-light text-base lg:text-lg">Explore our inviting therapy spaces and events.</h1>
+                    <h1 className="font-extrabold text-2xl lg:text-5xl font-avenir">Image Gallery</h1>
+                    <h1 className="font-light text-base lg:text-lg font-avenir">Explore our inviting therapy spaces and events.</h1>
                 </motion.div>
 
                 {/* Mobile Carousel */}

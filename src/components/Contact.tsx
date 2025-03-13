@@ -72,7 +72,7 @@ const Contact = () => {
                         className='w-full lg:w-1/2 flex flex-col items-center md:items-start'
                         variants={fadeIn("up", 0.3)}
                     >
-                        <h1 className='font-extrabold text-2xl text-[#131313] mb-2'>Ready for an expert consultation?</h1>
+                        <h1 className='font-avenir font-extrabold text-2xl text-[#131313] mb-2'>Ready for an expert consultation?</h1>
                         <h2 className='text-base text-[#131313]'>Let&apos;s begin 😊</h2>
                         <ContactForm />
                     </motion.div>
@@ -143,7 +143,7 @@ const ContactForm = () => {
                                             <FormItem>
                                                 <FormLabel className="text-sm text-[#131313] md:text-base">{field.name.replace("_", " ")}</FormLabel>
                                                 <FormControl>
-                                                    <Input {...field} className="w-full py-[10px] px-4 border" placeholder={field.name.replace("_", " ")} />
+                                                    <Input {...field} className="w-full py-[10px] px-4 border rounded-[8px]" placeholder={field.name.replace("_", " ")} />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
@@ -167,8 +167,8 @@ const ContactForm = () => {
                             />
                         </motion.div>
 
-                        <motion.div className="flex justify-center mt-8" variants={fadeIn("up", 0.6)}>
-                            <Button type="submit" className="bg-[#C99D86] hover:bg-[#d8bdaf] w-[361px] py-2 px-5 text-white">Send Message</Button>
+                        <motion.div className="w-fit mt-8" variants={fadeIn("up", 0.6)}>
+                            <Button type="submit" className="h-14 bg-[#C99D86] hover:bg-[#d8bdaf] w-[361px] py-2 px-5 text-white">Send Message</Button>
                         </motion.div>
                     </form>
                 </Form>

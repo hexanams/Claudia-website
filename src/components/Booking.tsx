@@ -79,8 +79,8 @@ const Booking = () => {
                 viewport={{ once: true }}
             >
                 <motion.div className='text-center flex flex-col gap-2' variants={fadeIn}>
-                    <h1 className='font-extrabold text-xl md:text-3xl'>Free 15 minutes consultation call</h1>
-                    <h2 className='text-base'>Conducted via Phone or Video Call with me</h2>
+                    <h1 className='font-extrabold font-avenir text-xl md:text-3xl'>Free 15 minutes consultation call</h1>
+                    <h2 className='text-base font-avenir'>Conducted via Phone or Video Call with me</h2>
                 </motion.div>
 
                 <motion.div className='mt-10 md:mt-20 flex flex-col md:flex-row items-center gap-8 justify-between' variants={fadeIn}>
@@ -101,11 +101,11 @@ const Booking = () => {
                         <div className='bg-white py-8 px-10 flex flex-col gap-4 md:gap-8'>
                             <div className='flex gap-3.5 items-center'>
                                 <Phone className='text-black size-4' />
-                                <h4 className='text-sm md:text-base'>+29000000000</h4>
+                                <h4 className='font-avenir text-sm md:text-base'>+29000000000</h4>
                             </div>
                             <div className='flex gap-3.5 items-center'>
                                 <Mail className='text-black size-4' />
-                                <h4 className='text-sm md:text-base'>claudia@empoweredtherapy.com</h4>
+                                <h4 className='font-avenir text-sm md:text-base'>claudia@empoweredtherapy.com</h4>
                             </div>
                         </div>
 
@@ -119,7 +119,7 @@ const Booking = () => {
                                 <DialogHeader>
                                     <DialogTitle className='flex justify-between'>
                                         <div />
-                                        <h1 className="text-sm md:text-3xl font-extrabold text-center">FREE 15 Minute Consultation Call</h1>
+                                        <h1 className="text-sm font-avenir md:text-3xl font-extrabold text-center">FREE 15 Minute Consultation Call</h1>
                                         <DialogClose><X /></DialogClose>
                                     </DialogTitle>
                                     <DialogDescription className='text-xs md:text-base text-center font-light text-[#666666]'>

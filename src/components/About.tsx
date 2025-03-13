@@ -31,8 +31,8 @@ const About = () => {
             <div className='flex flex-col-reverse lg:flex-row gap-10 p-5 lg:py-20 lg:px-25'>
                 <motion.div className='lg:w-1/2 flex flex-col gap-4' variants={fadeIn}>
                     <div className='flex flex-col gap-6'>
-                        <h1 className='text-[#131313] text-2xl lg:text-3xl font-extrabold'>Hi there,</h1>
-                        <h1 className='text-[#C99D86] font-extrabold text-5xl lg:text-[3.5rem]'>I&apos;m Claudia</h1>
+                        <h1 className='text-[#131313] text-2xl lg:text-3xl font-avenir font-extrabold'>Hi there,</h1>
+                        <h1 className='text-[#C99D86] font-avenir font-extrabold text-5xl lg:text-[3.5rem]'>I&apos;m Claudia</h1>
                     </div>
 
 
@@ -71,7 +71,7 @@ const About = () => {
                 </motion.div>
             </div>
 
-            <hr className='hidden lg:block absolute w-full bottom-20 bg-[#C7C2BE]' />
+            <hr className='hidden font-avenir lg:block absolute w-full bottom-20 bg-[#C7C2BE]' />
         </motion.section>
     )
 }

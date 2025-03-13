@@ -41,7 +41,7 @@ const FAQSection = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <h1 className='text-[#F2F2F2] text-xl lg:text-5xl font-extrabold'>FAQs</h1>
+                    <h1 className='text-[#F2F2F2] text-xl lg:text-5xl font-extrabold font-avenir'>FAQs</h1>
                     <p className='text-xs text-white lg:text-lg font-light'>Have questions about therapy? We&apos;re here to help. Below are answers to some of the most common questions about our services, what to expect, and how therapy can support you on your journey to healing and growth. If you don&apos;t see your question here, feel free to reach out—we&apos;re happy to assist.</p>
                 </motion.div>
             </section >
@@ -56,12 +56,15 @@ const FAQSection = () => {
                 <motion.h1
                     className='font-extrabold text-2xl lg:text-5xl text-center'
                     variants={fadeIn("up", 0.1)}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
                 >
                     Frequently Asked Questions
                 </motion.h1>
 
                 <motion.div
-                    className='bg-white px-5 lg:px-20 py-5 mt-10'
+                    className='bg-white px-5 lg:px-20 py-5 mt-10 rounded-2xl'
                     variants={fadeIn("up", 0.2)}
                 >
                     <Accordion type="multiple">
@@ -69,6 +72,10 @@ const FAQSection = () => {
                             <motion.div
                                 key={i}
                                 variants={fadeIn("up", 0.2 + i * 0.1)}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                className='border-b border-b-black last:border-none'
                             >
                                 <AccordionItem value={`item-${i}`}>
                                     <AccordionTrigger className='py-2 lg:py-5 text-base lg:text-lg font-extrabold'>
