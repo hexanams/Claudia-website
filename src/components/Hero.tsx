@@ -17,9 +17,9 @@ const Hero = () => {
                 muted
                 playsInline
                 preload='auto'
-                className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+                className="absolute top-0 left-0 w-full h-full blur-[4px] object-cover -z-10"
             >
-                <source src="/hero-bg.mp4" type="video/mp4" />
+                <source src="/hero-image.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
             <motion.h1
@@ -27,13 +27,13 @@ const Hero = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className='text-3xl font-avenir lg:text-[2.5rem] text-white font-extrabold text-center lg:mx-[11.3rem]'>You deserve a life of empowerment and fulfilment.</motion.h1>
+                className='text-3xl font-avenir lg:text-[2.5rem] text-gray-400 font-extrabold text-center lg:mx-[11.3rem]'>You deserve a life of empowerment and fulfilment.</motion.h1>
             <motion.h1
                 variants={fadeIn}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className='text-3xl font-avenir lg:text-[2.5rem] text-white font-extrabold text-center lg:mx-[11.3rem]'>  I am committed to helping you find it.
+                className='text-3xl font-avenir lg:text-[2.5rem] text-gray-400 font-extrabold text-center lg:mx-[11.3rem]'>  I am committed to helping you find it.
             </motion.h1>
             <motion.p
                 variants={{
@@ -43,7 +43,7 @@ const Hero = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className='text-center text-sm lg:text-lg mt-6 font-light text-white'>
+                className='text-center text-sm lg:text-lg mt-6 font-light text-gray-400'>
                 Therapy is not a linear process. It&apos;s filled with ups and downs, progress and setbacks, and moments of clarity mixed with times of confusion. People can have mixed feelings about how they see therapy but going to therapy doesn&apos;t mean something is wrong with you; it means you&apos;re taking steps to become the best version of yourself.
                 At empoweredtherapy.com we believe that the best investment you can make is in yourself.  A healthy relationship with yourself is the foundation for a healthy relationship with others.
                 You have to be in your mind 24/7 let&apos;s make it a nice place to be. I am committed to helping you get there.

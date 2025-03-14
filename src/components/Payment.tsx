@@ -8,7 +8,6 @@ import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, Car
 const Payment = () => {
     const [api, setApi] = React.useState<CarouselApi>()
     const [current, setCurrent] = React.useState(0)
-    const [count, setCount] = React.useState(0)
 
     const fadeIn = {
         hidden: { opacity: 0, y: 50 },
@@ -25,11 +24,12 @@ const Payment = () => {
             return
         }
 
-        setCount(api.scrollSnapList().length)
+        // setCount(api.scrollSnapList().length)
         setCurrent(api.selectedScrollSnap() + 1)
 
         api.on("select", () => {
             setCurrent(api.selectedScrollSnap() + 1)
+
         })
     }, [api])
 
@@ -66,24 +66,46 @@ const Payment = () => {
 
                 <div className="mt-[60px] px-5 lg:px-10 w-full flex flex-col justify-center gap-4 mx-auto max-w-5xl">
                     <h1 className='text-[#131313] font-extrabold font-avenir text-3xl'>Testimonials</h1>
-                    <Carousel setApi={setApi} className="w-full lg:max-w-5xl">
+                    <Carousel
+                        setApi={setApi}
+                        className="w-full lg:max-w-5xl">
                         <CarouselContent>
-                            {Array.from({ length: 2 }).map((_, index) => (
-                                <CarouselItem key={index}>
-                                    <Card className='py-0'>
-                                        <CardContent className="flex flex-col items-start justify-center p-4">
-                                            <p className='text-sm lg:text-lg text-[#424242] '>Claudia has been incredibly supportive and caring throughout our therapy sessions. She has shown me a new way to manage my stress and maintain a positive mindset.</p>
-                                            <h3 className='mt-[14px] font-avenir text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
-                                        </CardContent>
-                                    </Card>
-                                </CarouselItem>
-                            ))}
+                            <CarouselItem>
+                                <Card className='py-0'>
+                                    <CardContent className="flex flex-col items-start justify-center p-4">
+                                        <p className='text-sm lg:text-lg text-[#424242] '>“I was unsure about starting therapy, but Claudia was able to quickly put my mind at ease. She really helped me to explore and understand my problems in a kind and empathetic way. Claudia was caring and non-judgemental at a time when I really needed that in my life. I gained so much from her support and feel so much more able to handle life stress confidently and put myself first. Thank you, Claudia!”.</p>
+                                        <h3 className='mt-[14px] font-avenir text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
+                                    </CardContent>
+                                </Card>
+                            </CarouselItem>
+                            <CarouselItem>
+                                <Card className='py-0'>
+                                    <CardContent className="flex flex-col items-start justify-center p-4">
+                                        <p className='text-sm lg:text-lg text-[#424242] '>“Working with Claudia has been life-changing. From our very first session, I felt truly seen and heard. She patiently helped me unpack years of self-doubt and stress, giving me the clarity I desperately needed. Her gentle approach and insightful guidance empowered me to heal and rebuild my confidence. I now approach life with a sense of calm and resilience I never thought possible. I&apos;m incredibly grateful for her support and encouragement.”</p>
+                                        <h3 className='mt-[14px] font-avenir text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
+                                    </CardContent>
+                                </Card>
+                            </CarouselItem>
+                            <CarouselItem>
+                                <Card className='py-0'>
+                                    <CardContent className="flex flex-col items-start justify-center p-4">
+                                        <p className='text-sm lg:text-lg text-[#424242] '>“I was feeling completely overwhelmed by my anxiety, but Claudia’s warmth and professionalism made all the difference. She provided a safe, welcoming space where I could talk openly without fear of judgment. Claudia helped me uncover patterns in my thinking and gave me practical tools to manage my emotions. Thanks to her guidance, I feel stronger, more grounded, and better equipped to face challenges. I can&apos;t thank her enough for helping me regain control over my life.”</p>
+                                        <h3 className='mt-[14px] font-avenir text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
+                                    </CardContent>
+                                </Card>
+                            </CarouselItem>
                         </CarouselContent>
                         <CarouselPrevious />
                         <CarouselNext />
                     </Carousel>
-                    <div className="mt-4 text-center text-sm text-muted-foreground">
-                        Slide {current} of {count}
+                    <div className="flex items-center justify-center mt-4 gap-2">
+                        {[...Array(3)].map((_, index) => (
+                            <div
+                                key={index}
+                                className={`w-3 h-3 rounded-full transition-colors ${index + 1 === current ? 'bg-[#C99D86]' : 'bg-[#C4C4C4]'
+                                    }`}
+                            />
+                        ))}
                     </div>
                 </div>
             </section >

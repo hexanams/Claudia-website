@@ -11,6 +11,7 @@ import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { toast } from "sonner"
 import { z } from 'zod'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 
 const formSchema = z.object({
     first_name: z.string().min(2, { message: "First name must be at least 2 characters.", }),
@@ -18,6 +19,7 @@ const formSchema = z.object({
     description: z.string().optional(),
     email: z.string().email().min(2, { message: "Email must be at least 2 characters.", }),
     phone_number: z.coerce.number().min(2, { message: "Phone number must be at least 2 characters.", }),
+    about_us: z.enum(['FACEBOOK, X, INSTAGRAM, YOUTUBE, LINKEDIN, OTHERS']),
 })
 
 const Contact = () => {
@@ -99,6 +101,7 @@ const ContactForm = () => {
             email: "",
             phone_number: 0,
             description: "",
+            about_us: undefined
         },
     })
 
@@ -108,6 +111,7 @@ const ContactForm = () => {
             to_name: "Claudia",
             message: data.description,
             reply_to: data.email,
+            heard_from: data.about_us,
         };
         try {
             await emailjs.send(
@@ -143,9 +147,9 @@ const ContactForm = () => {
                                             <FormItem>
                                                 <FormLabel className="text-sm text-[#131313] md:text-base">{field.name.replace("_", " ")}</FormLabel>
                                                 <FormControl>
-                                                    <Input {...field} className="w-full py-[10px] px-4 border rounded-[8px]" placeholder={field.name.replace("_", " ")} />
+                                                    <Input {...field} className="w-full py-[10px] px-4 text-[#B6B6B6] border rounded-[8px]" placeholder={field.name.replace("_", " ")} />
                                                 </FormControl>
-                                                <FormMessage />
+                                                <FormMessage className='text-xs text-destructive' />
                                             </FormItem>
                                         )}
                                     />
@@ -153,7 +157,35 @@ const ContactForm = () => {
                             ))}
                         </div>
 
-                        <motion.div variants={fadeIn("up", 0.5)}>
+                        <FormField
+                            control={form.control}
+                            name="about_us"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="text-sm text-[#131313] md:text-base">How did you hear about us?</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger
+                                                className="w-full py-[10px] px-4 border rounded-[8px]"
+                                            >
+                                                <SelectValue placeholder="Select an option" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent className='text-[#B6B6B6]'>
+                                            <SelectItem value="X">X</SelectItem>
+                                            <SelectItem value="FACEBOOK">FACEBOOK</SelectItem>
+                                            <SelectItem value="INSTAGRAM">INSTAGRAM</SelectItem>
+                                            <SelectItem value="LINKEDIN">LINKEDIN</SelectItem>
+                                            <SelectItem value="YOUTUBE">YOUTUBE</SelectItem>
+                                            <SelectItem value="OTHERS">OTHERS</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                    <FormMessage className='text-xs text-destructive' />
+                                </FormItem>
+                            )}
+                        />
+
+                        <motion.div className='mt-6' variants={fadeIn("up", 0.5)}>
                             <FormField
                                 control={form.control}
                                 name="description"
@@ -161,7 +193,7 @@ const ContactForm = () => {
                                     <FormItem>
                                         <FormDescription className="text-[#131313] mb-2">What are you seeking support with?</FormDescription>
                                         <Textarea {...field} placeholder="I am seeking therapy because..." />
-                                        <FormMessage />
+                                        <FormMessage className='text-xs text-destructive' />
                                     </FormItem>
                                 )}
                             />

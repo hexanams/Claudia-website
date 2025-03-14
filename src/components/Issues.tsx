@@ -58,7 +58,15 @@ const Issues = () => {
                     </div>
                 ))}
             </div>
-        </section>
+            <div className="mt-11 flex flex-col gap-6">
+                <p className="text-[#666666] text-lg">
+                    Can&apos;t see exactly what you are looking for help with? Don&apos;t worry anything that is causing you distress you can bring to therapy, and I would still see this as important.
+                </p>
+                <p className="text-[#666666] text-lg">
+                    Areas I do not cover would be better addressed through a different practitioner – Personality disorder, Bi-polar disorder.
+                </p>
+            </div>
+        </section >
     )
 }
 
