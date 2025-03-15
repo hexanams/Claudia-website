@@ -89,7 +89,7 @@ const Payment = () => {
                             <CarouselItem>
                                 <Card className='py-0'>
                                     <CardContent className="flex flex-col items-start justify-center p-4">
-                                        <p className='text-sm lg:text-lg text-[#424242] '>“I was feeling completely overwhelmed by my anxiety, but Claudia’s warmth and professionalism made all the difference. She provided a safe, welcoming space where I could talk openly without fear of judgment. Claudia helped me uncover patterns in my thinking and gave me practical tools to manage my emotions. Thanks to her guidance, I feel stronger, more grounded, and better equipped to face challenges. I can&apos;t thank her enough for helping me regain control over my life.”</p>
+                                        <p className='text-sm lg:text-lg text-[#424242] '>“I was feeling completely overwhelmed by my anxiety, but Claudia&apos;s warmth and professionalism made all the difference. She provided a safe, welcoming space where I could talk openly without fear of judgment. Claudia helped me uncover patterns in my thinking and gave me practical tools to manage my emotions. Thanks to her guidance, I feel stronger, more grounded, and better equipped to face challenges. I can&apos;t thank her enough for helping me regain control over my life.”</p>
                                         <h3 className='mt-[14px] font-avenir text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
                                     </CardContent>
                                 </Card>
