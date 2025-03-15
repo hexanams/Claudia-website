@@ -17,7 +17,7 @@ const Hero = () => {
                 muted
                 playsInline
                 preload='auto'
-                className="absolute top-0 left-0 w-full h-full blur-[4px] object-cover -z-10"
+                className="absolute top-0 left-0 w-full h-full blur-[0.5px] object-cover -z-10"
             >
                 <source src="/hero-image.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
