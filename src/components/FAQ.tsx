@@ -80,7 +80,7 @@ const FAQ = () => {
     return (
         <><section className="p-5 lg:py-20 lg:px-[12.5rem] flex flex-col items-center gap-10 lg:gap-20">
             <div className="w-fit flex flex-col justify-center items-center gap-6">
-                <h1 className="text-5xl font-extrabold font-avenir">FAQs</h1>
+                <h1 className="text-3xl lg:text-5xl font-extrabold font-avenir">FAQs</h1>
                 <h3 className="text-lg font-light text-center font-avenir">
                     Find answers to common questions about our services and how we can support you.
                 </h3>
