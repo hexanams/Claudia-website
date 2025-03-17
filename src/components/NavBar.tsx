@@ -18,12 +18,12 @@ const NavBar = () => {
             <header className='h-[4.5rem] w-full flex justify-between items-center px-5 lg:px-11 xl:px-[100px] py-4 bg-white'>
                 <div className='hidden lg:flex justify-between text-xs xl:text-base w-full'>
                     <div className='flex gap-8 items-center justify-between w-full'>
-                        <Link className={`${linkStyle('/')}`} href='/'>Home</Link>
-                        <Link className={linkStyle('/about')} href='/about'>About Us</Link>
-                        <Link className={linkStyle('/issues')} href='/issues'>Issues we treat</Link>
-                        <Link className={linkStyle('/services')} href='/therapeutic-services'>Therapeutic services</Link>
+                        <Link className={`${linkStyle('/')} whitespace-nowrap`} href='/'>Home</Link>
+                        <Link className={`${linkStyle('/about')} whitespace-nowrap`} href='/about'>About Us</Link>
+                        <Link className={`${linkStyle('/issues')} whitespace-nowrap`} href='/issues'>Issues we treat</Link>
+                        <Link className={`${linkStyle('/services')} whitespace-nowrap`} href='/therapeutic-services'>Therapeutic services</Link>
                     </div>
-                    <div className="w-full h-[4.5rem] flex justify-center items-center">
+                    <Link href='/' className="w-full h-[4.5rem] flex justify-center items-center">
                         <Image
                             src='/logo.svg'
                             alt='logo'
@@ -32,15 +32,16 @@ const NavBar = () => {
                             priority
                             unoptimized
                         />
-                    </div>
+                    </Link>
                     <div className='flex gap-8 items-center justify-between w-full'>
-                        <Link className={linkStyle('/price')} href='/price'>Price</Link>
-                        <Link className={linkStyle('/booking')} href='/booking'>Book online</Link>
-                        <Link className={linkStyle('/contact')} href='/contact'>Contact us</Link>
-                        <Link className={linkStyle('/faqs')} href='/faqs'>FAQ</Link>
+                        <Link className={`${linkStyle('/price')} whitespace-nowrap`} href='/price'>Price</Link>
+                        <Link className={`${linkStyle('/booking')} whitespace-nowrap`} href='/booking'>Book online</Link>
+                        <Link className={`${linkStyle('/contact')} whitespace-nowrap`} href='/contact'>Contact us</Link>
+                        <Link className={`${linkStyle('/faqs')} whitespace-nowrap`} href='/faqs'>FAQ</Link>
                         {/* <Link className={linkStyle('/blogs')} href='/blogs'>Blogs</Link> */}
                     </div>
                 </div>
+
                 <div className='lg:hidden flex justify-between items-center w-full'>
                     <Link href={'/'} className='cursor-pointer w-[100px] h-[20px] flex justify-center items-center'>
                         <Image

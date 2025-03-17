@@ -65,7 +65,7 @@ const Hero = () => {
                     </Link>
                     <Link
                         href='/contact'
-                        className='py-3 px-6 text-[#C7C2BE] bg-[#F9F9F9] text-base rounded'>
+                        className='py-3 px-6 text-[#C7C2BE] bg-[#EEECEB] text-base rounded'>
                         Contact
                     </Link>
                 </motion.div>
