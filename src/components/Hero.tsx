@@ -28,13 +28,13 @@ const Hero = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className='text-3xl z-20 font-avenir lg:text-[2.5rem] text-[#C99D85] font-extrabold text-center lg:mx-[11.3rem]'>You deserve a life of empowerment and fulfilment.</motion.h1>
+                    className='text-3xl z-20 font-avenir lg:text-[2.5rem] text-[#C99D85] font-extrabold text-center xl:mx-[11.3rem]'>You deserve a life of empowerment and fulfilment.</motion.h1>
                 <motion.h1
                     variants={fadeIn}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className='text-3xl font-avenir lg:text-[2.5rem] text-[#C99D85] font-extrabold text-center lg:mx-[11.3rem]'>  I am committed to helping you find it.
+                    className='text-3xl font-avenir lg:text-[2.5rem] text-[#C99D85] font-extrabold text-center xl:mx-[11.3rem]'>  I am committed to helping you find it.
                 </motion.h1>
                 <motion.p
                     variants={{
