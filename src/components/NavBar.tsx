@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import { Sheet, SheetContent, SheetHeader } from './ui/sheet'
 
@@ -12,6 +12,12 @@ const NavBar = () => {
     const [open, setOpen] = useState(false)
     const pathname = usePathname()
     const linkStyle = (path: string) => pathname === path ? 'text-[#C7C2BE] pointer-cursor hover:underline' : 'text-[#131313] pointer-cursor hover:underline'
+
+    useEffect(() => {
+        setOpen(false);
+    }, [pathname, setOpen]);
+
+
 
     return (
         <>
