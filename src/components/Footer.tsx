@@ -1,13 +1,23 @@
 import Link from 'next/link'
 import { BsInstagram } from 'react-icons/bs'
 import { RiFacebookCircleFill, RiLinkedinFill, RiTwitterXFill, RiYoutubeFill } from 'react-icons/ri'
-
+import Image from "next/image"
 const Footer = () => {
     return (
         <footer className='p-5 lg:px-16 lg:py-20'>
             <div className='block gap-5 lg:flex justify-between'>
                 <div className='flex flex-col gap-6 lg:w-1/2'>
-                    <h1 className='text-3xl font-avenir'>Logo</h1>
+                    <div className='flex items-center w-[200px] h-[4.5rem]'>
+                        <Image
+                            src='/logo.svg'
+                            alt='logo'
+                            width={200}
+                            height={40}
+                            priority
+                            unoptimized
+                        />
+                    </div>
+
                     <p className='text-base text-light'>Subscribe to our newsletter for the latest updates on features and services.</p>
 
                     <div className='flex flex-col gap-3'>

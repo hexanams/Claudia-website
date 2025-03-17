@@ -58,7 +58,6 @@ const About = () => {
 
                 <motion.div className="relative lg:w-fit h-fit" variants={fadeIn}>
                     <div className="hidden xl:inline w-[520px] h-[621px] absolute left-5 -top-5 bg-[#C7C2BE] z-0" />
-
                     <Image
                         className="relative z-10"
                         alt="image gallery"
@@ -67,6 +66,7 @@ const About = () => {
                         height={621}
                         fetchPriority="high"
                         priority
+                        unoptimized
                     />
                 </motion.div>
             </div>

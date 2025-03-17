@@ -36,7 +36,7 @@ const Payment = () => {
     return (
         <>
             <section
-                className="px-5 h-[434px] md:px-[6.3rem] pb-14 bg-[url('/payment.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end"
+                className="px-5 h-[350px] lg:h-[434px] md:px-[6.3rem] pb-14 bg-[url('/payment.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end"
             >
                 <motion.div
                     variants={fadeIn}

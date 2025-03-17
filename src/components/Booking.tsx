@@ -56,7 +56,7 @@ const Booking = () => {
     return (
         <>
             <section
-                className="px-5 h-[434px] md:px-[6.3rem] pb-14 bg-[url('/booking-hero.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end"
+                className="px-5 h-[350px] lg:h-[434px] md:px-[6.3rem] pb-14 bg-[url('/booking-hero.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end"
             >
                 <motion.div
                     variants={fadeIn}
@@ -119,7 +119,7 @@ const Booking = () => {
                                 <DialogHeader>
                                     <DialogTitle className='flex justify-between'>
                                         <div />
-                                        <h1 className="text-sm font-avenir md:text-3xl font-extrabold text-center">FREE 15 Minute Consultation Call</h1>
+                                        <div className="text-sm font-avenir md:text-3xl font-extrabold text-center">FREE 15 Minute Consultation Call</div>
                                         <DialogClose><X /></DialogClose>
                                     </DialogTitle>
                                     <DialogDescription className='text-xs md:text-base text-center font-light text-[#666666]'>

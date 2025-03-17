@@ -34,7 +34,7 @@ const FAQSection = () => {
 
     return (
         <>
-            <section className="px-5 h-[434px] lg:px-[6.3rem] pb-14 bg-[url('/faq-hero.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end">
+            <section className="px-5 h-[350px] lg:h-[434px] lg:px-[6.3rem] pb-14 bg-[url('/faq-hero.svg')] w-full bg-cover bg-center bg-no-repeat flex items-end">
                 <motion.div
                     variants={fadeIn("up", 0)}
                     initial="hidden"
