@@ -63,7 +63,7 @@ const Booking = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <h1 className='text-[#F2F2F2] text-xl md:text-5xl font-extrabold'>Book a Consultation Online</h1>
+                    <div className='font-canela text-[#F2F2F2] text-xl md:text-5xl font-extrabold'>Book a Consultation Online</div>
                     <p className='text-xs text-white lg:text-lg font-light mt-3'>Taking the first step toward therapy is a sign of strength, and we&apos;re here to make it as easy as possible. Schedule your consultation online at a time that works for you. Whether you have questions about our services or are ready to begin your journey, we&apos;re here to support you.</p>
                 </motion.div>
             </section>
@@ -76,7 +76,7 @@ const Booking = () => {
                 viewport={{ once: true }}
             >
                 <motion.div className='text-center flex flex-col gap-2' variants={fadeIn}>
-                    <h1 className='font-extrabold  text-xl md:text-3xl'>Free 15 minutes consultation call</h1>
+                    <div className='font-canela font-extrabold  text-xl md:text-3xl'>Free 15 minutes consultation call</div>
                     <p className='text-base '>Conducted via Phone or Video Call with me</p>
                 </motion.div>
 
@@ -98,11 +98,11 @@ const Booking = () => {
                         <div className='bg-white py-8 px-10 flex flex-col gap-4 md:gap-8'>
                             <div className='flex gap-3.5 items-center'>
                                 <Phone className='text-black size-4' />
-                                <h4 className=' text-sm md:text-base'>+29000000000</h4>
+                                <div className='font-canela text-sm md:text-base'>+29000000000</div>
                             </div>
                             <div className='flex gap-3.5 items-center'>
                                 <Mail className='text-black size-4' />
-                                <h4 className=' text-sm md:text-base'>claudia@empoweredtherapy.com</h4>
+                                <div className='font-canela text-sm md:text-base'>claudia@empoweredtherapy.com</div>
                             </div>
                         </div>
 

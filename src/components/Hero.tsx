@@ -10,7 +10,7 @@ const Hero = () => {
     }
 
     return (
-        <div className='relative h-[calc(100vh-120px)] flex flex-col justify-center lg:justify-start lg:items-start items-center p-5 py-5 lg:py-0 w-full lg:px-24'>
+        <div className='relative h-[calc(100vh-120px)] flex flex-col justify-center lg:justify-start lg:items-start items-center p-5 py-5 lg:py-0 w-full lg:px-14'>
             <video
                 autoPlay
                 loop
@@ -22,23 +22,23 @@ const Hero = () => {
                 <source src="/hero-image.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            <div className='bg-[rgba(255,255,255,0.5)] w-full h-fit lg:h-full lg:w-[600px] z-10 p-5 lg:p-10 rounded-lg lg:rounded-none flex flex-col justify-center items-center backdrop-blur-sm'>
-                <motion.h1
+            <div className='bg-[rgba(255,255,255,0.5)] w-full h-fit lg:h-full lg:w-[470px] z-10 p-5 lg:p-10 lg:py-10 rounded-lg lg:rounded-none flex flex-col justify-center items-center backdrop-blur-sm'>
+                <motion.div
                     variants={fadeIn}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className='text-3xl z-20 lg:text-[2.5rem] text-[#C99D86] font-extrabold text-center xl:mx-10 font-grotesk'>
-                    You deserve a life of empowerment and fulfillment.
-                </motion.h1>
-                <motion.h1
+                    className='text-2xl z-20 lg:text-3xl text-[#C99D86] font-extrabold text-center font-canela'>
+                    You deserve a life of empowerment and fulfillment,
+                </motion.div>
+                <motion.div
                     variants={fadeIn}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className='text-3xl lg:text-[2.5rem] text-[#C99D86] font-extrabold text-center xl:mx-10'>
-                    I am committed to helping you find it.
-                </motion.h1>
+                    className='text-2xl lg:text-3xl text-[#C99D86] font-extrabold text-center font-canela'>
+                    i am committed to helping you find it.
+                </motion.div>
 
                 <motion.p
                     variants={{
@@ -48,19 +48,8 @@ const Hero = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className='text-center text-grotesk text-sm lg:text-lg mt-6 font-light text-[#C99D86]'>
-                    Therapy is not a linear process. It&apos;s filled with ups and downs, progress and setbacks, and moments of clarity mixed with times of confusion. People can have mixed feelings about how they see therapy but going to therapy doesn&apos;t mean something is wrong with you; it means you&apos;re taking steps to become the best version of yourself.
-                </motion.p>
-                <motion.p
-                    variants={{
-                        hidden: { opacity: 0, y: 50 },
-                        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
-                    }}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className='text-center text-grotesk text-sm lg:text-lg mt-6 font-light text-[#C99D86]'>At empoweredtherapy.com we believe that the best investment you can make is in yourself.  A healthy relationship with yourself is the foundation for a healthy relationship with others.
-                    You have to be in your mind 24/7 let&apos;s make it a nice place to be. I am committed to helping you get there.
+                    className='text-center text-grotesk text-xs lg:text-sm mt-6 font-light text-[#C99D86]'>
+                    Therapy is a journey of growth with ups and downs, and seeking it doesn&lsquo;t mean something is wrong with you—it means you&lsquo;re investing in becoming your best self. At empoweredtherapy.com, we&lsquo;re here to help you build a healthy relationship with yourself because you deserve a mind that&lsquo;s a good place to be.
                 </motion.p>
                 <motion.div
                     variants={{

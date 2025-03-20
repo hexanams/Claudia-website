@@ -49,9 +49,9 @@ const Contact = () => {
                             <motion.div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit font-sweet-sans'>
                                 Contact Us
                             </motion.div>
-                            <motion.h1 className='font-extrabold text-4xl text-[#939393]'>
+                            <motion.div className='font-canela font-extrabold text-4xl text-[#939393]'>
                                 Get in touch with Claudia
-                            </motion.h1>
+                            </motion.div>
                             <motion.p className='font-light text-base text-[#939393] line-clamp-3'>
                                 We are here to support you on your journey to emotional wellness. Whether you have questions, need more information or are ready to book your first session, don’t forget to reach out. We’d love to hear from you.
                             </motion.p>
@@ -75,7 +75,7 @@ const Contact = () => {
                         className='w-full lg:w-1/2 flex flex-col items-center md:items-start'
                         variants={fadeIn("up", 0.3)}
                     >
-                        <h1 className=' font-extrabold text-2xl text-[#B6B6B6] mb-2'>Ready for an expert consultation?</h1>
+                        <div className='font-canela font-extrabold text-2xl text-[#B6B6B6] mb-2'>Ready for an expert consultation?</div>
                         <p className='text-base text-[#B6B6B6]'>Let&apos;s begin 😊</p>
                         <ContactForm />
                     </motion.div>
@@ -88,7 +88,7 @@ const Contact = () => {
                         animate="visible"
                         variants={fadeIn()}
                     >
-                        <h1 className="text-3xl text-[#939393]">Reach Out to Us</h1>
+                        <div className="font-canela text-3xl text-[#939393]">Reach Out to Us</div>
                         <p className='mt-[10px] text-[#5C5C5C] text-center'>Feel free to reach out to us, be it in come visiting, or on our social media handle.</p>
 
                         <div className='mt-7 py-8 px-10 flex flex-col gap-10 item-start justify-center'>

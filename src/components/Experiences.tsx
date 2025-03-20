@@ -81,7 +81,7 @@ const Experiences = () => {
                                         <p className="text-[#939393] font-light text-base lg:text-lg text-left font-grotesk">
                                             “I was unsure about starting therapy, but Claudia was able to quickly put my mind at ease. She really helped me to explore and understand my problems in a kind and empathetic way. Claudia was caring and non-judgemental at a time when I really needed that in my life. I gained so much from her support and feel so much more able to handle life stress confidently and put myself first. Thank you, Claudia!”
                                         </p>
-                                        <h3 className='mt-[14px]  text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
+                                        <div className='mt-[14px] font-canela text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</div>
                                     </div>
                                 </CarouselItem>
                                 <CarouselItem>
@@ -89,7 +89,7 @@ const Experiences = () => {
                                         <p className="font-grotesk text-[#939393] font-light text-base lg:text-lg text-left">
                                             “Working with Claudia has been life-changing. From our very first session, I felt truly seen and heard. She patiently helped me unpack years of self-doubt and stress, giving me the clarity I desperately needed. Her gentle approach and insightful guidance empowered me to heal and rebuild my confidence. I now approach life with a sense of calm and resilience I never thought possible. I&apos;m incredibly grateful for her support and encouragement.”
                                         </p>
-                                        <h3 className='mt-[14px]  text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
+                                        <div className='mt-[14px] font-canela text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</div>
                                     </div>
                                 </CarouselItem>
                                 <CarouselItem>
@@ -97,7 +97,7 @@ const Experiences = () => {
                                         <p className="font-grotesk text-[#939393] font-light text-base lg:text-lg text-left">
                                             “I was feeling completely overwhelmed by my anxiety, but Claudia’s warmth and professionalism made all the difference. She provided a safe, welcoming space where I could talk openly without fear of judgment. Claudia helped me uncover patterns in my thinking and gave me practical tools to manage my emotions. Thanks to her guidance, I feel stronger, more grounded, and better equipped to face challenges. I can&apos;t thank her enough for helping me regain control over my life.”
                                         </p>
-                                        <h3 className='mt-[14px]  text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
+                                        <div className='mt-[14px] font-canela text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</div>
                                     </div>
                                 </CarouselItem>
 
@@ -120,15 +120,15 @@ const Experiences = () => {
             </section >
 
             <section className="flex flex-col justify-center items-center">
-                <motion.h1
-                    className="text-[#131313] font-extrabold text-2xl text-center px-5 lg:px-[270px]"
+                <motion.div
+                    className="text-[#131313] font-canela font-extrabold text-2xl text-center px-5 lg:px-[270px]"
                     variants={textVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
                 >
                     We uphold rigorous quality standards and follow ethical guidelines set by trusted regulatory bodies to ensure the safety and well-being of all our clients.
-                </motion.h1>
+                </motion.div>
                 <motion.div
                     className="flex flex-wrap justify-center items-center gap-6 pt-[3.7rem] pb-[4.9rem]"
                     variants={containerVariants}
@@ -157,9 +157,9 @@ const Experiences = () => {
                             Empathy
                         </motion.div>
                         <motion.div className="flex flex-col gap-6" variants={textVariants}>
-                            <h1 className=" text-[#939393] font-extrabold text-xl lg:text-[2.5rem] text-left">
+                            <div className=" text-[#939393] font-canela font-extrabold text-xl lg:text-[2.5rem] text-left">
                                 Your Journey to Mental Well-Being Starts Here
-                            </h1>
+                            </div>
                             <p className="text-[#939393] font-light text-base  lg:text-lg text-left font-grotesk">
                                 Discover a holistic approach to mental health that prioritizes your unique needs. Our practice fosters a supportive environment where you can thrive, you can feel seen, heard and understood.
                             </p>

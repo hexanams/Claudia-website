@@ -50,7 +50,7 @@ const Issues = () => {
 
     return (
         <section className="p-5 lg:py-10 lg:px-[100px] bg-[url('/issues-bg.svg')] w-full bg-cover bg-center bg-no-repeat">
-            <h1 className='  text-3xl md:text-5xl font-extrabold text-center'>Issues that we treat</h1>
+            <div className=' font-canela text-3xl md:text-5xl font-extrabold text-center'>Issues that we treat</div>
             <div className='mt-11 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                 {issues.map((issue, i) => (
                     <div key={i} className='border-b flex h-14 items-start'>

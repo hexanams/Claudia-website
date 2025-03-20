@@ -21,9 +21,9 @@ const MentalHealth = () => {
                     <div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit font-sweet-sans'>Thrive</div>
 
                     <div className='flex flex-col gap-6'>
-                        <h1 className='font-extrabold text-xl lg:text-[2.5rem] text-left text-[#939393]'>
+                        <div className='font-canela font-extrabold text-xl lg:text-[2.5rem] text-left text-[#939393]'>
                             Your Journey to Mental Well-Being Starts Here
-                        </h1>
+                        </div>
                         <p className=' text-[#616161] font-light text-base lg:text-lg text-left font-grotesk'>
                             Discover a holistic approach to mental health that prioritizes your unique needs. Our practice fosters a supportive environment where you can thrive, you can feel seen, heard and understood.
                         </p>
@@ -31,13 +31,13 @@ const MentalHealth = () => {
 
                     <div className='flex gap-6'>
                         <div className='flex flex-col gap-4'>
-                            <h2 className='text-[#939393] font-extrabold  text-base lg:text-[1.3rem]'>Personalized Care</h2>
+                            <div className='font-canela text-[#939393] font-extrabold  text-base lg:text-[1.3rem]'>Personalized Care</div>
                             <p className='text-[#616161] text-sm lg:text-base font-light text-left font-grotesk'>
                                 Experience tailored strategies that empower you to overcome challenges and achieve balance.
                             </p>
                         </div>
                         <div className='flex flex-col gap-4'>
-                            <h2 className='text-[#939393] font-extrabold  text-base lg:text-[1.3rem]'>Compassionate Support</h2>
+                            <div className='font-canela text-[#939393] font-extrabold  text-base lg:text-[1.3rem]'>Compassionate Support</div>
                             <p className='text-[#616161] text-sm lg:text-base font-light text-left font-grotesk'>
                                 Our empathetic approach ensures you feel heard, valued, and understood throughout your journey.
                             </p>

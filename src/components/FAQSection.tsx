@@ -41,7 +41,7 @@ const FAQSection = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <h1 className='text-[#F2F2F2] text-xl lg:text-5xl font-extrabold '>FAQs</h1>
+                    <div className='text-[#F2F2F2] font-canela text-xl lg:text-5xl font-extrabold '>FAQs</div>
                     <p className='text-xs text-white lg:text-lg font-light mt-3'>Have questions about therapy? We&apos;re here to help. Below are answers to some of the most common questions about our services, what to expect, and how therapy can support you on your journey to healing and growth. If you don&apos;t see your question here, feel free to reach out—we&apos;re happy to assist.</p>
                 </motion.div>
             </section >
@@ -53,15 +53,15 @@ const FAQSection = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeIn("up", 0)}
             >
-                <motion.h1
-                    className='font-extrabold text-2xl lg:text-5xl text-center'
+                <motion.div
+                    className='font-canela font-extrabold text-2xl lg:text-5xl text-center'
                     variants={fadeIn("up", 0.1)}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
                     Frequently Asked Questions
-                </motion.h1>
+                </motion.div>
 
                 <motion.div
                     className='bg-white px-5 lg:px-20 py-5 mt-10 rounded-2xl'

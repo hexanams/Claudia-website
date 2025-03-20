@@ -45,9 +45,9 @@ const NavBar = () => {
     return (
         <>
             <header className='h-[120px] w-full flex justify-between items-center px-5 lg:px-11 xl:px-[100px] py-4 bg-white'>
-                <div className='hidden lg:flex justify-around items-center text-xs xl:text-base w-full'>
+                <div className='hidden lg:flex justify-between items-center text-xs lg:text-sm w-full font-light'>
                     {/* Left Links */}
-                    <div className='flex gap-8 items-center w-[40%] justify-between font-sweet-sans'>
+                    <div className='flex gap-8 items-center w-[40%] justify-start font-sweet-sans'>
                         <Link className={`${linkStyle('/')} whitespace-nowrap`} href='/'>Home</Link>
                         <Link className={`${linkStyle('/about')} whitespace-nowrap`} href='/about'>About Us</Link>
                         <Link className={`${linkStyle('/issues')} whitespace-nowrap`} href='/issues'>Issues we treat</Link>
@@ -55,21 +55,19 @@ const NavBar = () => {
                     </div>
 
                     {/* Logo */}
-                    <Link href='/' className="w-[50%] flex justify-center">
-                        <div className="w-full h-[40px] flex justify-center items-center">
-                            <Image
-                                src='/logo.svg'
-                                alt='logo'
-                                width={220}
-                                height={40}
-                                priority
-                                unoptimized
-                            />
-                        </div>
+                    <Link href='/' className="w-[220px] flex justify-center items-center">
+                        <Image
+                            src='/logo.svg'
+                            alt='logo'
+                            width={220}
+                            height={40}
+                            priority
+                            unoptimized
+                        />
                     </Link>
 
                     {/* Right Links */}
-                    <div className='flex gap-8 items-center w-[40%] justify-around font-sweet-sans '>
+                    <div className='flex gap-8 items-center w-[40%] justify-end font-sweet-sans '>
                         <Link className={`${linkStyle('/price')} whitespace-nowrap`} href='/price'>Price</Link>
                         <Link className={`${linkStyle('/booking')} whitespace-nowrap`} href='/booking'>Book online</Link>
                         <Link className={`${linkStyle('/contact')} whitespace-nowrap`} href='/contact'>Contact us</Link>

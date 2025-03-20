@@ -127,7 +127,7 @@ const TheraputicServices = () => {
 
     return (
         <section className='bg-[#EEECEB]'>
-            <h1 className='text-xl text-[#939393] md:text-5xl font-extrabold mt-10 text-center'>Therapeutic services we offer</h1>
+            <div className='text-xl font-canela text-[#939393] md:text-5xl font-extrabold mt-10 text-center'>Therapeutic services we offer</div>
             <div className='flex'>
                 <section className="mt-9 flex flex-col lg:flex-row gap-10 p-5 lg:px-20">
 
@@ -203,9 +203,9 @@ const TheraputicServices = () => {
                                     className="rounded-lg"
                                 />
 
-                                <h1 className="mt-10  text-2xl md:text-[40px] text-[#939393] font-extrabold">
+                                <div className="mt-10 font-canela text-2xl md:text-[40px] text-[#939393] font-extrabold">
                                     {selectedService.title}
-                                </h1>
+                                </div>
 
                                 <div className="mt-4 text-gray text-base space-y-4 text-[#939393]">
                                     {selectedService.description}

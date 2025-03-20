@@ -83,9 +83,9 @@ const Footer = () => {
             <div className='mt-20 border-t-2 flex flex-col py-2 lg:p-0 lg:flex-row justify-between items-center gap-5 lg:items-end h-20'>
                 <div className='font-light text-sm font-sweet-sans'>© 2025 Claudia. All rights reserved.</div>
                 <div className='flex gap-6'>
-                    <h1 className='underline cursor-pointer text-xs lg:text-sm '>Privacy Policy</h1>
-                    <h1 className='underline cursor-pointer text-xs lg:text-sm '>Terms of Service</h1>
-                    <h1 className='underline cursor-pointer text-xs lg:text-sm '>Cookie Settings Policy</h1>
+                    <div className='font-canela underline cursor-pointer text-xs lg:text-sm '>Privacy Policy</div>
+                    <div className='font-canela underline cursor-pointer text-xs lg:text-sm '>Terms of Service</div>
+                    <div className='font-canela underline cursor-pointer text-xs lg:text-sm '>Cookie Settings Policy</div>
                 </div>
             </div>
         </footer>
