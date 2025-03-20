@@ -18,34 +18,34 @@ const MentalHealth = () => {
                     viewport={{ once: true, amount: 0.2 }}
                     variants={slideIn("left", 0)}
                 >
-                    <div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit'>Thrive</div>
+                    <div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit font-sweet-sans'>Thrive</div>
 
                     <div className='flex flex-col gap-6'>
-                        <h1 className='font-avenir font-extrabold text-xl lg:text-[2.5rem] text-left text-[#939393]'>
+                        <h1 className='font-extrabold text-xl lg:text-[2.5rem] text-left text-[#939393]'>
                             Your Journey to Mental Well-Being Starts Here
                         </h1>
-                        <h3 className='font-avenir text-[#616161] font-light text-base lg:text-lg text-left'>
+                        <p className=' text-[#616161] font-light text-base lg:text-lg text-left font-grotesk'>
                             Discover a holistic approach to mental health that prioritizes your unique needs. Our practice fosters a supportive environment where you can thrive, you can feel seen, heard and understood.
-                        </h3>
+                        </p>
                     </div>
 
                     <div className='flex gap-6'>
                         <div className='flex flex-col gap-4'>
-                            <h2 className='text-[#939393] font-extrabold font-avenir text-base lg:text-[1.3rem]'>Personalized Care</h2>
-                            <p className='text-[#616161] text-sm lg:text-base font-light text-left'>
+                            <h2 className='text-[#939393] font-extrabold  text-base lg:text-[1.3rem]'>Personalized Care</h2>
+                            <p className='text-[#616161] text-sm lg:text-base font-light text-left font-grotesk'>
                                 Experience tailored strategies that empower you to overcome challenges and achieve balance.
                             </p>
                         </div>
                         <div className='flex flex-col gap-4'>
-                            <h2 className='text-[#939393] font-extrabold font-avenir text-base lg:text-[1.3rem]'>Compassionate Support</h2>
-                            <p className='text-[#616161] text-sm lg:text-base font-light text-left'>
+                            <h2 className='text-[#939393] font-extrabold  text-base lg:text-[1.3rem]'>Compassionate Support</h2>
+                            <p className='text-[#616161] text-sm lg:text-base font-light text-left font-grotesk'>
                                 Our empathetic approach ensures you feel heard, valued, and understood throughout your journey.
                             </p>
                         </div>
                     </div>
 
                     <Link
-                        className="bg-[#C99D85] h-12 py-3 px-6 text-base w-fit rounded-lg text-[#FEFEFE] hover:bg-[#b48470] transition-colors"
+                        className="bg-[#C99D85] h-12 py-3 px-6 text-base w-fit rounded-lg text-[#FEFEFE] hover:bg-[#b48470] transition-colors font-sweet-sans"
                         href='/about'
                     >
                         Learn More

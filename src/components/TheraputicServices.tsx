@@ -127,7 +127,7 @@ const TheraputicServices = () => {
 
     return (
         <section className='bg-[#EEECEB]'>
-            <h1 className='text-xl font-avenir md:text-5xl font-extrabold mt-10 text-center'>Therapeutic services we offer</h1>
+            <h1 className='text-xl text-[#939393] md:text-5xl font-extrabold mt-10 text-center'>Therapeutic services we offer</h1>
             <div className='flex'>
                 <section className="mt-9 flex flex-col lg:flex-row gap-10 p-5 lg:px-20">
 
@@ -136,7 +136,7 @@ const TheraputicServices = () => {
                         {services.map((service) => (
                             <div
                                 key={service.id}
-                                className={`cursor-pointer text-[#131313] font-medium text-base md:text-lg ${selectedService.id === service.id ? "text-[#C99D86]" : ""}`}
+                                className={`cursor-pointer text-[#939393] font-medium text-base md:text-lg ${selectedService.id === service.id ? "text-[#C99D86]" : ""}`}
                                 onClick={() => setSelectedService(service)}
                             >
                                 {service.title}
@@ -203,11 +203,11 @@ const TheraputicServices = () => {
                                     className="rounded-lg"
                                 />
 
-                                <h1 className="mt-10 font-avenir text-2xl md:text-[40px] text-[#939393] font-extrabold">
+                                <h1 className="mt-10  text-2xl md:text-[40px] text-[#939393] font-extrabold">
                                     {selectedService.title}
                                 </h1>
 
-                                <div className="mt-4 text-gray-700 text-base space-y-4">
+                                <div className="mt-4 text-gray text-base space-y-4 text-[#939393]">
                                     {selectedService.description}
                                 </div>
 

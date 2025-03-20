@@ -2,12 +2,11 @@
 import { Button } from "@/components/ui/button"
 import { DialogClose } from "@radix-ui/react-dialog"
 import { Mail, Phone, X } from 'lucide-react'
+import { motion } from "motion/react"
 import Image from "next/image"
 import { useEffect } from 'react'
 import { InlineWidget } from 'react-calendly'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog'
-import Link from "next/link"
-import { motion } from "motion/react"
 
 
 const Booking = () => {
@@ -64,10 +63,8 @@ const Booking = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <Link
-                        href={'/booking'}
-                        className='text-[#F2F2F2] text-xl md:text-5xl font-extrabold'>Book a Consultation Online</Link>
-                    <p className='text-xs text-white lg:text-lg font-light'>Taking the first step toward therapy is a sign of strength, and we&apos;re here to make it as easy as possible. Schedule your consultation online at a time that works for you. Whether you have questions about our services or are ready to begin your journey, we&apos;re here to support you.</p>
+                    <h1 className='text-[#F2F2F2] text-xl md:text-5xl font-extrabold'>Book a Consultation Online</h1>
+                    <p className='text-xs text-white lg:text-lg font-light mt-3'>Taking the first step toward therapy is a sign of strength, and we&apos;re here to make it as easy as possible. Schedule your consultation online at a time that works for you. Whether you have questions about our services or are ready to begin your journey, we&apos;re here to support you.</p>
                 </motion.div>
             </section>
 
@@ -79,8 +76,8 @@ const Booking = () => {
                 viewport={{ once: true }}
             >
                 <motion.div className='text-center flex flex-col gap-2' variants={fadeIn}>
-                    <h1 className='font-extrabold font-avenir text-xl md:text-3xl'>Free 15 minutes consultation call</h1>
-                    <h2 className='text-base font-avenir'>Conducted via Phone or Video Call with me</h2>
+                    <h1 className='font-extrabold  text-xl md:text-3xl'>Free 15 minutes consultation call</h1>
+                    <p className='text-base '>Conducted via Phone or Video Call with me</p>
                 </motion.div>
 
                 <motion.div className='mt-10 md:mt-20 flex flex-col md:flex-row items-center gap-8 justify-between' variants={fadeIn}>
@@ -101,11 +98,11 @@ const Booking = () => {
                         <div className='bg-white py-8 px-10 flex flex-col gap-4 md:gap-8'>
                             <div className='flex gap-3.5 items-center'>
                                 <Phone className='text-black size-4' />
-                                <h4 className='font-avenir text-sm md:text-base'>+29000000000</h4>
+                                <h4 className=' text-sm md:text-base'>+29000000000</h4>
                             </div>
                             <div className='flex gap-3.5 items-center'>
                                 <Mail className='text-black size-4' />
-                                <h4 className='font-avenir text-sm md:text-base'>claudia@empoweredtherapy.com</h4>
+                                <h4 className=' text-sm md:text-base'>claudia@empoweredtherapy.com</h4>
                             </div>
                         </div>
 
@@ -119,7 +116,7 @@ const Booking = () => {
                                 <DialogHeader>
                                     <DialogTitle className='flex justify-between'>
                                         <div />
-                                        <div className="text-sm font-avenir md:text-3xl font-extrabold text-center">FREE 15 Minute Consultation Call</div>
+                                        <div className="text-sm  md:text-3xl font-extrabold text-center">FREE 15 Minute Consultation Call</div>
                                         <DialogClose><X /></DialogClose>
                                     </DialogTitle>
                                     <DialogDescription className='text-xs md:text-base text-center font-light text-[#666666]'>

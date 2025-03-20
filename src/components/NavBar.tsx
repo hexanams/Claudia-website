@@ -6,25 +6,48 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import { Sheet, SheetContent, SheetHeader } from './ui/sheet'
-
+import { motion } from "motion/react"
 
 const NavBar = () => {
     const [open, setOpen] = useState(false)
     const pathname = usePathname()
-    const linkStyle = (path: string) => pathname === path ? 'text-[#C7C2BE] pointer-cursor hover:underline' : 'text-[#131313] pointer-cursor hover:underline'
+    const linkStyle = (path: string) => pathname === path ? 'text-[#C7C2BE] pointer-cursor hover:underline' : 'text-[#6F6F6F] pointer-cursor hover:underline'
 
     useEffect(() => {
         setOpen(false);
     }, [pathname, setOpen]);
 
+    const staggeredLinkVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                staggerChildren: 0.1, // Stagger each link with a delay
+            },
+        },
+    };
+
+    const linkVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: 'spring', // Smooth spring-based animation
+                stiffness: 100,
+                damping: 25,
+            },
+        },
+    };
 
 
     return (
         <>
-            <header className='h-[4.5rem] w-full flex justify-between items-center px-5 lg:px-11 xl:px-[100px] py-4 bg-white'>
-                <div className='hidden lg:flex justify-between items-center text-xs xl:text-base w-full'>
+            <header className='h-[120px] w-full flex justify-between items-center px-5 lg:px-11 xl:px-[100px] py-4 bg-white'>
+                <div className='hidden lg:flex justify-around items-center text-xs xl:text-base w-full'>
                     {/* Left Links */}
-                    <div className='flex gap-8 items-center w-[40%] justify-between'>
+                    <div className='flex gap-8 items-center w-[40%] justify-between font-sweet-sans'>
                         <Link className={`${linkStyle('/')} whitespace-nowrap`} href='/'>Home</Link>
                         <Link className={`${linkStyle('/about')} whitespace-nowrap`} href='/about'>About Us</Link>
                         <Link className={`${linkStyle('/issues')} whitespace-nowrap`} href='/issues'>Issues we treat</Link>
@@ -32,7 +55,7 @@ const NavBar = () => {
                     </div>
 
                     {/* Logo */}
-                    <Link href='/' className="w-[20%] flex justify-center">
+                    <Link href='/' className="w-[50%] flex justify-center">
                         <div className="w-full h-[40px] flex justify-center items-center">
                             <Image
                                 src='/logo.svg'
@@ -46,7 +69,7 @@ const NavBar = () => {
                     </Link>
 
                     {/* Right Links */}
-                    <div className='flex gap-8 items-center w-[40%] justify-between'>
+                    <div className='flex gap-8 items-center w-[40%] justify-around font-sweet-sans '>
                         <Link className={`${linkStyle('/price')} whitespace-nowrap`} href='/price'>Price</Link>
                         <Link className={`${linkStyle('/booking')} whitespace-nowrap`} href='/booking'>Book online</Link>
                         <Link className={`${linkStyle('/contact')} whitespace-nowrap`} href='/contact'>Contact us</Link>
@@ -72,8 +95,8 @@ const NavBar = () => {
 
                 <div className="grid grid-cols-2 gap-2">
                     <Sheet open={open} onOpenChange={setOpen}>
-                        <SheetContent side={'right'}>
-                            <SheetHeader className='flex flex-row items-center justify-between px-5 lg:px-11 xl:px-[100px] py-4 h-[4.5rem]'>
+                        <SheetContent side={'right'} className='bg-white'>
+                            <SheetHeader className='flex flex-row items-center justify-between pl-5 pr-10 lg:px-11 xl:px-[100px] py-4 h-[120px]'>
                                 <div className="w-[100px] h-[20px] flex justify-center items-center">
                                     <Image
                                         src='/logo.svg'
@@ -88,18 +111,37 @@ const NavBar = () => {
                                     <X className='text-black' />
                                 </Button>
                             </SheetHeader>
-                            <div className='flex flex-col gap-4 p-4 px-7 items-start text-[#131313]'>
-                                <Link className={`${linkStyle('/')} text-xl`} href='/'>Home</Link>
-                                <Link className={`${linkStyle('/about')} text-xl`} href='/about'>About Us</Link>
-                                <Link className={`${linkStyle('/issues')} text-xl`} href='/issues'>Issues we treat</Link>
-                                <Link className={`${linkStyle('/therapeutic-services')} text-xl`} href='/therapeutic-services'>Threapeutic services</Link>
-                                <Link className={`${linkStyle('/price')} text-xl`} href='/price'>Price</Link>
-                                <Link className={`${linkStyle('/booking')} text-xl`} href='/booking'>Book online</Link>
-                                <Link className={`${linkStyle('/contact')} text-xl`} href='/contact'>Contact us</Link>
-                                <Link className={`${linkStyle('/faqs')} text-xl`} href='/faqs'>FAQ</Link>
-                                {/* <Link className='pointer-cursor hover:underline text-xl' href='/'>Blogs</Link> */}
-                            </div>
-                        </SheetContent>
+                            <motion.div
+                                className='flex flex-col gap-4 p-4 px-7 items-start text-[#131313]'
+                                variants={staggeredLinkVariants}
+                                initial="hidden"
+                                animate="visible"
+                            >
+                                <motion.div variants={linkVariants}>
+                                    <Link className={`${linkStyle('/')} text-xl`} href='/'>Home</Link>
+                                </motion.div>
+                                <motion.div variants={linkVariants}>
+                                    <Link className={`${linkStyle('/about')} text-xl`} href='/about'>About Us</Link>
+                                </motion.div>
+                                <motion.div variants={linkVariants}>
+                                    <Link className={`${linkStyle('/issues')} text-xl`} href='/issues'>Issues we treat</Link>
+                                </motion.div>
+                                <motion.div variants={linkVariants}>
+                                    <Link className={`${linkStyle('/therapeutic-services')} text-xl`} href='/therapeutic-services'>Therapeutic services</Link>
+                                </motion.div>
+                                <motion.div variants={linkVariants}>
+                                    <Link className={`${linkStyle('/price')} text-xl`} href='/price'>Price</Link>
+                                </motion.div>
+                                <motion.div variants={linkVariants}>
+                                    <Link className={`${linkStyle('/booking')} text-xl`} href='/booking'>Book online</Link>
+                                </motion.div>
+                                <motion.div variants={linkVariants}>
+                                    <Link className={`${linkStyle('/contact')} text-xl`} href='/contact'>Contact us</Link>
+                                </motion.div>
+                                <motion.div variants={linkVariants}>
+                                    <Link className={`${linkStyle('/faqs')} text-xl`} href='/faqs'>FAQ</Link>
+                                </motion.div>
+                            </motion.div>   </SheetContent>
                     </Sheet>
                 </div>
             </header>

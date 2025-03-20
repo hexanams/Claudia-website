@@ -4,14 +4,52 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@font-face {
+/* @font-face {
   font-family: "Avenir";
   src: url(../../public/fonts/Avenir-Medium.woff2) format("woff2");
   font-weight: 400;
+} */
+@font-face {
+  font-family: "HK Grotesk";
+  src: url(../../public/fonts/HKGrotesk-Regular.woff2) format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SweetSans";
+  src: url(../../public/fonts/SweetSansPro-Medium.woff2) format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Canela";
+  src: url(../../public/fonts/Canela-Light.woff2) format("woff2");
+  font-weight: 400;
 }
 
-.font-supreme {
-  font-family: "Avenir", sans-serif;
+.font-grotesk {
+  font-family: "HK Grotesk", sans-serif;
+}
+.font-canela {
+  font-family: "Canela", sans-serif;
+}
+.font-sweet-sans {
+  font-family: "SweetSans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Canela", sans-serif !important;
+}
+
+p {
+  font-family: "HK Grotesk", sans-serif !important;
+}
+
+a {
+  font-family: "SweetSans", sans-serif !important;
 }
 
 :root {
@@ -86,7 +124,6 @@
 }
 
 @theme inline {
-  --font-avenir: "avenir", sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

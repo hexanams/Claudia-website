@@ -53,7 +53,7 @@ const MidSection = () => {
                 animate="visible"
             >
                 <MotionSection>
-                    <div className="text-[#131313] font-extrabold text-2xl text-center px-5 lg:px-[270px]">
+                    <div className="text-[#939393] font-extrabold text-2xl text-center px-5 lg:px-[270px] font-sweet-sans">
                         We uphold rigorous quality standards and follow ethical guidelines set by trusted regulatory bodies to ensure the safety and well-being of all our clients.
                     </div>
                 </MotionSection>
@@ -69,8 +69,8 @@ const MidSection = () => {
             <MotionSection>
                 <section className="p-5 lg:px-16 lg:py-20 bg-[url('/first-steps.svg')] w-full bg-cover bg-center bg-no-repeat">
                     <div className="flex flex-col gap-6 justify-center items-center">
-                        <h1 className='font-avenir font-extrabold text-xl lg:text-5xl text-center'>Take the First Step Today</h1>
-                        <p className='text-base lg:text-lg text-[#131313] font-light text-center '>Your journey to mental well-being starts here. Reach out now to schedule your appointment or learn more about our services.</p>
+                        <h1 className='font-extrabold text-xl lg:text-5xl text-center text-[#939393]'>Take the First Step Today</h1>
+                        <p className='text-base lg:text-lg text-[#939393] font-light text-center '>Your journey to mental well-being starts here. Reach out now to schedule your appointment or learn more about our services.</p>
                         <div
                             className="bg-[#C99D85] text-base w-fit rounded-lg text-white hover:bg-[#b48470] transition-colors">
                             <Link className="py-2 px-5 h-[56px] flex items-center" href='/booking'>
@@ -83,8 +83,8 @@ const MidSection = () => {
 
             <section className='p-5 lg:px-16 lg:py-20 flex flex-col gap-10 lg:gap-20'>
                 <motion.div variants={staggeredFadeIn} className="flex flex-col items-center gap-6">
-                    <h1 className="font-avenir font-extrabold text-2xl lg:text-5xl">Image Gallery</h1>
-                    <h1 className="font-avenir font-light text-base lg:text-lg">Explore our inviting therapy spaces and events.</h1>
+                    <h1 className=" font-extrabold text-2xl lg:text-5xl">Image Gallery</h1>
+                    <p className=" font-light text-base lg:text-lg">Explore our inviting therapy spaces and events.</p>
                 </motion.div>
                 <div className='md:hidden flex justify-center'>
                     <Carousel

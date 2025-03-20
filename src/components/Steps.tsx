@@ -86,12 +86,12 @@ const Steps = () => {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
                 >
-                    <motion.div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit' variants={textVariants}>
+                    <motion.div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit font-sweet-sans' variants={textVariants}>
                         Our Services
                     </motion.div>
-                    <motion.div className="font-extrabold lg:mx-[336px] text-xl lg:text-5xl text-center" variants={textVariants}>
+                    <motion.h1 className="font-extrabold lg:mx-[336px] text-xl lg:text-5xl text-center" variants={textVariants}>
                         We provide a safe, non-judgmental space where you can express yourself
-                    </motion.div>
+                    </motion.h1>
                 </motion.div>
 
                 <motion.div
@@ -112,7 +112,7 @@ const Steps = () => {
                                 />
                             </div>
                             <div className="px-6 mt-6 flex flex-col gap-4 ">
-                                <h2 className="text-xl lg:text-3xl font-avenir font-extrabold text-[#939393]">{step.title}</h2>
+                                <h2 className="text-xl lg:text-3xl  font-extrabold text-[#939393]">{step.title}</h2>
                                 <p className="font-light text-[#939393] text-base lg:text-xl">{step.description}</p>
                             </div>
 

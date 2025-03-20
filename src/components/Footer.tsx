@@ -27,7 +27,7 @@ const Footer = () => {
                                 placeholder='Your email here'
                                 className='p-3 w-[365px] border rounded-md'
                             />
-                            <button className='border-[#16A8B6] border py-3 px-6 text-[#16A8B6] rounded-md'>
+                            <button className='border-[#16A8B6] border py-3 px-6 text-[#16A8B6] rounded-md font-sweet-sans'>
                                 Join
                             </button>
                         </div>
@@ -37,8 +37,8 @@ const Footer = () => {
 
                 <div className='mt-5 lg:mt-0 flex gap-10 justify-around lg:w-1/2'>
                     <div className='flex flex-col gap-4 w-1/2'>
-                        <h2 className='font-semibold text-base font-avenir'>Quick Links</h2>
-                        <div className='flex flex-col justify-center'>
+                        <p className='font-semibold text-base'>Quick Links</p>
+                        <div className='flex flex-col justify-center font-grotesk'>
                             <Link className='py-2 text-sm font-extralight' href='/about'>About Us</Link>
                             <Link className='py-2 text-sm font-light' href='/contact'>Contact Us</Link>
                             <Link className='py-2 text-sm font-light' href='/'>Services</Link>
@@ -48,7 +48,7 @@ const Footer = () => {
                     </div>
 
                     <div className='flex flex-col gap-4 w-1/2'>
-                        <h2 className='font-semibold text-base font-avenir'>Connect With Us</h2>
+                        <p className='font-semibold text-base '>Connect With Us</p>
                         <div className='flex flex-col'>
                             <div className='flex gap-1 py-2 items-center'>
                                 <RiFacebookCircleFill />
@@ -81,11 +81,11 @@ const Footer = () => {
             </div>
 
             <div className='mt-20 border-t-2 flex flex-col py-2 lg:p-0 lg:flex-row justify-between items-center gap-5 lg:items-end h-20'>
-                <div className='font-light text-sm'>© 2025 Claudia. All rights reserved.</div>
+                <div className='font-light text-sm font-sweet-sans'>© 2025 Claudia. All rights reserved.</div>
                 <div className='flex gap-6'>
-                    <h1 className='underline cursor-pointer text-xs lg:text-sm font-avenir'>Privacy Policy</h1>
-                    <h1 className='underline cursor-pointer text-xs lg:text-sm font-avenir'>Terms of Service</h1>
-                    <h1 className='underline cursor-pointer text-xs lg:text-sm font-avenir'>Cookie Settings Policy</h1>
+                    <h1 className='underline cursor-pointer text-xs lg:text-sm '>Privacy Policy</h1>
+                    <h1 className='underline cursor-pointer text-xs lg:text-sm '>Terms of Service</h1>
+                    <h1 className='underline cursor-pointer text-xs lg:text-sm '>Cookie Settings Policy</h1>
                 </div>
             </div>
         </footer>

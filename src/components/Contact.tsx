@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from '@/components/ui/button'
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import emailjs from '@emailjs/browser'
@@ -12,6 +12,7 @@ import { useForm } from 'react-hook-form'
 import { toast } from "sonner"
 import { z } from 'zod'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
+import { MapPin, Mail, Phone } from 'lucide-react'
 
 const formSchema = z.object({
     first_name: z.string().min(2, { message: "First name must be at least 2 characters.", }),
@@ -45,15 +46,15 @@ const Contact = () => {
                         variants={fadeIn("up", 0.1)}
                     >
                         <div className='flex flex-col gap-4'>
-                            <motion.div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit'>
+                            <motion.div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit font-sweet-sans'>
                                 Contact Us
                             </motion.div>
                             <motion.h1 className='font-extrabold text-4xl text-[#939393]'>
                                 Get in touch with Claudia
                             </motion.h1>
-                            <motion.h2 className='font-light text-base text-[#939393] line-clamp-3'>
-                                We are here to support you on your journey to emotional wellness...
-                            </motion.h2>
+                            <motion.p className='font-light text-base text-[#939393] line-clamp-3'>
+                                We are here to support you on your journey to emotional wellness. Whether you have questions, need more information or are ready to book your first session, don’t forget to reach out. We’d love to hear from you.
+                            </motion.p>
                         </div>
 
                         <motion.div className="relative flex justify-center lg:w-fit h-fit" variants={fadeIn("up", 0.2)}>
@@ -74,11 +75,38 @@ const Contact = () => {
                         className='w-full lg:w-1/2 flex flex-col items-center md:items-start'
                         variants={fadeIn("up", 0.3)}
                     >
-                        <h1 className='font-avenir font-extrabold text-2xl text-[#131313] mb-2'>Ready for an expert consultation?</h1>
-                        <h2 className='text-base text-[#131313]'>Let&apos;s begin 😊</h2>
+                        <h1 className=' font-extrabold text-2xl text-[#B6B6B6] mb-2'>Ready for an expert consultation?</h1>
+                        <p className='text-base text-[#B6B6B6]'>Let&apos;s begin 😊</p>
                         <ContactForm />
                     </motion.div>
                 </motion.div>
+
+                <div className='w-full flex justify-center mt-13'>
+                    <motion.div
+                        className='flex flex-col w-[400px] h-fit items-center'
+                        initial="hidden"
+                        animate="visible"
+                        variants={fadeIn()}
+                    >
+                        <h1 className="text-3xl text-[#939393]">Reach Out to Us</h1>
+                        <p className='mt-[10px] text-[#5C5C5C] text-center'>Feel free to reach out to us, be it in come visiting, or on our social media handle.</p>
+
+                        <div className='mt-7 py-8 px-10 flex flex-col gap-10 item-start justify-center'>
+                            <div className='flex gap-3.5 items-center'>
+                                <Phone className='text-[#5C5C5C] size-4' />
+                                <p className=' text-sm md:text-base text-[#5C5C5C]'>+29000000000</p>
+                            </div>
+                            <div className='flex gap-3.5 items-center'>
+                                <Mail className='size-4 text-[#5C5C5C]' />
+                                <p className='text-sm md:text-base text-[#5C5C5C]'>claudia@empoweredtherapy.com</p>
+                            </div>
+                            <div className='flex gap-3.5 items-center'>
+                                <MapPin className='size-4 text-[#5C5C5C]' />
+                                <p className='text-sm md:text-base text-[#5C5C5C]'>Currently offering online sessions only </p>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
         </section>
 
@@ -136,25 +164,35 @@ const ContactForm = () => {
             className='mt-4 md:mt-11 flex justify-center items-start flex-col md:gap-6 w-full'>
             <div className="flex flex-col items-start justify-center lg:justify-between w-full md:flex-row gap-4">
                 <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)}>
-                        <div className="grid grid-cols-1 2xl:grid-cols-2 gap-6 mb-6">
-                            {["first_name", "last_name", "email", "number"].map((field, index) => (
-                                <motion.div key={field} variants={fadeIn("up", index * 0.1)}>
+                    <form className='w-full' onSubmit={form.handleSubmit(onSubmit)}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-6 w-full">
+                            {[
+                                { field: "first_name", label: "First Name", placeholder: "First name " },
+                                { field: "last_name", label: "Last Name", placeholder: "Last name" },
+                                { field: "email", label: "Email", placeholder: "Enter your email address" },
+                                { field: "number", label: "Phone Number", placeholder: "Enter your phone number" },
+                            ].map(({ field, label, placeholder }, index) => (
+                                <motion.div className="w-full" key={field} variants={fadeIn("up", index * 0.1)}>
                                     <FormField
                                         control={form.control}
                                         name={field as "phone_number" | "first_name" | "last_name" | "description" | "email"}
                                         render={({ field }) => (
                                             <FormItem>
-                                                <FormLabel className="text-sm text-[#131313] md:text-base">{field.name.replace("_", " ")}</FormLabel>
+                                                <FormLabel className="font-grotesk text-sm text-[#939393] md:text-base">{label}</FormLabel>
                                                 <FormControl>
-                                                    <Input {...field} className="w-full py-[10px] px-4 text-[#B6B6B6] border rounded-[8px]" placeholder={field.name.replace("_", " ")} />
+                                                    <Input
+                                                        {...field}
+                                                        className="w-full lg:w-[291px] h-[56px] py-[10px] px-4 text-[#B6B6B6] border rounded-[8px]"
+                                                        placeholder={placeholder}
+                                                    />
                                                 </FormControl>
-                                                <FormMessage className='text-xs text-destructive' />
+                                                <FormMessage className="text-xs text-destructive" />
                                             </FormItem>
                                         )}
                                     />
                                 </motion.div>
                             ))}
+
                         </div>
 
                         <FormField
@@ -162,16 +200,17 @@ const ContactForm = () => {
                             name="about_us"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="text-sm text-[#131313] md:text-base">How did you hear about us?</FormLabel>
+                                    <FormLabel className="text-sm font-grotesk text-[#939393] md:text-base">How did you hear about us?</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger
-                                                className="w-full py-[10px] px-4 border rounded-[8px]"
+                                                size='default'
+                                                className="w-full py-[10px] px-4 border rounded-[8px] text-[#B6B6B6]"
                                             >
-                                                <SelectValue placeholder="Select an option" />
+                                                <SelectValue className="text-[#B6B6B6]" placeholder="Select an option" />
                                             </SelectTrigger>
                                         </FormControl>
-                                        <SelectContent className='text-[#B6B6B6]'>
+                                        <SelectContent className='w-full'>
                                             <SelectItem value="X">X</SelectItem>
                                             <SelectItem value="FACEBOOK">FACEBOOK</SelectItem>
                                             <SelectItem value="INSTAGRAM">INSTAGRAM</SelectItem>
@@ -191,21 +230,21 @@ const ContactForm = () => {
                                 name="description"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormDescription className="text-[#131313] mb-2">What are you seeking support with?</FormDescription>
-                                        <Textarea {...field} placeholder="I am seeking therapy because..." />
+                                        <FormLabel className="text-sm font-grotesk text-[#939393] md:text-base">Your message</FormLabel>
+                                        <Textarea className="w-full border text-[#B6B6B6]" {...field} placeholder="I am seeking therapy because..." />
                                         <FormMessage className='text-xs text-destructive' />
                                     </FormItem>
                                 )}
                             />
                         </motion.div>
 
-                        <motion.div className="w-fit mt-8" variants={fadeIn("up", 0.6)}>
-                            <Button type="submit" className="h-14 bg-[#C99D86] hover:bg-[#d8bdaf] w-[361px] py-2 px-5 text-white">Send Message</Button>
+                        <motion.div className="w-full lg:w-fit mt-8" variants={fadeIn("up", 0.6)}>
+                            <Button type="submit" className="h-14 bg-[#C99D86] hover:bg-[#d8bdaf] w-full md:w-[361px] py-2 px-5 text-white font-sweet-sans">Send Message</Button>
                         </motion.div>
                     </form>
                 </Form>
             </div>
-        </motion.div>
+        </motion.div >
     )
 }
 

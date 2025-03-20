@@ -70,7 +70,7 @@ const Experiences = () => {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
                 >
-                    <motion.div className="bg-[#EEECEB] py-2 px-4 rounded-3xl text-[#C7C2BE] text-base font-extrabold" variants={textVariants}>
+                    <motion.div className="bg-[#EEECEB] py-2 px-4 rounded-3xl text-[#C7C2BE] text-base font-extrabold font-sweet-sans" variants={textVariants}>
                         A Journey From Struggle to Strength
                     </motion.div>
                     <div className="px-5 lg:px-10 w-full flex flex-col justify-center gap-4 mx-auto max-w-5xl">
@@ -78,26 +78,26 @@ const Experiences = () => {
                             <CarouselContent>
                                 <CarouselItem>
                                     <div className="flex flex-col items-start justify-center p-4">
-                                        <h3 className="text-[#939393] font-light text-base lg:text-lg text-left">
+                                        <p className="text-[#939393] font-light text-base lg:text-lg text-left font-grotesk">
                                             “I was unsure about starting therapy, but Claudia was able to quickly put my mind at ease. She really helped me to explore and understand my problems in a kind and empathetic way. Claudia was caring and non-judgemental at a time when I really needed that in my life. I gained so much from her support and feel so much more able to handle life stress confidently and put myself first. Thank you, Claudia!”
-                                        </h3>
-                                        <h3 className='mt-[14px] font-avenir text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
+                                        </p>
+                                        <h3 className='mt-[14px]  text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
                                     </div>
                                 </CarouselItem>
                                 <CarouselItem>
                                     <div className="flex flex-col items-start justify-center p-4">
-                                        <h3 className="text-[#939393] font-light text-base lg:text-lg text-left">
+                                        <p className="font-grotesk text-[#939393] font-light text-base lg:text-lg text-left">
                                             “Working with Claudia has been life-changing. From our very first session, I felt truly seen and heard. She patiently helped me unpack years of self-doubt and stress, giving me the clarity I desperately needed. Her gentle approach and insightful guidance empowered me to heal and rebuild my confidence. I now approach life with a sense of calm and resilience I never thought possible. I&apos;m incredibly grateful for her support and encouragement.”
-                                        </h3>
-                                        <h3 className='mt-[14px] font-avenir text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
+                                        </p>
+                                        <h3 className='mt-[14px]  text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
                                     </div>
                                 </CarouselItem>
                                 <CarouselItem>
                                     <div className="flex flex-col items-start justify-center p-4">
-                                        <h3 className="text-[#939393] font-light text-base lg:text-lg text-left">
+                                        <p className="font-grotesk text-[#939393] font-light text-base lg:text-lg text-left">
                                             “I was feeling completely overwhelmed by my anxiety, but Claudia’s warmth and professionalism made all the difference. She provided a safe, welcoming space where I could talk openly without fear of judgment. Claudia helped me uncover patterns in my thinking and gave me practical tools to manage my emotions. Thanks to her guidance, I feel stronger, more grounded, and better equipped to face challenges. I can&apos;t thank her enough for helping me regain control over my life.”
-                                        </h3>
-                                        <h3 className='mt-[14px] font-avenir text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
+                                        </p>
+                                        <h3 className='mt-[14px]  text-sm lg:text-xl font-extrabold text-[#131313]'>Anonymous Client - Former client</h3>
                                     </div>
                                 </CarouselItem>
 
@@ -120,7 +120,7 @@ const Experiences = () => {
             </section >
 
             <section className="flex flex-col justify-center items-center">
-                <motion.div
+                <motion.h1
                     className="text-[#131313] font-extrabold text-2xl text-center px-5 lg:px-[270px]"
                     variants={textVariants}
                     initial="hidden"
@@ -128,7 +128,7 @@ const Experiences = () => {
                     viewport={{ once: true, amount: 0.2 }}
                 >
                     We uphold rigorous quality standards and follow ethical guidelines set by trusted regulatory bodies to ensure the safety and well-being of all our clients.
-                </motion.div>
+                </motion.h1>
                 <motion.div
                     className="flex flex-wrap justify-center items-center gap-6 pt-[3.7rem] pb-[4.9rem]"
                     variants={containerVariants}
@@ -153,19 +153,19 @@ const Experiences = () => {
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}
                     >
-                        <motion.div className="px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit" variants={textVariants}>
+                        <motion.div className="px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit font-sweet-sans" variants={textVariants}>
                             Empathy
                         </motion.div>
                         <motion.div className="flex flex-col gap-6" variants={textVariants}>
-                            <h1 className="font-avenir text-[#939393] font-extrabold text-xl lg:text-[2.5rem] text-left">
+                            <h1 className=" text-[#939393] font-extrabold text-xl lg:text-[2.5rem] text-left">
                                 Your Journey to Mental Well-Being Starts Here
                             </h1>
-                            <h3 className="text-[#939393] font-light text-base font-avenir lg:text-lg text-left">
+                            <p className="text-[#939393] font-light text-base  lg:text-lg text-left font-grotesk">
                                 Discover a holistic approach to mental health that prioritizes your unique needs. Our practice fosters a supportive environment where you can thrive, you can feel seen, heard and understood.
-                            </h3>
+                            </p>
                         </motion.div>
                         <motion.div
-                            className="bg-[#C99D85] text-base w-fit rounded-lg text-white hover:bg-[#b48470] transition-colors"
+                            className="bg-[#C99D85] text-base w-fit rounded-lg text-white hover:bg-[#b48470] transition-colors font-sweet-sans"
                             variants={textVariants}>
                             <Link className="py-2 px-5 h-[56px] flex items-center" href='/booking'>
                                 Book an appointment

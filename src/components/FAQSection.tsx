@@ -41,8 +41,8 @@ const FAQSection = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <h1 className='text-[#F2F2F2] text-xl lg:text-5xl font-extrabold font-avenir'>FAQs</h1>
-                    <p className='text-xs text-white lg:text-lg font-light'>Have questions about therapy? We&apos;re here to help. Below are answers to some of the most common questions about our services, what to expect, and how therapy can support you on your journey to healing and growth. If you don&apos;t see your question here, feel free to reach out—we&apos;re happy to assist.</p>
+                    <h1 className='text-[#F2F2F2] text-xl lg:text-5xl font-extrabold '>FAQs</h1>
+                    <p className='text-xs text-white lg:text-lg font-light mt-3'>Have questions about therapy? We&apos;re here to help. Below are answers to some of the most common questions about our services, what to expect, and how therapy can support you on your journey to healing and growth. If you don&apos;t see your question here, feel free to reach out—we&apos;re happy to assist.</p>
                 </motion.div>
             </section >
 

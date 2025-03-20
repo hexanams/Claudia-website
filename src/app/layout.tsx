@@ -26,7 +26,7 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/payment-2.svg" />
       </head>
 
-      <body className="font-avenir">
+      <body className="overflow-x-hidden">
         <Toaster />
         <NavBar />
         {children}
