@@ -72,7 +72,7 @@ const Hero = () => {
                     viewport={{ once: true }}
                     className='mt-8 flex gap-4 font-grotesk'>
                     <Link
-                        href='/about'
+                        href='/booking'
                         className='py-3 px-6 bg-[#C99D86] text-[#F2F2F2] text-base rounded'>
                         Book your free consultation today
                     </Link>
