@@ -63,6 +63,7 @@ const NavBar = () => {
                             height={40}
                             priority
                             unoptimized
+                            quality={100}
                         />
                     </Link>
 
@@ -84,6 +85,7 @@ const NavBar = () => {
                             height={20}
                             priority
                             unoptimized
+                            quality={100}
                         />
                     </Link>
                     <Button variant='ghost' className="bg-[#C99D85] rounded-none" onClick={() => setOpen((prev) => !prev)}>
@@ -103,6 +105,7 @@ const NavBar = () => {
                                         height={20}
                                         priority
                                         unoptimized
+                                        quality={100}
                                     />
                                 </div>
                                 <Button variant='ghost' className="bg-transparent z-70 relative" onClick={() => setOpen((prev) => !prev)}>

@@ -66,7 +66,7 @@ const About = () => {
                         height={621}
                         fetchPriority="high"
                         priority
-                        unoptimized
+                        quality={100}
                     />
                 </motion.div>
             </div>

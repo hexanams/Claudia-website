@@ -91,6 +91,8 @@ const Booking = () => {
                             height={457}
                             fetchPriority="high"
                             priority
+                            quality={100}
+
                         />
                     </div>
 

@@ -67,6 +67,7 @@ const Contact = () => {
                                 height={457}
                                 fetchPriority="high"
                                 priority
+                                quality={100}
                             />
                         </motion.div>
                     </motion.div>
