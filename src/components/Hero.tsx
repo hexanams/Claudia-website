@@ -22,7 +22,7 @@ const Hero = () => {
                 <source src="/hero-image.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            <div className='bg-[rgba(255,255,255,0.5)] w-full h-fit lg:h-full lg:w-[770px] z-10 p-5 lg:p-10 rounded-lg flex flex-col justify-center items-center backdrop-blur-sm'>
+            <div className='bg-[rgba(255,255,255,0.5)] w-full h-fit lg:h-full lg:w-[600px] z-10 p-5 lg:p-10 rounded-lg lg:rounded-none flex flex-col justify-center items-center backdrop-blur-sm'>
                 <motion.h1
                     variants={fadeIn}
                     initial="hidden"

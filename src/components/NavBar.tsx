@@ -88,7 +88,7 @@ const NavBar = () => {
                             unoptimized
                         />
                     </Link>
-                    <Button variant='ghost' className="bg-transparent" onClick={() => setOpen((prev) => !prev)}>
+                    <Button variant='ghost' className="bg-[#C99D85] rounded-none" onClick={() => setOpen((prev) => !prev)}>
                         <Menu className='text-black' />
                     </Button>
                 </div>
@@ -107,7 +107,7 @@ const NavBar = () => {
                                         unoptimized
                                     />
                                 </div>
-                                <Button variant='ghost' className="bg-transparent" onClick={() => setOpen((prev) => !prev)}>
+                                <Button variant='ghost' className="bg-transparent z-70 relative" onClick={() => setOpen((prev) => !prev)}>
                                     <X className='text-black' />
                                 </Button>
                             </SheetHeader>
