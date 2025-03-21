@@ -54,7 +54,7 @@ const FAQSection = () => {
                 variants={fadeIn("up", 0)}
             >
                 <motion.div
-                    className='font-canela font-extrabold text-2xl lg:text-5xl text-center'
+                    className='font-canela text-[#939393] font-extrabold text-2xl lg:text-5xl text-center'
                     variants={fadeIn("up", 0.1)}
                     initial="hidden"
                     whileInView="visible"

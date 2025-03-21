@@ -83,8 +83,8 @@ const MidSection = () => {
 
             <section className='p-5 lg:px-16 lg:py-20 flex flex-col gap-10 lg:gap-20'>
                 <motion.div variants={staggeredFadeIn} className="flex flex-col items-center gap-6">
-                    <div className="font-canela font-extrabold text-2xl lg:text-5xl">Image Gallery</div>
-                    <p className=" font-light text-base lg:text-lg">Explore our inviting therapy spaces and events.</p>
+                    <div className="font-canela font-extrabold text-2xl lg:text-5xl text-[#939393]">Image Gallery</div>
+                    <p className=" font-light text-base lg:text-lg text-[#939393]">Explore our inviting therapy spaces and events.</p>
                 </motion.div>
                 <div className='md:hidden flex justify-center'>
                     <Carousel

@@ -1,8 +1,6 @@
+import AppLayout from "@/components/AppLayout";
 import type { Metadata } from "next";
 import "./globals.css";
-import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar";
-import { Toaster } from "sonner"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -10,10 +8,11 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <head>
@@ -26,12 +25,11 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/payment-2.svg" />
       </head>
 
-      <body className="overflow-x-hidden">
-        <Toaster />
-        <NavBar />
-        {children}
-        <Footer />
-
+      <body className="overflow-x-hidden w-full">
+        {/* <Toaster /> */}
+        <AppLayout>
+          {children}
+        </AppLayout>
       </body>
     </html>
   );

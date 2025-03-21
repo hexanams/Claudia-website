@@ -174,7 +174,7 @@ const Experiences = () => {
                     </motion.div>
 
                     <motion.div
-                        className="w-full lg:w-1/2 flex justify-center items-center"
+                        className="relative w-full lg:w-[616px] lg:h-[640px] flex justify-center items-center"
                         initial={{ opacity: 0, x: 100 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
@@ -183,8 +183,9 @@ const Experiences = () => {
                         <Image
                             alt='mental-health'
                             src='/mental-well-being.svg'
-                            width={616}
-                            height={640}
+                            fill
+                            className="object-contain"
+                            priority
                         />
                     </motion.div>
                 </div>

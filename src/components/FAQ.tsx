@@ -131,8 +131,8 @@ const FAQ = () => {
                     viewport={{ once: true }}
                     className="flex flex-col items-center gap-6"
                 >
-                    <div className="font-canela font-extrabold text-2xl lg:text-5xl ">Image Gallery</div>
-                    <p className="font-light text-base lg:text-lg ">Explore our inviting therapy spaces and events.</p>
+                    <div className="font-canela font-extrabold text-2xl lg:text-5xl text-[#939393]">Image Gallery</div>
+                    <p className="font-light text-base lg:text-lg text-[#939393]">Explore our inviting therapy spaces and events.</p>
                 </motion.div>
 
                 {/* Mobile Carousel */}

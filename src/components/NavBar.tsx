@@ -1,21 +1,49 @@
 "use client"
 import { Menu, X } from 'lucide-react'
+import { motion, useMotionValueEvent, useScroll, useSpring, useTransform } from "motion/react"
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import { Sheet, SheetContent, SheetHeader } from './ui/sheet'
-import { motion } from "motion/react"
 
-const NavBar = () => {
+interface NavBarProps {
+    onHeightChange: (height: number) => void;
+}
+
+const NavBar = ({ onHeightChange }: NavBarProps) => {
     const [open, setOpen] = useState(false)
     const pathname = usePathname()
     const linkStyle = (path: string) => pathname === path ? 'text-[#C7C2BE] pointer-cursor hover:underline' : 'text-[#6F6F6F] pointer-cursor hover:underline'
 
+    const { scrollY } = useScroll();
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    // Define the range for scrollY to header height transformation
+    const headerHeightRange = useTransform(scrollY, [0, 150], [120, 70]);
+    const logoSizeRange = useTransform(scrollY, [0, 150], [220, 110]);
+    const opacityRange = useTransform(scrollY, [0, 150], [1, 0.8]);
+
+    // Apply spring animation to header height
+    const headerHeight = useSpring(headerHeightRange, { stiffness: 250, damping: 25 });
+    const logoSize = useSpring(logoSizeRange, { stiffness: 300, damping: 30 });
+    const opacity = useSpring(opacityRange, { stiffness: 300, damping: 30 });
+
+    // Update scroll state
     useEffect(() => {
-        setOpen(false);
-    }, [pathname, setOpen]);
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Use useMotionValueEvent to listen for changes in headerHeight
+    useMotionValueEvent(headerHeight, 'change', (latest) => {
+        onHeightChange(latest);
+    });
 
     const staggeredLinkVariants = {
         hidden: { opacity: 0, y: 20 },
@@ -23,7 +51,7 @@ const NavBar = () => {
             opacity: 1,
             y: 0,
             transition: {
-                staggerChildren: 0.1, // Stagger each link with a delay
+                staggerChildren: 0.1,
             },
         },
     };
@@ -34,7 +62,7 @@ const NavBar = () => {
             opacity: 1,
             y: 0,
             transition: {
-                type: 'spring', // Smooth spring-based animation
+                type: 'spring',
                 stiffness: 100,
                 damping: 25,
             },
@@ -44,7 +72,10 @@ const NavBar = () => {
 
     return (
         <>
-            <header className='h-[120px] w-full flex justify-between items-center px-5 lg:px-11 xl:px-[100px] py-4 bg-white'>
+            <motion.header
+                style={{ height: headerHeight }}
+                className={`h-[70px] z-90 lg:h-[120px] fixed top-0 left-0 w-full flex justify-between items-center px-5 lg:px-11 xl:px-[100px] py-4 bg-white ${isScrolled ? "shadow-md" : ""}`}
+            >
                 <div className='hidden lg:flex justify-between items-center text-xs lg:text-sm w-full font-light'>
                     {/* Left Links */}
                     <div className='flex gap-8 items-center w-[40%] justify-start font-sweet-sans'>
@@ -55,17 +86,19 @@ const NavBar = () => {
                     </div>
 
                     {/* Logo */}
-                    <Link href='/' className="w-[220px] flex justify-center items-center">
-                        <Image
-                            src='/logo.svg'
-                            alt='logo'
-                            width={220}
-                            height={40}
-                            priority
-                            unoptimized
-                            quality={100}
-                        />
-                    </Link>
+                    <motion.div style={{ width: logoSize, opacity }}>
+                        <Link href='/'>
+                            <Image
+                                src='/logo.svg'
+                                alt='logo'
+                                width={220}
+                                height={40}
+                                priority
+                                unoptimized
+                                quality={100}
+                            />
+                        </Link>
+                    </motion.div>
 
                     {/* Right Links */}
                     <div className='flex gap-8 items-center w-[40%] justify-end font-sweet-sans '>
@@ -96,7 +129,7 @@ const NavBar = () => {
                 <div className="grid grid-cols-2 gap-2">
                     <Sheet open={open} onOpenChange={setOpen}>
                         <SheetContent side={'right'} className='bg-white'>
-                            <SheetHeader className='flex flex-row items-center justify-between pl-5 pr-10 lg:px-11 xl:px-[100px] py-4 h-[120px]'>
+                            <SheetHeader className='flex flex-row items-center justify-between pl-5 pr-10 lg:px-11 xl:px-[100px] py-4 h-[70px] lg:h-[120px]'>
                                 <div className="w-[100px] h-[20px] flex justify-center items-center">
                                     <Image
                                         src='/logo.svg'
@@ -145,7 +178,7 @@ const NavBar = () => {
                             </motion.div>   </SheetContent>
                     </Sheet>
                 </div>
-            </header>
+            </motion.header>
         </>
     )
 }

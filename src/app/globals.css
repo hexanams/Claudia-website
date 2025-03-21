@@ -4,25 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* @font-face {
-  font-family: "Avenir";
-  src: url(../../public/fonts/Avenir-Medium.woff2) format("woff2");
-  font-weight: 400;
-} */
 @font-face {
   font-family: "HK Grotesk";
   src: url(../../public/fonts/HKGrotesk-Regular.woff2) format("woff2");
-  font-weight: 400;
+  /* font-weight: 400; */
 }
 @font-face {
   font-family: "SweetSans";
   src: url(../../public/fonts/SweetSansPro-Medium.woff2) format("woff2");
-  font-weight: 400;
+  /* font-weight: 400; */
 }
 @font-face {
   font-family: "Canela";
-  src: url(../../public/fonts/Canela-Light.woff2) format("woff2");
-  font-weight: 400;
+  src: url(../../public/fonts/Canela-Thin.woff2) format("woff2");
+  /* font-weight: 400; */
 }
 
 .font-grotesk {

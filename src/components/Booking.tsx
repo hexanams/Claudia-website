@@ -69,15 +69,15 @@ const Booking = () => {
             </section>
 
             <motion.section
-                className='bg-[#EEECEB] flex flex-col justify-center items-center py-10 md:py-40'
+                className='bg-[#EEECEB] flex flex-col justify-center items-center py-10'
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
             >
                 <motion.div className='text-center flex flex-col gap-2' variants={fadeIn}>
-                    <div className='font-canela font-extrabold  text-xl md:text-3xl'>Free 15 minutes consultation call</div>
-                    <p className='text-base '>Conducted via Phone or Video Call with me</p>
+                    <div className='text-[#939393] font-canela font-extrabold  text-xl md:text-3xl'>Free 15 minutes consultation call</div>
+                    <p className='text-base text-[#939393]'>Conducted via Phone or Video Call with me</p>
                 </motion.div>
 
                 <motion.div className='mt-10 md:mt-20 flex flex-col md:flex-row items-center gap-8 justify-between' variants={fadeIn}>
@@ -92,7 +92,6 @@ const Booking = () => {
                             fetchPriority="high"
                             priority
                             quality={100}
-
                         />
                     </div>
 
@@ -110,7 +109,7 @@ const Booking = () => {
 
                         <Dialog>
                             <DialogTrigger asChild>
-                                <Button variant="outline" className='bg-[#C99D86] py-2 px-5 rounded-sm text-[#EFE9E3] text-base'>
+                                <Button variant="outline" className='bg-[#C99D86] py-2 px-5 rounded-sm h-[56px] text-[#EFE9E3] text-base hover:bg-[#b48470] transition-colors flex items-center justify-center'>
                                     Book an appointment
                                 </Button>
                             </DialogTrigger>
@@ -118,7 +117,7 @@ const Booking = () => {
                                 <DialogHeader>
                                     <DialogTitle className='flex justify-between'>
                                         <div />
-                                        <div className="text-sm  md:text-3xl font-extrabold text-center">FREE 15 Minute Consultation Call</div>
+                                        <div className="text-sm  md:text-3xl font-extrabold text-center text-[#939393]">FREE 15 Minute Consultation Call</div>
                                         <DialogClose><X /></DialogClose>
                                     </DialogTitle>
                                     <DialogDescription className='text-xs md:text-base text-center font-light text-[#666666]'>
