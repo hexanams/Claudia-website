@@ -33,7 +33,7 @@ export const services = [
         id: 3,
         title: "Child and adolescent",
         description: (
-            <div className='mt-6 flex flex-col gap-4 text-sm md:text-base text-[#939393] font-light'>
+            <div className='mt-6 flex flex-col gap-4 text-sm md:text-base text-[#939393] font-light font-canela'>
                 <p>Child and adolescent therapy offers a safe space for children to express and make sense of challenging thoughts, feelings and behaviours
                 </p>
                 <p>The psychological and emotional health of children and adolescents is crucial for health development as an adult. Their ability to bounce back from setbacks and mature into well-adjusted, healthy adults is facilitated by having good mental health from a young age.
@@ -41,7 +41,7 @@ export const services = [
                 <div>
                     <p>We offer support to children and adolescents for a wide-range of difficulties including:
                     </p>
-                    <ul>
+                    <ul className='list-disc pl-5'>
                         <li>Low Mood</li>
                         <li>Anxiety and Panic</li>
                         <li>Bullying</li>
@@ -66,7 +66,7 @@ export const services = [
         id: 4,
         title: "Couples therapy",
         description: (
-            <div className='mt-6 flex flex-col gap-4 text-sm md:text-base text-[#939393] font-light'>
+            <div className='font-canela mt-6 flex flex-col gap-4 text-sm md:text-base text-[#939393] font-light'>
                 <p>We recognise that every individual is different and has their own individual experience that leads them to seek psychological therapy and couples therapy is no different.
                 </p>
 
@@ -89,7 +89,7 @@ export const services = [
         id: 5,
         title: "Workplace therapy",
         description: (
-            <div className='mt-6 flex flex-col gap-4 text-sm md:text-base text-[#939393] font-light'>
+            <div className='font-canela mt-6 flex flex-col gap-4 text-sm md:text-base text-[#939393] font-light'>
 
                 <p>We want to make accessing psychological support for staff within companies as easy as possible. Therefore, we provide a &apos;pay as you go&apos; approach for businesses so you only pay for the therapy your staff need. We are happy to tailor our approach as best as possible to ensure we meet your companies needs and your staff&apos;s needs.</p>
             </div>
@@ -100,7 +100,7 @@ export const services = [
         id: 6,
         title: "Psychology career coaching",
         description: (
-            <div className='mt-6 flex flex-col gap-4 text-sm md:text-base text-[#939393] font-light'>
+            <div className='font-canela mt-6 flex flex-col gap-4 text-sm md:text-base text-[#939393] font-light'>
                 <p>We recognise the lack of career advice & resources that are available for aspiring psychologists and psychotherapists, therefore, we are proud to offer this specialist service  at empoweredtherapy.com to support Psychology students and graduates.
                 </p>
 
@@ -136,7 +136,7 @@ const TheraputicServices = () => {
                         {services.map((service) => (
                             <div
                                 key={service.id}
-                                className={`cursor-pointer text-[#939393] font-medium text-base md:text-lg ${selectedService.id === service.id ? "text-[#C99D86]" : ""}`}
+                                className={`cursor-pointer font-canela text-[#939393] font-medium text-base md:text-lg ${selectedService.id === service.id ? "text-[#C99D86]" : ""}`}
                                 onClick={() => setSelectedService(service)}
                             >
                                 {service.title}
@@ -195,13 +195,16 @@ const TheraputicServices = () => {
                                 transition={{ duration: 0.6 }}
                                 className="flex flex-col items-start"
                             >
-                                <Image
-                                    src={selectedService.image || ""}
-                                    alt={selectedService.title}
-                                    width={913}
-                                    height={200}
-                                    className="rounded-lg"
-                                />
+                                <div className='lg:h-[411px]'>
+                                    <Image
+                                        src={selectedService.image || ""}
+                                        alt={selectedService.title}
+                                        width={913}
+                                        height={411}
+                                        className="rounded-lg"
+                                    />
+                                </div>
+
 
                                 <div className="mt-10 font-canela text-2xl md:text-[40px] text-[#939393] font-extrabold">
                                     {selectedService.title}

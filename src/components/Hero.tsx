@@ -54,12 +54,11 @@ const Hero = () => {
                     className='mt-8 flex gap-4 font-grotesk'>
                     <Link
                         href='/booking'
-                        className='py-[10px] px-[20px] border border-[#939393] text-[#939393] text-center tracking-[3px] text-sm leading-8'>
+                        className='py-[10px] px-[20px] text-center tracking-[3px] leading-6 bg-[#C99D85] text-base w-fit rounded-lg text-white hover:bg-[#b48470] transition-colors'>
                         BOOK YOUR FREE CONSULTATION TODAY
                     </Link>
                 </motion.div>
             </div>
-
         </div>
     )
 }
