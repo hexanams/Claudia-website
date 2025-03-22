@@ -76,7 +76,7 @@ const NavBar = ({ onHeightChange }: NavBarProps) => {
                 style={{ height: headerHeight }}
                 className={`h-[70px] z-90 lg:h-[120px] fixed top-0 left-0 w-full flex justify-between items-center px-5 lg:px-11 xl:px-[100px] py-4 bg-white ${isScrolled ? "shadow-md" : ""}`}
             >
-                <div className='hidden lg:flex justify-between items-center text-xs lg:text-sm w-full font-light'>
+                <div className='hidden lg:flex justify-center items-center text-xs lg:text-sm w-full font-light'>
                     {/* Left Links */}
                     <div className='flex gap-8 items-center w-[40%] justify-start font-sweet-sans'>
                         <Link className={`${linkStyle('/')} whitespace-nowrap`} href='/'>Home</Link>
@@ -86,12 +86,12 @@ const NavBar = ({ onHeightChange }: NavBarProps) => {
                     </div>
 
                     {/* Logo */}
-                    <motion.div style={{ width: logoSize, opacity }}>
+                    <motion.div className='flex justify-center items-center' style={{ width: logoSize, opacity }}>
                         <Link href='/'>
                             <Image
-                                src='/logo.svg'
+                                src='/logo-therapy.svg'
                                 alt='logo'
-                                width={220}
+                                width={200}
                                 height={40}
                                 priority
                                 unoptimized
@@ -112,7 +112,7 @@ const NavBar = ({ onHeightChange }: NavBarProps) => {
                 <div className='lg:hidden flex justify-between items-center w-full'>
                     <Link href={'/'} className='cursor-pointer w-[100px] h-[20px] flex justify-center items-center'>
                         <Image
-                            src='/logo.svg'
+                            src='/logo-therapy.svg'
                             alt='logo'
                             width={100}
                             height={20}
@@ -132,7 +132,7 @@ const NavBar = ({ onHeightChange }: NavBarProps) => {
                             <SheetHeader className='flex flex-row items-center justify-between pl-5 pr-10 lg:px-11 xl:px-[100px] py-4 h-[70px] lg:h-[120px]'>
                                 <div className="w-[100px] h-[20px] flex justify-center items-center">
                                     <Image
-                                        src='/logo.svg'
+                                        src='/logo-therapy.svg'
                                         alt='logo'
                                         width={100}
                                         height={20}

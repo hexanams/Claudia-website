@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className='flex flex-col gap-6 lg:w-1/2'>
                     <div className='flex items-center w-[200px] h-[4.5rem]'>
                         <Image
-                            src='/logo.svg'
+                            src='/logo-therapy.svg'
                             alt='logo'
                             width={200}
                             height={40}
