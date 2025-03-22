@@ -28,7 +28,7 @@ const Hero = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className='text-2xl z-20 lg:text-5xl text-[#939393] font-light text-left font-canela'>
+                    className='text-2xl z-20 lg:text-5xl text-[#939393] font-light text-center lg:text-left font-canela'>
                     You deserve a life of empowerment and fulfilment.
                 </motion.div>
 
@@ -40,7 +40,7 @@ const Hero = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className='text-left tracking-normal text-grotesk text-xs lg:text-lg mt-6 font-light text-[#939393] leading-7'>
+                    className='text-center lg:text-left tracking-normal text-grotesk text-xs lg:text-lg mt-6 font-light text-[#939393] leading-7'>
                     Therapy is not a linear process. It&lsquo;s filled with ups and downs, progress and setbacks, and moments of clarity mixed with times of confusion. People can have mixed feelings about how they see therapy but going to therapy doesn&lsquo;t mean something is wrong with you; it means you&lsquo;re taking steps to become the best version of yourself.
                 </motion.p>
                 <motion.div

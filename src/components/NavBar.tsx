@@ -30,6 +30,7 @@ const NavBar = ({ onHeightChange }: NavBarProps) => {
     const logoSize = useSpring(logoSizeRange, { stiffness: 300, damping: 30 });
     const opacity = useSpring(opacityRange, { stiffness: 300, damping: 30 });
 
+
     // Update scroll state
     useEffect(() => {
         const handleScroll = () => {
@@ -73,10 +74,15 @@ const NavBar = ({ onHeightChange }: NavBarProps) => {
     return (
         <>
             <motion.header
-                style={{ height: headerHeight }}
-                className={`h-[70px] z-90 lg:h-[120px] fixed top-0 left-0 w-full flex justify-between items-center px-5 lg:px-11 xl:px-[100px] py-4 bg-white ${isScrolled ? "shadow-md" : ""}`}
+                style={{
+                    height: typeof window !== "undefined" && window.innerWidth >= 1024 ? headerHeight : 70,
+                }}
+                className={`fixed top-0 left-0 w-full flex justify-between items-center px-5 lg:px-11 xl:px-[100px] py-4 z-90 bg-white ${isScrolled ? "shadow-md" : ""} h-[70px]`}
             >
-                <div className='hidden lg:flex justify-center items-center text-xs lg:text-sm w-full font-light'>
+
+
+
+                <div className='hidden lg:flex justify-between items-center text-xs lg:text-sm w-full font-light'>
                     {/* Left Links */}
                     <div className='flex gap-8 items-center w-[40%] justify-start font-sweet-sans'>
                         <Link className={`${linkStyle('/')} whitespace-nowrap`} href='/'>Home</Link>
@@ -121,27 +127,23 @@ const NavBar = ({ onHeightChange }: NavBarProps) => {
                             quality={100}
                         />
                     </Link>
-                    <Button variant='ghost' className="bg-[#C99D85] rounded-none" onClick={() => setOpen((prev) => !prev)}>
-                        <Menu className='text-black' />
+                    <Button variant='ghost'
+                        className="bg-[#C99D85] rounded-none z-50 hover:bg-none"
+                        onClick={() => setOpen(!open)}
+                    >
+                        {open ? <X className='text-black' />
+                            : <Menu className='text-black' />}
                     </Button>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">
                     <Sheet open={open} onOpenChange={setOpen}>
-                        <SheetContent side={'right'} className='bg-white'>
-                            <SheetHeader className='flex flex-row items-center justify-between pl-5 pr-10 lg:px-11 xl:px-[100px] py-4 h-[70px] lg:h-[120px]'>
-                                <div className="w-[100px] h-[20px] flex justify-center items-center">
-                                    <Image
-                                        src='/logo-therapy.svg'
-                                        alt='logo'
-                                        width={100}
-                                        height={20}
-                                        priority
-                                        unoptimized
-                                        quality={100}
-                                    />
-                                </div>
-                                <Button variant='ghost' className="bg-transparent z-70 relative" onClick={() => setOpen((prev) => !prev)}>
+                        <SheetContent side={'right'}
+                            className='bg-white'>
+                            <SheetHeader
+                                className='flex flex-row items-center justify-between pl-5 pr-7 lg:px-11 xl:px-[100px] py-4 h-[70px] lg:h-[120px]'>
+                                <div />
+                                <Button variant='ghost' className="bg-transparent relative" onClick={() => setOpen((prev) => !prev)}>
                                     <X className='text-black' />
                                 </Button>
                             </SheetHeader>
@@ -178,7 +180,7 @@ const NavBar = ({ onHeightChange }: NavBarProps) => {
                             </motion.div>   </SheetContent>
                     </Sheet>
                 </div>
-            </motion.header>
+            </motion.header >
         </>
     )
 }
