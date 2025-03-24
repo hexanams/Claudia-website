@@ -27,6 +27,10 @@ const NavBar = () => {
     const opacity = useSpring(opacityRange, { stiffness: 300, damping: 30 });
 
 
+    useEffect(() => {
+        setOpen(false);
+    }, [pathname])
+
     // Update scroll state
     useEffect(() => {
         const handleScroll = () => {
