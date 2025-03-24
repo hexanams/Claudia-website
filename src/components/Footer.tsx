@@ -25,9 +25,9 @@ const Footer = () => {
                             <input
                                 type='text'
                                 placeholder='Your email here'
-                                className='p-3 w-[365px] border rounded-md'
+                                className='p-3 w-[365px] rounded-md text-[#939393] border-[#b48470] border'
                             />
-                            <button className='border-[#16A8B6] border py-3 px-6 text-[#16A8B6] rounded-md font-sweet-sans'>
+                            <button className='border-[#b48470] border py-3 px-6 text-[#939393] rounded-md font-sweet-sans'>
                                 Join
                             </button>
                         </div>

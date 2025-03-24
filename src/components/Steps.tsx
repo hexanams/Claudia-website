@@ -80,7 +80,7 @@ const Steps = () => {
 
             <section className="p-5 lg:py-20 lg:px-16 flex flex-col gap-20">
                 <motion.div
-                    className="flex flex-col justify-center items-center gap-4"
+                    className="flex flex-col justify-center items-center gap-4 h-fit"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -89,7 +89,7 @@ const Steps = () => {
                     <motion.div className='px-4 py-2 bg-[#EEECEB] text-[#C7C2BE] rounded-3xl w-fit font-sweet-sans' variants={textVariants}>
                         Our Services
                     </motion.div>
-                    <motion.div className="font-extrabold font-canela lg:mx-[336px] text-xl lg:text-5xl text-center" variants={textVariants}>
+                    <motion.div className="font-extrabold font-canela text-xl lg:text-5xl text-center text-wrap" variants={textVariants}>
                         We provide a safe, non-judgmental space where you can express yourself
                     </motion.div>
                 </motion.div>
