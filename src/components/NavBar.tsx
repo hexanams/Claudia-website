@@ -1,6 +1,6 @@
 "use client"
 import { Menu, X } from 'lucide-react'
-import { motion, useMotionValueEvent, useScroll, useSpring, useTransform } from "motion/react"
+import { motion, useScroll, useSpring, useTransform } from "motion/react"
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -8,11 +8,7 @@ import { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import { Sheet, SheetContent, SheetHeader } from './ui/sheet'
 
-interface NavBarProps {
-    onHeightChange: (height: number) => void;
-}
-
-const NavBar = ({ onHeightChange }: NavBarProps) => {
+const NavBar = () => {
     const [open, setOpen] = useState(false)
     const pathname = usePathname()
     const linkStyle = (path: string) => pathname === path ? 'text-[#C7C2BE] pointer-cursor hover:underline' : 'text-[#6F6F6F] pointer-cursor hover:underline'
@@ -40,11 +36,6 @@ const NavBar = ({ onHeightChange }: NavBarProps) => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    // Use useMotionValueEvent to listen for changes in headerHeight
-    useMotionValueEvent(headerHeight, 'change', (latest) => {
-        onHeightChange(latest);
-    });
 
     const staggeredLinkVariants = {
         hidden: { opacity: 0, y: 20 },

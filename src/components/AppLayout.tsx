@@ -1,17 +1,14 @@
-"use client"
-import React, { useState } from 'react';
-import NavBar from './NavBar';
+import React from 'react';
 import Footer from './Footer';
+import NavBar from './NavBar';
 
 const AppLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
-    const [headerHeight, setHeaderHeight] = useState(120);
-
     return (
         <>
-            <NavBar onHeightChange={setHeaderHeight} />
+            <NavBar />
             <div
                 style={{
-                    marginTop: typeof window !== "undefined" && window.innerWidth >= 1024 ? `${headerHeight}px` : '120px',
+                    marginTop: '120px',
                     transition: 'margin-top 0.2s ease-out',
                 }}
             >
