@@ -201,7 +201,7 @@ const ContactForm = () => {
                             name="about_us"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="text-sm font-grotesk text-[#939393] md:text-base">How did you hear about us?</FormLabel>
+                                    <FormLabel className="text-sm font-grotesk text-[#939393] md:text-base">How did you hear about me?</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger
@@ -212,11 +212,11 @@ const ContactForm = () => {
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent className='w-full'>
-                                            <SelectItem value="X">X</SelectItem>
-                                            <SelectItem value="FACEBOOK">FACEBOOK</SelectItem>
-                                            <SelectItem value="INSTAGRAM">INSTAGRAM</SelectItem>
-                                            <SelectItem value="LINKEDIN">LINKEDIN</SelectItem>
-                                            <SelectItem value="YOUTUBE">YOUTUBE</SelectItem>
+                                            <SelectItem value="SOCIAL MEDIA">SOCIAL MEDIA</SelectItem>
+                                            <SelectItem value="GOOGLE MAPS">GOOGLE MAPS</SelectItem>
+                                            <SelectItem value="GOOGLE SEARCH">GOOGLE SEARCH</SelectItem>
+                                            <SelectItem value="WORD OF MOUTH">WORD OF MOUTH</SelectItem>
+                                            <SelectItem value="FLYERS">FLYERS</SelectItem>
                                             <SelectItem value="OTHERS">OTHERS</SelectItem>
                                         </SelectContent>
                                     </Select>

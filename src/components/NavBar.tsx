@@ -18,12 +18,14 @@ const NavBar = () => {
 
     // Define the range for scrollY to header height transformation
     const headerHeightRange = useTransform(scrollY, [0, 150], [120, 70]);
-    const logoSizeRange = useTransform(scrollY, [0, 150], [220, 110]);
+    const logoSizeRange = useTransform(scrollY, [0, 150], [150, 70], { clamp: true });
     const opacityRange = useTransform(scrollY, [0, 150], [1, 0.8]);
+    const roundedLogoSize = useTransform(logoSizeRange, (size) => Math.round(size));
+
 
     // Apply spring animation to header height
     const headerHeight = useSpring(headerHeightRange, { stiffness: 250, damping: 25 });
-    const logoSize = useSpring(logoSizeRange, { stiffness: 300, damping: 30 });
+    const logoSize = useSpring(roundedLogoSize, { stiffness: 300, damping: 30 });
     const opacity = useSpring(opacityRange, { stiffness: 300, damping: 30 });
 
 
@@ -70,18 +72,16 @@ const NavBar = () => {
         <>
             <motion.header
                 style={{
-                    height: typeof window !== "undefined" && window.innerWidth >= 1024 ? headerHeight : 70,
+                    height: typeof window !== "undefined" && window.innerWidth <= 1024 ? "70px" : headerHeight,
                 }}
-                className={`fixed top-0 left-0 w-full flex justify-between items-center px-5 lg:px-11 xl:px-[100px] py-4 z-90 bg-white ${isScrolled ? "shadow-md" : ""} h-[70px]`}
+                className={`fixed top-0 left-0 w-full flex justify-between items-center px-5 lg:px-16 py-4 z-90 bg-white ${isScrolled ? "shadow-md" : ""}`}
             >
 
-
-
-                <div className='hidden lg:flex justify-between items-center text-xs lg:text-sm w-full font-light'>
+                <div className='hidden lg:flex justify-between items-center text-xs xl:text-sm w-full font-light'>
                     {/* Left Links */}
                     <div className='flex gap-8 items-center w-[40%] justify-start font-sweet-sans'>
                         <Link className={`${linkStyle('/')} whitespace-nowrap`} href='/'>Home</Link>
-                        <Link className={`${linkStyle('/about')} whitespace-nowrap`} href='/about'>About Us</Link>
+                        <Link className={`${linkStyle('/about')} whitespace-nowrap`} href='/about'>About Me</Link>
                         <Link className={`${linkStyle('/issues')} whitespace-nowrap`} href='/issues'>Issues we treat</Link>
                         <Link className={`${linkStyle('/services')} whitespace-nowrap`} href='/therapeutic-services'>Therapeutic services</Link>
                     </div>
@@ -152,7 +152,7 @@ const NavBar = () => {
                                     <Link className={`${linkStyle('/')} text-xl`} href='/'>Home</Link>
                                 </motion.div>
                                 <motion.div variants={linkVariants}>
-                                    <Link className={`${linkStyle('/about')} text-xl`} href='/about'>About Us</Link>
+                                    <Link className={`${linkStyle('/about')} text-xl`} href='/about'>About Me</Link>
                                 </motion.div>
                                 <motion.div variants={linkVariants}>
                                     <Link className={`${linkStyle('/issues')} text-xl`} href='/issues'>Issues we treat</Link>

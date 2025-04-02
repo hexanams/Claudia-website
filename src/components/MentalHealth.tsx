@@ -52,13 +52,7 @@ const MentalHealth = () => {
                     </Link>
                 </motion.div>
 
-                <motion.div
-                    className='w-full lg:w-1/2 flex items-center justify-center'
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={slideIn("right", 0.2)}
-                >
+                <div className='w-full lg:w-1/2 flex items-center justify-center'>
                     <Image
                         alt='mental-health'
                         src='/mental-health.svg'
@@ -66,7 +60,7 @@ const MentalHealth = () => {
                         height={474}
                         priority
                     />
-                </motion.div>
+                </div>
             </div>
         </section>
     )

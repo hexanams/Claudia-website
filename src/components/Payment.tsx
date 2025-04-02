@@ -54,7 +54,7 @@ const Payment = () => {
                     {['payment-1.svg', 'payment-2.svg'].map((src, index) => (
                         <motion.div key={index} className="w-full md:w-[559px] h-[261px] px-36 py-8 flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('/${src}')` }} variants={fadeIn}>
                             <div className='font-canela font-extrabold text-3xl text-[#EEEEEE]'>{index === 0 ? 'Individual therapy' : 'Couples therapy'}</div>
-                            <p className='mt-2 font-extrabold   text-[56px] text-[#FFFFFF]'>{index === 0 ? '$100' : '$120'}</p>
+                            <p className='mt-2 font-extrabold   text-[56px] text-[#FFFFFF]'>{index === 0 ? '€100' : '€120'}</p>
                             <Link
                                 href='/booking'
                                 className="mt-6 py-2 px-5 bg-[#C99D85] text-base w-fit rounded-lg text-white hover:underline">

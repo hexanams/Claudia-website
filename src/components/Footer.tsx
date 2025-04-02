@@ -39,7 +39,7 @@ const Footer = () => {
                     <div className='flex flex-col gap-4 w-1/2'>
                         <p className='font-semibold text-base'>Quick Links</p>
                         <div className='flex flex-col justify-center font-grotesk'>
-                            <Link className='py-2 text-sm font-extralight' href='/about'>About Us</Link>
+                            <Link className='py-2 text-sm font-extralight' href='/about'>About Me</Link>
                             <Link className='py-2 text-sm font-light' href='/contact'>Contact Us</Link>
                             <Link className='py-2 text-sm font-light' href='/'>Services</Link>
                             <Link className='py-2 text-sm font-light' href='/'>Blog Posts</Link>
