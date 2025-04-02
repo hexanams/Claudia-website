@@ -82,13 +82,13 @@ const Booking = () => {
 
                 <motion.div className='mt-10 md:mt-20 flex flex-col md:flex-row items-center gap-8 justify-between' variants={fadeIn}>
                     <div className="relative md:w-fit h-fit">
-                        <div className="hidden xl:inline w-[380px] h-[457px] absolute left-5 -top-5 bg-[#C7C2BE] z-0" />
+                        <div className="hidden xl:inline w-[380px] h-[325px] absolute left-5 -top-5 bg-[#C7C2BE] z-0" />
                         <Image
                             className="relative md:z-10 z-0"
                             alt="image gallery"
-                            src="/Claudia.svg"
+                            src="/Claudia.jpg"
                             width={380}
-                            height={457}
+                            height={325}
                             fetchPriority="high"
                             priority
                             quality={100}

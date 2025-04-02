@@ -58,13 +58,13 @@ const Contact = () => {
                         </div>
 
                         <motion.div className="relative flex justify-center lg:w-fit h-fit" variants={fadeIn("up", 0.2)}>
-                            <div className="hidden xl:inline w-[380px] h-[457px] absolute left-5 -top-5 bg-[#C7C2BE] z-0" />
+                            <div className="hidden xl:inline w-[380px] h-[325px] absolute left-5 -top-5 bg-[#C7C2BE] z-0" />
                             <Image
                                 className="relative z-10"
                                 alt="image gallery"
-                                src="/Claudia.svg"
+                                src="/Claudia.jpg"
                                 width={380}
-                                height={457}
+                                height={325}
                                 fetchPriority="high"
                                 priority
                                 quality={100}

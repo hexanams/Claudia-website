@@ -17,12 +17,12 @@ const Hero = () => {
                 muted
                 playsInline
                 preload='auto'
-                className="absolute top-0 left-0 w-full h-full blur-[0.5px] object-cover -z-10"
+                className="absolute top-0 left-0 w-full h-full object-cover -z-10"
             >
                 <source src="/Ocean_01.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            <div className='bg-[#fffefcb8] w-full h-fit lg:h-full lg:max-w-[530px] z-10 p-5 lg:px-[60px] lg:pt-[10%] rounded-lg lg:rounded-none flex flex-col justify-start items-center backdrop-blur-sm'>
+            <div className='bg-[rgba(255,254,252,0.7)] w-full h-fit lg:h-full lg:max-w-[530px] z-10 p-5 lg:px-[60px] lg:pt-[10%] rounded-lg lg:rounded-none flex flex-col justify-start items-center'>
                 <motion.div
                     variants={fadeIn}
                     initial="hidden"

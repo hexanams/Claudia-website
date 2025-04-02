@@ -57,13 +57,13 @@ const About = () => {
                 </motion.div>
 
                 <motion.div className="relative lg:w-fit h-fit" variants={fadeIn}>
-                    <div className="hidden xl:inline w-[520px] h-[621px] absolute left-5 -top-5 bg-[#C7C2BE] z-0" />
+                    <div className="hidden xl:inline w-[380px] h-[325px] absolute left-5 -top-5 bg-[#C7C2BE] z-0" />
                     <Image
                         className="relative z-10"
                         alt="image gallery"
-                        src="/Claudia.svg"
-                        width={520}
-                        height={621}
+                        src="/Claudia.jpg"
+                        width={380}
+                        height={325}
                         fetchPriority="high"
                         priority
                         quality={100}
