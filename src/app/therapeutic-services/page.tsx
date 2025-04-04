@@ -2,7 +2,7 @@ import MidSection from '@/components/PageMidSection'
 import TheraputicServices from '@/components/TheraputicServices'
 import { Metadata } from 'next'
 export const metadata: Metadata = {
-    title: "Therapeutic services",
+    title: "Empowered therapy - Therapeutic services i provide",
     description:
         "Therapeutic services i provide",
     keywords: "Therapeutic services, therapy, mental health, counseling, psychotherapy",

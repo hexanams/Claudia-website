@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Booking",
+    title: "Empowered therapy - Booking",
     description:
         "book an online appointment with me so i can get you the help you need ",
     keywords: "Therapeutic services, therapy, mental health, counseling, psychotherapy",
