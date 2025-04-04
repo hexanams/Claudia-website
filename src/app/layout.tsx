@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Empowered therapy - Home page",
   description:
     "Empowered therapy landing page",
   openGraph: {
