@@ -1,5 +1,21 @@
 import Contact from '@/components/Contact'
 import MidSection from '@/components/PageMidSection'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: "Contact",
+    description:
+        "Have any questions? reach out to me",
+    keywords: "Therapeutic services, therapy, mental health, counseling, psychotherapy",
+    authors: [{ name: "Empowered therapy" }],
+    creator: "Empowered therapy",
+    openGraph: {
+        images: [{ url: "/logo.svg" }],
+        title: "Empowered therapy - contact",
+        description:
+            "Reach out to me for any questions you may have",
+    },
+}
 
 const Page = () => {
     return (

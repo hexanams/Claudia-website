@@ -1,5 +1,21 @@
 import FAQSection from '@/components/FAQSection'
 import MidSection from '@/components/PageMidSection'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: "FAQs",
+    description:
+        "Frequently asked questions about empowered therapy",
+    keywords: "Therapeutic services, therapy, mental health, counseling, psychotherapy",
+    authors: [{ name: "Empowered therapy" }],
+    creator: "Empowered therapy",
+    openGraph: {
+        images: [{ url: "/logo.svg" }],
+        title: "Empowered therapy - FAQs",
+        description:
+            "Frequently asked questions about empowered therapy",
+    },
+}
 
 const Page = () => {
     return (
