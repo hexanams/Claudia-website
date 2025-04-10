@@ -28,7 +28,7 @@ const Issues = () => {
         "Loneliness",
         "Low self confidence",
         "Low self esteem",
-        "Men&apos;s issues",
+        "Menopause issues",
         "Obsessive Compulsive Disorder (OCD)",
         "Obsessive thoughts",
         "Panic attacks",
@@ -44,7 +44,7 @@ const Issues = () => {
         "Substance misuse",
         "Trauma",
         "Trauma bonds",
-        "Women&apos;s issues",
+        "Women's issues",
         "Work-related stress"
     ];
 

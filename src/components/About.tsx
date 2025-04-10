@@ -42,7 +42,7 @@ const About = () => {
                         </motion.p>
 
                         <motion.p variants={fadeIn} className='text-xs lg:text-base text-black'>
-                            My therapeutic approach is very rational and has a deep root in humanistic principals, meaning I am to create a space where you feel truly seen and understood. Therapy is a safe space for you to explore and make sense of your difficulties. Together, we&apos;ll explore what feels most challenging for you and work towards meaningful change and personal growth. For me, therapy is about self-development which can be a transformative process and a chance to uncover hidden wounds and shed light on patterns that may be causing and maintaining your difficulties.
+                            My therapeutic approach is very relational and has a deep root in humanistic principals, meaning I am to create a space where you feel truly seen and understood. Therapy is a safe space for you to explore and make sense of your difficulties. Together, we&apos;ll explore what feels most challenging for you and work towards meaningful change and personal growth. For me, therapy is about self-development which can be a transformative process and a chance to uncover hidden wounds and shed light on patterns that may be causing and maintaining your difficulties.
                         </motion.p>
 
                         <motion.p variants={fadeIn} className='text-xs lg:text-base text-black'>
