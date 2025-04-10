@@ -181,6 +181,7 @@ const ContactForm = () => {
                                             <FormItem>
                                                 <FormLabel className="font-grotesk text-sm text-[#939393] md:text-base">{label}</FormLabel>
                                                 <FormControl>
+
                                                     <Input
                                                         {...field}
                                                         className="w-full lg:w-[291px] h-[56px] py-[10px] px-4 text-[#B6B6B6] border rounded-[8px]"

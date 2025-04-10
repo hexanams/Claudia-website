@@ -82,7 +82,7 @@ const NavBar = () => {
                     <div className='flex gap-8 items-center w-[40%] justify-start font-sweet-sans'>
                         <Link className={`${linkStyle('/')} whitespace-nowrap`} href='/'>Home</Link>
                         <Link className={`${linkStyle('/about')} whitespace-nowrap`} href='/about'>About Me</Link>
-                        <Link className={`${linkStyle('/issues')} whitespace-nowrap`} href='/issues'>Issues we treat</Link>
+                        <Link className={`${linkStyle('/issues')} whitespace-nowrap`} href='/issues'>Issues i treat</Link>
                         <Link className={`${linkStyle('/services')} whitespace-nowrap`} href='/therapeutic-services'>Therapeutic services</Link>
                     </div>
 
@@ -90,7 +90,7 @@ const NavBar = () => {
                     <motion.div className='flex justify-center items-center' style={{ width: logoSize, opacity }}>
                         <Link href='/'>
                             <Image
-                                src='/logo-therapy.svg'
+                                src='/logo.png'
                                 alt='logo'
                                 width={200}
                                 height={40}
@@ -113,7 +113,7 @@ const NavBar = () => {
                 <div className='lg:hidden flex justify-between items-center w-full'>
                     <Link href={'/'} className='cursor-pointer w-[100px] h-[20px] flex justify-center items-center'>
                         <Image
-                            src='/logo-therapy.svg'
+                            src='/logo.png'
                             alt='logo'
                             width={100}
                             height={20}
@@ -155,7 +155,7 @@ const NavBar = () => {
                                     <Link className={`${linkStyle('/about')} text-xl`} href='/about'>About Me</Link>
                                 </motion.div>
                                 <motion.div variants={linkVariants}>
-                                    <Link className={`${linkStyle('/issues')} text-xl`} href='/issues'>Issues we treat</Link>
+                                    <Link className={`${linkStyle('/issues')} text-xl`} href='/issues'>Issues i treat</Link>
                                 </motion.div>
                                 <motion.div variants={linkVariants}>
                                     <Link className={`${linkStyle('/therapeutic-services')} text-xl`} href='/therapeutic-services'>Therapeutic services</Link>

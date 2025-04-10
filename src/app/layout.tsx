@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Empowered therapy landing page",
   openGraph: {
-    images: [{ url: "/logo.svg" }],
+    images: [{ url: "/fav-icon.png" }],
     title: "Empowered therapy - learn about us",
     description:
       "Get to know about the benefits of using empowered therapy",
@@ -23,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/fav-icon.png" />
         <link rel="preload" as="image" href="/booking-hero.svg" />
         <link rel="preload" as="image" href="/claudia-hero.svg" />
         <link rel="preload" as="image" href="/payment.svg" />

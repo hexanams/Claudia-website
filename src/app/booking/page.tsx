@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     creator: "Empowered therapy",
     openGraph: {
         images: [{
-            url: "https://empoweredtherapy.com/logo.svg"
+            url: "https://empoweredtherapy.com/fav-icon.png"
         }],
         title: "Empowered therapy - booking",
         description:
