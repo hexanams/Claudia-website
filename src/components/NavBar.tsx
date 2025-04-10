@@ -15,32 +15,44 @@ const NavBar = () => {
 
     const { scrollY } = useScroll();
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     // Define the range for scrollY to header height transformation
     const headerHeightRange = useTransform(scrollY, [0, 150], [120, 70]);
-    const logoSizeRange = useTransform(scrollY, [0, 150], [150, 70], { clamp: true });
+    const logoSizeRange = useTransform(scrollY, [0, 170], [170, 150], { clamp: true });
     const opacityRange = useTransform(scrollY, [0, 150], [1, 0.8]);
     const roundedLogoSize = useTransform(logoSizeRange, (size) => Math.round(size));
-
 
     // Apply spring animation to header height
     const headerHeight = useSpring(headerHeightRange, { stiffness: 250, damping: 25 });
     const logoSize = useSpring(roundedLogoSize, { stiffness: 300, damping: 30 });
     const opacity = useSpring(opacityRange, { stiffness: 300, damping: 30 });
 
-
     useEffect(() => {
         setOpen(false);
     }, [pathname])
 
-    // Update scroll state
+    // Check for mobile devices and update scroll state
     useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 1024);
+        };
+
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 0);
         };
 
+        // Initial check
+        checkMobile();
+
+        // Add event listeners
+        window.addEventListener('resize', checkMobile);
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('resize', checkMobile);
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     const staggeredLinkVariants = {
@@ -67,12 +79,11 @@ const NavBar = () => {
         },
     };
 
-
     return (
         <>
             <motion.header
                 style={{
-                    height: typeof window !== "undefined" && window.innerWidth <= 1024 ? "70px" : headerHeight,
+                    height: isMobile ? "70px" : headerHeight,
                 }}
                 className={`fixed top-0 left-0 w-full flex justify-between items-center px-5 lg:px-16 py-4 z-90 bg-white ${isScrolled ? "shadow-md" : ""}`}
             >
