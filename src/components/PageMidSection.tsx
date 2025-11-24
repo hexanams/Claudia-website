@@ -9,20 +9,20 @@ import {
 } from "./ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { motion, useInView } from "motion/react";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "./ui/dialog";
-import { Button } from "./ui/button";
-import { X } from "lucide-react";
-import { CalendlyTab } from "./Booking";
+// import {
+//   Dialog,
+//   DialogClose,
+//   DialogContent,
+//   DialogDescription,
+//   DialogHeader,
+//   DialogTitle,
+//   DialogTrigger,
+// } from "./ui/dialog";
+// import { Button } from "./ui/button";
+// import { X } from "lucide-react";
+// import { CalendlyTab } from "./Booking";
 import BookingDialog from "./BookingDialog";
 
 const MidSection = () => {

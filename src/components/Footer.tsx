@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { BsInstagram } from "react-icons/bs";
-import {
-  RiFacebookCircleFill,
-  RiLinkedinFill,
-  RiTwitterXFill,
-  RiYoutubeFill,
-} from "react-icons/ri";
+// import { BsInstagram } from "react-icons/bs";
+// import {
+//   RiFacebookCircleFill,
+//   RiLinkedinFill,
+//   RiTwitterXFill,
+//   RiYoutubeFill,
+// } from "react-icons/ri";
 import Image from "next/image";
 const Footer = () => {
   return (
