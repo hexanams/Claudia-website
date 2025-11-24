@@ -42,7 +42,14 @@ const formSchema = z.object({
   phone_number: z.coerce
     .number()
     .min(2, { message: "Phone number must be at least 2 characters." }),
-  about_us: z.enum(["FACEBOOK, X, INSTAGRAM, YOUTUBE, LINKEDIN, OTHERS"]),
+  about_us: z.enum([
+    "SOCIAL MEDIA",
+    "GOOGLE MAPS",
+    "GOOGLE SEARCH",
+    "WORD OF MOUTH",
+    "FLYERS",
+    "OTHERS",
+  ]),
 });
 
 const Contact = () => {
@@ -128,7 +135,7 @@ const Contact = () => {
               <div className="flex gap-3.5 items-center">
                 <Phone className="text-[#5C5C5C] size-4" />
                 <p className=" text-sm md:text-base text-[#5C5C5C]">
-                  +00447443993266
+                  +447443993266
                 </p>
               </div>
               <div className="flex gap-3.5 items-center">
@@ -222,7 +229,7 @@ const ContactForm = () => {
                   placeholder: "Enter your email address",
                 },
                 {
-                  field: "number",
+                  field: "phone_number",
                   label: "Phone Number",
                   placeholder: "Enter your phone number",
                 },
