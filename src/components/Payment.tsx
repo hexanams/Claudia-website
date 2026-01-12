@@ -80,7 +80,7 @@ const Payment = () => {
                 {index === 0 ? "Individual therapy" : "Couples therapy"}
               </div>
               <p className="mt-2 font-extrabold   text-[56px] text-[#FFFFFF]">
-                {index === 0 ? "€100" : "€120"}
+                {index === 0 ? "€120" : "€140"}
               </p>
               <Link
                 href="/booking"

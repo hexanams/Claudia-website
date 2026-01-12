@@ -92,14 +92,14 @@ const Contact = () => {
             >
               <div className="hidden xl:inline w-[380px] h-[325px] absolute left-5 -top-5 bg-[#C7C2BE] z-0" />
               <Image
-                className="relative z-10"
+                className="relative z-10 w-[380px] h-[325px] object-cover"
                 alt="image gallery"
-                src="/Claudia.jpg"
+                src="/contact.jpeg"
                 width={380}
                 height={325}
                 fetchPriority="high"
                 priority
-                quality={100}
+                quality={80}
               />
             </motion.div>
           </motion.div>
@@ -180,11 +180,13 @@ const ContactForm = () => {
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     const templateParams = {
-      from_name: `${data.first_name} ${data.last_name}`,
-      to_name: "Claudia",
+      company_name: "Claudia - Empowered Therapy",
+      name: `${data.first_name} ${data.last_name}`,
+      email: data.email,
+      phone: data.phone_number,
+      how: data.about_us,
       message: data.description,
-      reply_to: data.email,
-      heard_from: data.about_us,
+      to_email: "oluyohokiemute@gmail.com",
     };
     try {
       await emailjs.send(
@@ -197,6 +199,7 @@ const ContactForm = () => {
       form.reset();
     } catch (error) {
       toast.error("Failed to send email. Please try again.");
+
       console.error(error);
     }
   };

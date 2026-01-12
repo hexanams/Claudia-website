@@ -45,58 +45,54 @@ const About = () => {
               className="text-xs lg:text-base text-black"
             >
               I understand that life can be challenging and difficult to
-              navigate at times. Perhaps you are experiencing low mood, anxiety
-              or difficulties in your relationships. You can bring anything that
-              is worrying you or causing you distress, confusion or pain.
-              Sometimes, individuals are not sure why they are coming to see me.
-              You might just feel things are not okay and feel a bit lost in
-              life. You might be struggling to manage your feelings. You might
-              want to engage in a journey of self-discovery and exploration.
-              There is no right or wrong topic to bring and nothing that I would
-              not consider important enough. Whatever is making you want to seek
-              help is always justified and I can help you to explore further.
-              Therapy can help to create shifts, movement and new energy that
-              did not previously feel present or possible.
+              navigate at times. Therapy offers a space to bring anything that
+              may be worrying you or causing you distress. Sometimes, people are
+              unsure why they are coming to therapy, and that is completely
+              okay. There is no right or wrong topic to bring, and nothing I
+              would consider unimportant. Whatever has led you to seek support
+              is valid, and I can help you explore it further. Therapy can help
+              create meaningful shifts and heal the past.
             </motion.p>
 
             <motion.p
               variants={fadeIn}
               className="text-xs lg:text-base text-black"
             >
-              My therapeutic approach is very relational and has a deep root in
-              humanistic principals, meaning I am to create a space where you
-              feel truly seen and understood. Therapy is a safe space for you to
-              explore and make sense of your difficulties. Together, we&apos;ll
-              explore what feels most challenging for you and work towards
-              meaningful change and personal growth. For me, therapy is about
-              self-development which can be a transformative process and a
-              chance to uncover hidden wounds and shed light on patterns that
-              may be causing and maintaining your difficulties.
+              Therapy is a safe and supportive space to explore and make sense
+              of your difficulties. I want you to feel truly seen and
+              understood. Together, we will explore what feels most challenging
+              for you and work towards meaningful change and personal growth. I
+              believe the therapeutic relationship is just as important as
+              psychological knowledge. I take a person-centred approach, seeking
+              to understand not only the difficulties someone brings, but the
+              whole person. This allows us to work together in a way that
+              supports psychological, emotional, and relational wellbeing,
+              tailored to each individual.
             </motion.p>
 
             <motion.p
               variants={fadeIn}
               className="text-xs lg:text-base text-black"
             >
-              For the past 10 years I have undertaken rigours clinical training.
-              I have worked with children, young adults and adults supporting
-              them with their psychological distress. I&apos;ve worked in both
-              Ireland and the United Kingdom across various mental health
-              services, such as the Health Service Executive (HSE), National
-              Health Service (NHS), charity services, private settings, private
-              rehabs, and staff support services. I have also worked in highly
-              specialised services such as addiction and substance abuse, eating
-              disorders and chronic health conditions.
+              Over the past 10 years, I have undertaken rigorous clinical
+              training and worked with children, adolescents, and adults. I have
+              practiced in both Ireland and the United Kingdom across a range of
+              mental health services, including the Health Service Executive
+              (HSE), the National Health Service (NHS), charity services,
+              private settings, private rehabilitation services, and staff
+              support services. I have also worked in highly specialised areas,
+              including addiction and substance misuse, trauma, and chronic
+              health conditions.
             </motion.p>
 
             <motion.p
               variants={fadeIn}
               className="text-xs lg:text-base text-black"
             >
-              I am registered psychotherapist and Psychologist. I am a member
-              with the British Psychological Society, and the British
-              Association for Counselling and Psychotherapy. I have completed my
-              Doctorate in Counselling Psychology at City, University of London.
+              I am a registered Psychologist and a member of the British
+              Psychological Society and the British Association for Counselling
+              and Psychotherapy. I completed my Doctorate in Counselling
+              Psychology at City, University of London.
             </motion.p>
           </div>
         </motion.div>
@@ -106,12 +102,12 @@ const About = () => {
           <Image
             className="relative z-10"
             alt="image gallery"
-            src="/Claudia.jpg"
+            src="/about_me.png"
             width={380}
             height={325}
             fetchPriority="high"
             priority
-            quality={100}
+            quality={80}
           />
         </motion.div>
       </div>

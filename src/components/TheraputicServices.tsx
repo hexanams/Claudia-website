@@ -40,7 +40,8 @@ export const services = [
         </p>
       </div>
     ),
-    image: "/indivi-therapy.svg",
+    image: "/indiv.jpeg",
+    // image: "/indivi-therapy.svg",
   },
   {
     id: 3,
@@ -261,13 +262,13 @@ const TheraputicServices = () => {
                 transition={{ duration: 0.6 }}
                 className="flex flex-col items-start"
               >
-                <div className="lg:h-[411px]">
+                <div className="">
                   <Image
                     src={selectedService.image || ""}
                     alt={selectedService.title}
                     width={913}
-                    height={411}
-                    className="rounded-lg"
+                    height={460}
+                    className="rounded-lg object-cover object-center lg:max-h-[460px]"
                   />
                 </div>
 
