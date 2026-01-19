@@ -27,7 +27,7 @@ const NavBar = () => {
   });
   const opacityRange = useTransform(scrollY, [0, 150], [1, 0.8]);
   const roundedLogoSize = useTransform(logoSizeRange, (size) =>
-    Math.round(size)
+    Math.round(size),
   );
 
   // Apply spring animation to header height
@@ -237,7 +237,7 @@ const NavBar = () => {
                     className={`${linkStyle("/issues")} text-xl`}
                     href="/issues"
                   >
-                    Issues i treat
+                    Issues I treat
                   </Link>
                 </motion.div>
                 <motion.div variants={linkVariants}>

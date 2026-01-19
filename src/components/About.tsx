@@ -35,7 +35,7 @@ const About = () => {
               Hi there,
             </div>
             <div className="text-[#C99D86] font-canela font-extrabold text-5xl lg:text-[3.5rem]">
-              I&apos;m Claudia
+              I&apos;m Dr Claudia
             </div>
           </div>
 
